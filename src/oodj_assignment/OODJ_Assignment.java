@@ -5,6 +5,8 @@
 package oodj_assignment;
 
 import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,13 +14,16 @@ import java.awt.Color;
  */
 public class OODJ_Assignment {
 
-   
+    static UserInterface formMenu =  new UserInterface();
+    static UserFeedBack formFeedBack = new UserFeedBack();
     public static void main(String[] args) {
         
-    UserInterface form =  new UserInterface();
-    form.setBackground(Color.yellow);
-    form.setVisible(true);
-  
+    
+    formMenu.setBackground(Color.yellow);
+    formMenu.setVisible(true);
+    formMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    formFeedBack.setVisible(true);
+    formFeedBack.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
 }
