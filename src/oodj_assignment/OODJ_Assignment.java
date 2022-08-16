@@ -17,16 +17,16 @@ public class OODJ_Assignment {
     static UserInterface formMenu =  new UserInterface();
     static UserFeedBack formFeedBack = new UserFeedBack();
     public static void main(String[] args) {
-        
+    
     
     formMenu.setBackground(Color.yellow);
-    formMenu.setVisible(true);
-    formMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    formFeedBack.setVisible(true);
-    formFeedBack.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        formMenu.setVisible(true);
+        formMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
     
 }
 //let's hope.
 //double confirming!
+//triple confirming!
 //triple confirming!
