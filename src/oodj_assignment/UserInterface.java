@@ -123,8 +123,6 @@ public class UserInterface extends javax.swing.JFrame {
         menuPanel.setBackground(new java.awt.Color(222, 222, 222));
         menuPanel.setAutoscrolls(true);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\HAO\\Downloads\\nasilemak.jpg")); // NOI18N
-
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Nasi Lemak                           RM4.80");
@@ -170,8 +168,6 @@ public class UserInterface extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\HAO\\Downloads\\nasilemak.jpg")); // NOI18N
-
         jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(102, 102, 102));
         jLabel12.setText("Nasi Lemak                           RM4.80");
@@ -197,7 +193,7 @@ public class UserInterface extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jLabel11)
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,8 +212,6 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\HAO\\Downloads\\nasilemak.jpg")); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(102, 102, 102));
@@ -244,7 +238,7 @@ public class UserInterface extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jLabel13)
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,8 +257,6 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(42, Short.MAX_VALUE))
         );
-
-        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\Users\\HAO\\Downloads\\nasilemak.jpg")); // NOI18N
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(102, 102, 102));
@@ -291,7 +283,7 @@ public class UserInterface extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addComponent(jLabel15)
-                .addGap(0, 25, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,8 +302,6 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\HAO\\Downloads\\nasilemak.jpg")); // NOI18N
 
         jLabel18.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(102, 102, 102));
@@ -358,8 +348,6 @@ public class UserInterface extends javax.swing.JFrame {
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\HAO\\Downloads\\nasilemak.jpg")); // NOI18N
-
         jLabel20.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(102, 102, 102));
         jLabel20.setText("Nasi Lemak                           RM4.80");
@@ -404,8 +392,6 @@ public class UserInterface extends javax.swing.JFrame {
                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jLabel21.setIcon(new javax.swing.ImageIcon("C:\\Users\\HAO\\Downloads\\nasilemak.jpg")); // NOI18N
 
         jLabel22.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(102, 102, 102));
@@ -495,8 +481,6 @@ public class UserInterface extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(menuPanel);
 
-        labelPic1.setIcon(new javax.swing.ImageIcon("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\apcafelogo.png")); // NOI18N
-
         lblMenu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblMenu.setForeground(new java.awt.Color(254, 120, 83));
         lblMenu.setText("Menu");
@@ -513,7 +497,6 @@ public class UserInterface extends javax.swing.JFrame {
         jLabel3.setText("Order History");
 
         jButton1.setBackground(new java.awt.Color(242, 242, 242));
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\HAO\\Downloads\\logoutIcon2.png")); // NOI18N
         jButton1.setText("Logout  ");
         jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         buttonGroup1.add(jButton1);
@@ -569,10 +552,6 @@ public class UserInterface extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setText("YOUR CART");
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\HAO\\Downloads\\straightLine.png")); // NOI18N
-
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\HAO\\Downloads\\straightLine.png")); // NOI18N
-
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel7.setText("GRAND TOTAL : RM");
 
@@ -591,7 +570,6 @@ public class UserInterface extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(254, 120, 83));
         jButton2.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         jButton2.setForeground(new java.awt.Color(242, 242, 242));
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\HAO\\Downloads\\cartIcon.png")); // NOI18N
         jButton2.setText("CHECK OUT");
         jButton2.setAlignmentY(0.0F);
         jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
