@@ -256,22 +256,31 @@ public class ManagerHome extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
+        PreLogin formPreLogin = new PreLogin();
+        formPreLogin.setVisible(true);
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnViewMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewMenuActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnViewMenuActionPerformed
 
     private void btnViewProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfActionPerformed
         // TODO add your handling code here:
+        ManagerProfile formManagerProfile = new ManagerProfile();
+        formManagerProfile.setVisible(true);
     }//GEN-LAST:event_btnViewProfActionPerformed
 
     private void btnViewOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrdersActionPerformed
         // TODO add your handling code here:
+        ManagerManageOrders formManageOrders = new ManagerManageOrders();
+        formManageOrders.setVisible(true);
     }//GEN-LAST:event_btnViewOrdersActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
+        UserRegistration formUserReg = new UserRegistration();
+        formUserReg.setVisible(true);
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnViewStatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStatActionPerformed

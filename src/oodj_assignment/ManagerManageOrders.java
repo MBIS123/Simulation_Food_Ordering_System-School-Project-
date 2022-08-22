@@ -26,18 +26,90 @@ public class ManagerManageOrders extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PanelOrders1 = new javax.swing.JPanel();
+        lblRecentOrders1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        TableOrders1 = new javax.swing.JTable();
+        btnViewOrders1 = new javax.swing.JButton();
         PanelOrders = new javax.swing.JPanel();
         lblRecentOrders = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableOrders = new javax.swing.JTable();
         btnViewOrders = new javax.swing.JButton();
+        btnExit1 = new javax.swing.JButton();
+        PanelOrders2 = new javax.swing.JPanel();
+        lblRecentOrders2 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        TableOrders2 = new javax.swing.JTable();
+        btnViewOrders2 = new javax.swing.JButton();
+
+        PanelOrders1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.orange));
+
+        lblRecentOrders1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblRecentOrders1.setText("PENDING ORDERS:");
+
+        TableOrders1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(TableOrders1);
+
+        btnViewOrders1.setBackground(new java.awt.Color(254, 120, 83));
+        btnViewOrders1.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
+        btnViewOrders1.setForeground(new java.awt.Color(242, 242, 242));
+        btnViewOrders1.setText("EDIT ORDER");
+        btnViewOrders1.setAlignmentY(0.0F);
+        btnViewOrders1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnViewOrders1.setBorderPainted(false);
+        btnViewOrders1.setIconTextGap(30);
+        btnViewOrders1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewOrders1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelOrders1Layout = new javax.swing.GroupLayout(PanelOrders1);
+        PanelOrders1.setLayout(PanelOrders1Layout);
+        PanelOrders1Layout.setHorizontalGroup(
+            PanelOrders1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelOrders1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(lblRecentOrders1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(PanelOrders1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelOrders1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 962, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelOrders1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnViewOrders1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        PanelOrders1Layout.setVerticalGroup(
+            PanelOrders1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelOrders1Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(lblRecentOrders1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnViewOrders1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         PanelOrders.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.orange));
 
         lblRecentOrders.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblRecentOrders.setText("YOUR RECENT ORDERS:");
+        lblRecentOrders.setText("PENDING ORDERS:");
 
         TableOrders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -55,7 +127,7 @@ public class ManagerManageOrders extends javax.swing.JFrame {
         btnViewOrders.setBackground(new java.awt.Color(254, 120, 83));
         btnViewOrders.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
         btnViewOrders.setForeground(new java.awt.Color(242, 242, 242));
-        btnViewOrders.setText("VIEW ALL ORDERS");
+        btnViewOrders.setText("EDIT ORDER");
         btnViewOrders.setAlignmentY(0.0F);
         btnViewOrders.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btnViewOrders.setBorderPainted(false);
@@ -77,7 +149,7 @@ public class ManagerManageOrders extends javax.swing.JFrame {
             .addGroup(PanelOrdersLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 771, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelOrdersLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnViewOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -92,28 +164,108 @@ public class ManagerManageOrders extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnViewOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        btnExit1.setBackground(new java.awt.Color(254, 120, 83));
+        btnExit1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnExit1.setForeground(new java.awt.Color(242, 242, 242));
+        btnExit1.setText("EXIT");
+        btnExit1.setAlignmentY(0.0F);
+        btnExit1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnExit1.setBorderPainted(false);
+        btnExit1.setIconTextGap(30);
+        btnExit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExit1ActionPerformed(evt);
+            }
+        });
+
+        PanelOrders2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.orange));
+
+        lblRecentOrders2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblRecentOrders2.setText("COMPLETED ORDERS:");
+
+        TableOrders2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(TableOrders2);
+
+        btnViewOrders2.setBackground(new java.awt.Color(254, 120, 83));
+        btnViewOrders2.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        btnViewOrders2.setForeground(new java.awt.Color(242, 242, 242));
+        btnViewOrders2.setText("VIEW ORDER HISTORY");
+        btnViewOrders2.setAlignmentY(0.0F);
+        btnViewOrders2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnViewOrders2.setBorderPainted(false);
+        btnViewOrders2.setIconTextGap(30);
+        btnViewOrders2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewOrders2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelOrders2Layout = new javax.swing.GroupLayout(PanelOrders2);
+        PanelOrders2.setLayout(PanelOrders2Layout);
+        PanelOrders2Layout.setHorizontalGroup(
+            PanelOrders2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelOrders2Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(lblRecentOrders2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(PanelOrders2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelOrders2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 962, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelOrders2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnViewOrders2, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        PanelOrders2Layout.setVerticalGroup(
+            PanelOrders2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelOrders2Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(lblRecentOrders2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnViewOrders2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 990, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(PanelOrders, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(197, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PanelOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnExit1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(PanelOrders2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 323, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(37, 37, 37)
-                    .addComponent(PanelOrders, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(61, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(PanelOrders, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(PanelOrders2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -122,6 +274,19 @@ public class ManagerManageOrders extends javax.swing.JFrame {
     private void btnViewOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrdersActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnViewOrdersActionPerformed
+
+    private void btnExit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExit1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnExit1ActionPerformed
+
+    private void btnViewOrders1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrders1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnViewOrders1ActionPerformed
+
+    private void btnViewOrders2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrders2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnViewOrders2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,9 +326,20 @@ public class ManagerManageOrders extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelOrders;
+    private javax.swing.JPanel PanelOrders1;
+    private javax.swing.JPanel PanelOrders2;
     private javax.swing.JTable TableOrders;
+    private javax.swing.JTable TableOrders1;
+    private javax.swing.JTable TableOrders2;
+    private javax.swing.JButton btnExit1;
     private javax.swing.JButton btnViewOrders;
+    private javax.swing.JButton btnViewOrders1;
+    private javax.swing.JButton btnViewOrders2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblRecentOrders;
+    private javax.swing.JLabel lblRecentOrders1;
+    private javax.swing.JLabel lblRecentOrders2;
     // End of variables declaration//GEN-END:variables
 }
