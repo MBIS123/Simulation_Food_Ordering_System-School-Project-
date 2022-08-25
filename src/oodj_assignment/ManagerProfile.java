@@ -42,19 +42,24 @@ public class ManagerProfile extends javax.swing.JFrame {
         btnViewOrders = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         btnExit1 = new javax.swing.JButton();
-        lblWelcome1 = new javax.swing.JLabel();
-        lblPic1 = new javax.swing.JLabel();
+        lblMyProfile = new javax.swing.JLabel();
+        btnUpdateManagerProfile = new javax.swing.JButton();
         PanelRegDetails1 = new javax.swing.JPanel();
-        lblName1 = new javax.swing.JLabel();
-        lblContact1 = new javax.swing.JLabel();
+        lblManagerName = new javax.swing.JLabel();
+        lblManagerUsername = new javax.swing.JLabel();
+        lblManagerContact = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txtManagerUsername = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
-        txtName1 = new javax.swing.JTextArea();
+        txtManagerName = new javax.swing.JTextArea();
         jScrollPane6 = new javax.swing.JScrollPane();
-        txtContact1 = new javax.swing.JTextArea();
+        txtManagerContact = new javax.swing.JTextArea();
+        lblManagerIC = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        txtAddress = new javax.swing.JTextArea();
-        lblAddress = new javax.swing.JLabel();
-        btnViewOrders1 = new javax.swing.JButton();
+        txtManagerIC = new javax.swing.JTextArea();
+        lblManagerDOB = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        txtManagerDOB = new javax.swing.JTextArea();
 
         jFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -214,39 +219,60 @@ public class ManagerProfile extends javax.swing.JFrame {
             }
         });
 
-        lblWelcome1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
-        lblWelcome1.setForeground(new java.awt.Color(254, 120, 83));
-        lblWelcome1.setText("MY PROFILE");
-        lblWelcome1.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblMyProfile.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        lblMyProfile.setForeground(new java.awt.Color(254, 120, 83));
+        lblMyProfile.setText("MY PROFILE");
+        lblMyProfile.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblWelcome1MousePressed(evt);
+                lblMyProfileMousePressed(evt);
             }
         });
 
-        lblPic1.setText("[Insert Photo Here]");
+        btnUpdateManagerProfile.setBackground(new java.awt.Color(254, 120, 83));
+        btnUpdateManagerProfile.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
+        btnUpdateManagerProfile.setForeground(new java.awt.Color(242, 242, 242));
+        btnUpdateManagerProfile.setText("UPDATE");
+        btnUpdateManagerProfile.setAlignmentY(0.0F);
+        btnUpdateManagerProfile.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnUpdateManagerProfile.setBorderPainted(false);
+        btnUpdateManagerProfile.setIconTextGap(30);
 
         PanelRegDetails1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        lblName1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblName1.setText("                            Name :");
+        lblManagerName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblManagerName.setText("                            Name :");
 
-        lblContact1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblContact1.setText("                  Contact No. :");
+        lblManagerUsername.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblManagerUsername.setText("                      Username:");
 
-        txtName1.setColumns(20);
-        txtName1.setRows(5);
-        jScrollPane5.setViewportView(txtName1);
+        lblManagerContact.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblManagerContact.setText("                  Contact No. :");
 
-        txtContact1.setColumns(20);
-        txtContact1.setRows(5);
-        jScrollPane6.setViewportView(txtContact1);
+        txtManagerUsername.setColumns(20);
+        txtManagerUsername.setRows(5);
+        jScrollPane4.setViewportView(txtManagerUsername);
 
-        txtAddress.setColumns(20);
-        txtAddress.setRows(5);
-        jScrollPane7.setViewportView(txtAddress);
+        txtManagerName.setColumns(20);
+        txtManagerName.setRows(5);
+        jScrollPane5.setViewportView(txtManagerName);
 
-        lblAddress.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblAddress.setText("                        Address :");
+        txtManagerContact.setColumns(20);
+        txtManagerContact.setRows(5);
+        jScrollPane6.setViewportView(txtManagerContact);
+
+        lblManagerIC.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblManagerIC.setText("                   I.C Number :");
+
+        txtManagerIC.setColumns(20);
+        txtManagerIC.setRows(5);
+        jScrollPane7.setViewportView(txtManagerIC);
+
+        lblManagerDOB.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblManagerDOB.setText("     DOB (dd/mm/yyyy) :");
+
+        txtManagerDOB.setColumns(20);
+        txtManagerDOB.setRows(5);
+        jScrollPane8.setViewportView(txtManagerDOB);
 
         javax.swing.GroupLayout PanelRegDetails1Layout = new javax.swing.GroupLayout(PanelRegDetails1);
         PanelRegDetails1.setLayout(PanelRegDetails1Layout);
@@ -256,89 +282,95 @@ public class ManagerProfile extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelRegDetails1Layout.createSequentialGroup()
-                        .addComponent(lblName1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblManagerUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelRegDetails1Layout.createSequentialGroup()
-                        .addComponent(lblContact1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblManagerContact, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelRegDetails1Layout.createSequentialGroup()
-                        .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblManagerName, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelRegDetails1Layout.createSequentialGroup()
+                        .addComponent(lblManagerIC, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelRegDetails1Layout.createSequentialGroup()
+                        .addComponent(lblManagerDOB, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
         PanelRegDetails1Layout.setVerticalGroup(
             PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelRegDetails1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(13, 13, 13)
+                .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelRegDetails1Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(lblManagerUsername)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelRegDetails1Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
-                        .addComponent(lblName1)))
-                .addGap(18, 18, 18)
+                        .addComponent(lblManagerName)))
+                .addGap(14, 14, 14)
                 .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelRegDetails1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(lblContact1)))
-                .addGap(18, 18, 18)
+                        .addGap(6, 6, 6)
+                        .addComponent(lblManagerIC))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelRegDetails1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(lblAddress)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                        .addGap(6, 6, 6)
+                        .addComponent(lblManagerDOB))
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelRegDetails1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(lblManagerContact))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51))
         );
-
-        btnViewOrders1.setBackground(new java.awt.Color(254, 120, 83));
-        btnViewOrders1.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
-        btnViewOrders1.setForeground(new java.awt.Color(242, 242, 242));
-        btnViewOrders1.setText("UPDATE");
-        btnViewOrders1.setAlignmentY(0.0F);
-        btnViewOrders1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        btnViewOrders1.setBorderPainted(false);
-        btnViewOrders1.setIconTextGap(30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnExit1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnViewOrders1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(lblPic1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                        .addComponent(PanelRegDetails1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap()
+                .addComponent(btnExit1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 573, Short.MAX_VALUE)
+                .addComponent(btnUpdateManagerProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblWelcome1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblMyProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(119, 119, 119)
+                .addComponent(PanelRegDetails1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(lblPic1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(160, 355, Short.MAX_VALUE)
                 .addComponent(btnExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblWelcome1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(PanelRegDetails1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnViewOrders1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblMyProfile)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PanelRegDetails1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnUpdateManagerProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
 
@@ -358,9 +390,9 @@ public class ManagerProfile extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnExit1ActionPerformed
 
-    private void lblWelcome1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblWelcome1MousePressed
+    private void lblMyProfileMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMyProfileMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblWelcome1MousePressed
+    }//GEN-LAST:event_lblMyProfileMousePressed
 
     /**
      * @param args the command line arguments
@@ -402,30 +434,35 @@ public class ManagerProfile extends javax.swing.JFrame {
     private javax.swing.JPanel PanelRegDetails1;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnExit1;
+    private javax.swing.JButton btnUpdateManagerProfile;
     private javax.swing.JButton btnViewOrders;
-    private javax.swing.JButton btnViewOrders1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JLabel lblAddress;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JLabel lblContact;
-    private javax.swing.JLabel lblContact1;
+    private javax.swing.JLabel lblManagerContact;
+    private javax.swing.JLabel lblManagerDOB;
+    private javax.swing.JLabel lblManagerIC;
+    private javax.swing.JLabel lblManagerName;
+    private javax.swing.JLabel lblManagerUsername;
+    private javax.swing.JLabel lblMyProfile;
     private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblName1;
     private javax.swing.JLabel lblPic;
-    private javax.swing.JLabel lblPic1;
     private javax.swing.JLabel lblTPNo;
     private javax.swing.JLabel lblWelcome;
-    private javax.swing.JLabel lblWelcome1;
-    private javax.swing.JTextArea txtAddress;
     private javax.swing.JTextArea txtContact;
-    private javax.swing.JTextArea txtContact1;
+    private javax.swing.JTextArea txtManagerContact;
+    private javax.swing.JTextArea txtManagerDOB;
+    private javax.swing.JTextArea txtManagerIC;
+    private javax.swing.JTextArea txtManagerName;
+    private javax.swing.JTextArea txtManagerUsername;
     private javax.swing.JTextArea txtName;
-    private javax.swing.JTextArea txtName1;
     private javax.swing.JTextArea txtTPNo;
     // End of variables declaration//GEN-END:variables
 }
