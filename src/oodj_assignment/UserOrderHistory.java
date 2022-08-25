@@ -136,7 +136,7 @@ public class UserOrderHistory extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblMenu2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMenu2MousePressed
-        lblMenu.setForeground(new Color(255,119,83));
+        //lblMenu.setForeground(new Color(255,119,83));
     }//GEN-LAST:event_lblMenu2MousePressed
 
     private void jButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseEntered
