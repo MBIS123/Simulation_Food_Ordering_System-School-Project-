@@ -34,13 +34,13 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="37" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="lblTPNo" alignment="1" pref="119" max="32767" attributes="0"/>
+                          <Component id="lblManagerID" alignment="1" pref="119" max="32767" attributes="0"/>
                           <Component id="lblPassword" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="txtPassword" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtTPNo" alignment="0" pref="214" max="32767" attributes="0"/>
+                          <Component id="txtManagerID" alignment="0" pref="214" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
@@ -63,8 +63,8 @@
               <Component id="lblWelcome" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblTPNo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtTPNo" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="lblManagerID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtManagerID" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -137,7 +137,7 @@
         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPasswordMousePressed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblTPNo">
+    <Component class="javax.swing.JLabel" name="lblManagerID">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI Semibold" size="14" style="0"/>
@@ -145,10 +145,10 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Username          :"/>
+        <Property name="text" type="java.lang.String" value="Manager ID       :"/>
       </Properties>
       <Events>
-        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblTPNoMousePressed"/>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblManagerIDMousePressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnExit">
@@ -176,7 +176,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExitActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtTPNo">
+    <Component class="javax.swing.JTextField" name="txtManagerID">
     </Component>
   </SubComponents>
 </Form>

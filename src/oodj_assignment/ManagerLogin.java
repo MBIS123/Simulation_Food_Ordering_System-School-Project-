@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package oodj_assignment;
+import java.io.*;
+import java.util.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,9 +33,9 @@ public class ManagerLogin extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
         lblPassword = new javax.swing.JLabel();
-        lblTPNo = new javax.swing.JLabel();
+        lblManagerID = new javax.swing.JLabel();
         btnExit = new javax.swing.JButton();
-        txtTPNo = new javax.swing.JTextField();
+        txtManagerID = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,12 +72,12 @@ public class ManagerLogin extends javax.swing.JFrame {
             }
         });
 
-        lblTPNo.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        lblTPNo.setForeground(new java.awt.Color(102, 102, 102));
-        lblTPNo.setText("Username          :");
-        lblTPNo.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblManagerID.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        lblManagerID.setForeground(new java.awt.Color(102, 102, 102));
+        lblManagerID.setText("Manager ID       :");
+        lblManagerID.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblTPNoMousePressed(evt);
+                lblManagerIDMousePressed(evt);
             }
         });
 
@@ -106,12 +109,12 @@ public class ManagerLogin extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 37, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lblTPNo, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                            .addComponent(lblManagerID, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
                             .addComponent(lblPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtPassword)
-                            .addComponent(txtTPNo, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE))
+                            .addComponent(txtManagerID, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE))
                         .addGap(31, 31, 31))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnExit)
@@ -127,8 +130,8 @@ public class ManagerLogin extends javax.swing.JFrame {
                 .addComponent(lblWelcome)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTPNo)
-                    .addComponent(txtTPNo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblManagerID)
+                    .addComponent(txtManagerID, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPassword)
@@ -150,19 +153,55 @@ public class ManagerLogin extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         // no validation done yet
-        ManagerHome formManagerHome = new ManagerHome();
-        formManagerHome.setVisible(true);
-        this.dispose();
+        String managerIDx = txtManagerID.getText();
+        String pwx = String.valueOf(txtPassword.getPassword());
+        
+        try
+        {
+            File filex = new File("UserDetails.txt");
+            JOptionPane.showMessageDialog(null, "Login Processing");
+            Scanner scan = new Scanner(filex);
+            scan.useDelimiter("[,\n]");
 
+            while(scan.hasNext())
+            {
+                String managerID = scan.next();
+                String pw = scan.next();
+                String name = scan.next();
+                String gender = scan.next();
+                String address = scan.next();
+                String contactno = scan.next();
+                String email = scan.next();
+                String DOB = scan.next();
+
+                if (managerIDx.equals(managerID) && pwx.equals(pw))
+                {
+                    JOptionPane.showMessageDialog(null, "Login Successful!");
+                    ManagerHome formManagerHome = new ManagerHome();
+                    formManagerHome.setVisible(true);
+                    this.dispose();
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Invalid Username/Password.");
+                    txtManagerID.setText("");
+                    txtPassword.setText("");
+                }
+            }
+        }
+        catch(Exception e)
+        {
+            //JOptionPane.showMessageDialog(null, "An Error Occured!" + e);
+        }
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void lblPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPasswordMousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_lblPasswordMousePressed
 
-    private void lblTPNoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTPNoMousePressed
+    private void lblManagerIDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblManagerIDMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblTPNoMousePressed
+    }//GEN-LAST:event_lblManagerIDMousePressed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
@@ -209,10 +248,10 @@ public class ManagerLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JLabel lblManagerID;
     private javax.swing.JLabel lblPassword;
-    private javax.swing.JLabel lblTPNo;
     private javax.swing.JLabel lblWelcome;
+    private javax.swing.JTextField txtManagerID;
     private javax.swing.JPasswordField txtPassword;
-    private javax.swing.JTextField txtTPNo;
     // End of variables declaration//GEN-END:variables
 }

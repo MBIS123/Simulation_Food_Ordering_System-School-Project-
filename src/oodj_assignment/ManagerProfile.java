@@ -46,10 +46,10 @@ public class ManagerProfile extends javax.swing.JFrame {
         btnUpdateManagerProfile = new javax.swing.JButton();
         PanelRegDetails1 = new javax.swing.JPanel();
         lblManagerName = new javax.swing.JLabel();
-        lblManagerUsername = new javax.swing.JLabel();
+        lblManagerID = new javax.swing.JLabel();
         lblManagerContact = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        txtManagerUsername = new javax.swing.JTextArea();
+        txtManagerID = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
         txtManagerName = new javax.swing.JTextArea();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -242,15 +242,15 @@ public class ManagerProfile extends javax.swing.JFrame {
         lblManagerName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblManagerName.setText("                            Name :");
 
-        lblManagerUsername.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblManagerUsername.setText("                      Username:");
+        lblManagerID.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblManagerID.setText("                  Manager ID :");
 
         lblManagerContact.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblManagerContact.setText("                  Contact No. :");
 
-        txtManagerUsername.setColumns(20);
-        txtManagerUsername.setRows(5);
-        jScrollPane4.setViewportView(txtManagerUsername);
+        txtManagerID.setColumns(20);
+        txtManagerID.setRows(5);
+        jScrollPane4.setViewportView(txtManagerID);
 
         txtManagerName.setColumns(20);
         txtManagerName.setRows(5);
@@ -282,7 +282,7 @@ public class ManagerProfile extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelRegDetails1Layout.createSequentialGroup()
-                        .addComponent(lblManagerUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblManagerID, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelRegDetails1Layout.createSequentialGroup()
@@ -311,7 +311,7 @@ public class ManagerProfile extends javax.swing.JFrame {
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelRegDetails1Layout.createSequentialGroup()
                         .addGap(9, 9, 9)
-                        .addComponent(lblManagerUsername)))
+                        .addComponent(lblManagerID)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -449,8 +449,8 @@ public class ManagerProfile extends javax.swing.JFrame {
     private javax.swing.JLabel lblManagerContact;
     private javax.swing.JLabel lblManagerDOB;
     private javax.swing.JLabel lblManagerIC;
+    private javax.swing.JLabel lblManagerID;
     private javax.swing.JLabel lblManagerName;
-    private javax.swing.JLabel lblManagerUsername;
     private javax.swing.JLabel lblMyProfile;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPic;
@@ -460,8 +460,8 @@ public class ManagerProfile extends javax.swing.JFrame {
     private javax.swing.JTextArea txtManagerContact;
     private javax.swing.JTextArea txtManagerDOB;
     private javax.swing.JTextArea txtManagerIC;
+    private javax.swing.JTextArea txtManagerID;
     private javax.swing.JTextArea txtManagerName;
-    private javax.swing.JTextArea txtManagerUsername;
     private javax.swing.JTextArea txtName;
     private javax.swing.JTextArea txtTPNo;
     // End of variables declaration//GEN-END:variables

@@ -25,11 +25,12 @@ public class Main {
         
         //new UserInterface().setVisible(true);
         //new UserPayment().setVisible(true);
-        new UserInterface().setVisible(true);
+        //new UserInterface().setVisible(true);
         
         //start from pre-login page
-         //PreLogin formPreLogin = new PreLogin();
-        //formPreLogin.setVisible(true);         new UserFeedBack().setVisible(true);
+        PreLogin formPreLogin = new PreLogin();
+        formPreLogin.setVisible(true);         
+        //new UserFeedBack().setVisible(true);
        
     }
     

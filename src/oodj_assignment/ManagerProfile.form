@@ -401,7 +401,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="lblManagerUsername" min="-2" pref="173" max="-2" attributes="0"/>
+                          <Component id="lblManagerID" min="-2" pref="173" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jScrollPane4" min="-2" pref="267" max="-2" attributes="0"/>
                       </Group>
@@ -438,7 +438,7 @@
                       <Component id="jScrollPane4" min="-2" pref="37" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                          <Component id="lblManagerUsername" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblManagerID" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -487,12 +487,12 @@
             <Property name="text" type="java.lang.String" value="                            Name :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblManagerUsername">
+        <Component class="javax.swing.JLabel" name="lblManagerID">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="                      Username:"/>
+            <Property name="text" type="java.lang.String" value="                  Manager ID :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblManagerContact">
@@ -510,7 +510,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="txtManagerUsername">
+            <Component class="javax.swing.JTextArea" name="txtManagerID">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
