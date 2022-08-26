@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author HAO
  */
-public class OODJ_Assignment {
+public class Main {
 
     //static UserInterface formMenu =  new UserInterface();
     //static UserFeedBack formFeedBack = new UserFeedBack();
@@ -23,9 +23,14 @@ public class OODJ_Assignment {
             formMenu.setVisible(true);
             formMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);*/
         
+        //new UserInterface().setVisible(true);
+        //new UserPayment().setVisible(true);
+        new UserInterface().setVisible(true);
+        
         //start from pre-login page
-        PreLogin formPreLogin = new PreLogin();
-        formPreLogin.setVisible(true);
+         //PreLogin formPreLogin = new PreLogin();
+        //formPreLogin.setVisible(true);         new UserFeedBack().setVisible(true);
+       
     }
     
 }

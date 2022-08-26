@@ -59,12 +59,9 @@ public class UserFeedBack extends javax.swing.JFrame {
             .addGroup(headPanelMenu1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(headPanelMenu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(headPanelMenu1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(438, Short.MAX_VALUE))
-                    .addGroup(headPanelMenu1Layout.createSequentialGroup()
-                        .addComponent(jLabel22)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         headPanelMenu1Layout.setVerticalGroup(
             headPanelMenu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
