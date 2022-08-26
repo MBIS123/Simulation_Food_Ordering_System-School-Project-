@@ -1786,8 +1786,7 @@ public class UserInterface extends javax.swing.JFrame {
             BufferedReader read = new BufferedReader(new FileReader(f));
             while ( (x = read.readLine()) != null) {
                 
-                cartOrder.setText(read.readLine()+ "\n"+read.readLine());
-            
+   
             }
            read.close();
             
