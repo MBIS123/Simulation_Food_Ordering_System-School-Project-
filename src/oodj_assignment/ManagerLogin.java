@@ -38,6 +38,7 @@ public class ManagerLogin extends javax.swing.JFrame {
         txtManagerID = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         lblWelcome.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         lblWelcome.setForeground(new java.awt.Color(254, 120, 83));
@@ -158,10 +159,10 @@ public class ManagerLogin extends javax.swing.JFrame {
         
         try
         {
-            File filex = new File("UserDetails.txt");
-            JOptionPane.showMessageDialog(null, "Login Processing");
+            //you will have to change this according to the local filepath
+            File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\UserDetail.txt");
             Scanner scan = new Scanner(filex);
-            scan.useDelimiter("[,\n]");
+            scan.useDelimiter("[:\n]");
 
             while(scan.hasNext())
             {
@@ -178,6 +179,7 @@ public class ManagerLogin extends javax.swing.JFrame {
                 {
                     JOptionPane.showMessageDialog(null, "Login Successful!");
                     ManagerHome formManagerHome = new ManagerHome();
+                    formManagerHome.setData(managerID, pw, name, gender, address, contactno, email, DOB);
                     formManagerHome.setVisible(true);
                     this.dispose();
                 }
@@ -193,6 +195,8 @@ public class ManagerLogin extends javax.swing.JFrame {
         {
             //JOptionPane.showMessageDialog(null, "An Error Occured!" + e);
         }
+        
+        
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void lblPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPasswordMousePressed

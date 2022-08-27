@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package oodj_assignment;
-
+import java.io.*;
+import java.util.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author hp
@@ -35,6 +37,7 @@ public class UserLogin extends javax.swing.JFrame {
         btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         btnLogin.setBackground(new java.awt.Color(254, 120, 83));
         btnLogin.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
@@ -143,12 +146,49 @@ public class UserLogin extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-        // no validation done yet -> just linked directly to UserInterface
-        UserInterface formMenu =  new UserInterface();
-        //formMenu.setBackground(Color.yellow);
-            formMenu.setVisible(true);
-            this.dispose();
-            // formMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        String TPNox = txtTPNo.getText();
+        String pwx = String.valueOf(txtPassword.getPassword());
+        
+        try
+        {
+            //you will have to change this according to the local filepath
+            File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\UserDetail.txt");
+            Scanner scan = new Scanner(filex);
+            scan.useDelimiter("[:\n]");
+
+            while(scan.hasNext())
+            {
+                String TPNo = scan.next();
+                String pw = scan.next();
+                String name = scan.next();
+                String gender = scan.next();
+                String address = scan.next();
+                String contactno = scan.next();
+                String email = scan.next();
+                String DOB = scan.next();
+
+                if (TPNox.equals(TPNo) && pwx.equals(pw))
+                {
+                    JOptionPane.showMessageDialog(null, "Login Successful!");
+                    UserInterface formMenu =  new UserInterface();
+                    //formMenu.setData(TPNo, pw, name, gender, address, contactno, email, DOB);
+                    //formMenu.setBackground(Color.yellow);
+                    //formMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    formMenu.setVisible(true);
+                    this.dispose();
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Invalid Username/Password.");
+                    txtTPNo.setText("");
+                    txtPassword.setText("");
+                }
+            }
+        }
+        catch(Exception e)
+        {
+            //JOptionPane.showMessageDialog(null, "An Error Occured!" + e);
+        }
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void lblPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPasswordMousePressed

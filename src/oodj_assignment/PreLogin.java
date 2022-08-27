@@ -33,6 +33,7 @@ public class PreLogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         lblWelcome.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         lblWelcome.setForeground(new java.awt.Color(254, 120, 83));

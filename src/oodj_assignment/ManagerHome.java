@@ -3,20 +3,49 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package oodj_assignment;
+import java.io.*;
+import java.util.*;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author hp
  */
 public class ManagerHome extends javax.swing.JFrame {
-
-    /**
+    
+    //declare class variables that can be called from child classes
+    private String managerID;
+    private String pw;
+    private String name;
+    private String gender;
+    private String address;
+    private String contactno;
+    private String email;
+    private String DOB;
+    
+    //create setter method
+    void setData(String mid, String pass, String nm, String gen, String add, String cont, String em, String birth)
+    {
+        managerID = mid;
+        pw = pass;
+        name = nm;
+        gender = gen;
+        address = add;
+        contactno = cont;
+        email = em;
+        DOB = birth;
+        
+        lblName.setText(name);
+    }
+    
+        /**
      * Creates new form ManagerHome
      */
     public ManagerHome() {
         initComponents();
     }
-
+     
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -104,7 +133,6 @@ public class ManagerHome extends javax.swing.JFrame {
 
         lblName.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         lblName.setForeground(new java.awt.Color(254, 120, 83));
-        lblName.setText("JAY REN");
         lblName.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblNameMousePressed(evt);
@@ -148,7 +176,7 @@ public class ManagerHome extends javax.swing.JFrame {
                 .addGap(182, 182, 182)
                 .addComponent(lblWelcome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblName)
+                .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -244,6 +272,7 @@ public class ManagerHome extends javax.swing.JFrame {
                 new ManagerHome().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
