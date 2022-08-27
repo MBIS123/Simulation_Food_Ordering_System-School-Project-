@@ -206,6 +206,7 @@ public class ManagerHome extends javax.swing.JFrame {
         // TODO add your handling code here:
         PreLogin formPreLogin = new PreLogin();
         formPreLogin.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnViewMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewMenuActionPerformed

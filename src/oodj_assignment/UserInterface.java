@@ -22,15 +22,40 @@ import javax.swing.JOptionPane;
  * @author HAO
  */
 public class UserInterface extends javax.swing.JFrame {
+    
+    //following code is to pass login variables into form
+    
+    //declare class variables that can be called from child classes
+    private String TPNo;
+    private String pw;
+    private String name;
+    private String gender;
+    private String address;
+    private String contactno;
+    private String email;
+    private String DOB;
+    
+    void setData(String tp, String pass, String nm, String gen, String add, String cont, String em, String birth)
+    {
+        TPNo = tp;
+        pw = pass;
+        name = nm;
+        gender = gen;
+        address = add;
+        contactno = cont;
+        email = em;
+        DOB = birth;        
+    }
 
-    String[][] menu = new Menu().load_Menu_Data();
+    //String[][] menu = new Menu().load_Menu_Data();
    
     // * Creates new form UserInterface
      //*/
     public UserInterface() {
         initComponents();
+    
         
-        DefaultListModel temp1 = new DefaultListModel();
+        /*DefaultListModel temp1 = new DefaultListModel();
         localFoodList.setModel(temp1);
         for(int i=0; i< menu.length;i++){
             if("Local".equals(menu[i][0])){

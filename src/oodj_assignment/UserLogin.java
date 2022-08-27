@@ -18,6 +18,8 @@ public class UserLogin extends javax.swing.JFrame {
     public UserLogin() {
         initComponents();
     }
+    
+    private String line;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -152,37 +154,66 @@ public class UserLogin extends javax.swing.JFrame {
         try
         {
             //you will have to change this according to the local filepath
-            File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\UserDetail.txt");
-            Scanner scan = new Scanner(filex);
-            scan.useDelimiter("[:\n]");
+            File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+            Scanner scan1 = new Scanner(filex);
+            boolean flag = false;
 
-            while(scan.hasNext())
+            while(scan1.hasNext())
             {
-                String TPNo = scan.next();
-                String pw = scan.next();
-                String name = scan.next();
-                String gender = scan.next();
-                String address = scan.next();
-                String contactno = scan.next();
-                String email = scan.next();
-                String DOB = scan.next();
+                
+                line = scan1.nextLine();
+                JOptionPane.showMessageDialog(null, line);
+                
+                if((line.contains(TPNox)) && (line.contains(pwx)))
+                {
+                    flag = true;
+                }
+            }    
+            
+            JOptionPane.showMessageDialog(null, flag);
+            
+            if (flag == true)
+            {
+                //create temporary user file
+                File file = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                FileWriter fw = new FileWriter(file);
+                
+                fw.write(line);
+                fw.close();
 
-                if (TPNox.equals(TPNo) && pwx.equals(pw))
-                {
-                    JOptionPane.showMessageDialog(null, "Login Successful!");
-                    UserInterface formMenu =  new UserInterface();
-                    //formMenu.setData(TPNo, pw, name, gender, address, contactno, email, DOB);
-                    //formMenu.setBackground(Color.yellow);
-                    //formMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    formMenu.setVisible(true);
-                    this.dispose();
-                }
-                else
-                {
-                    JOptionPane.showMessageDialog(null, "Invalid Username/Password.");
-                    txtTPNo.setText("");
-                    txtPassword.setText("");
-                }
+                Scanner scan2 = new Scanner(file);
+                scan2.useDelimiter("[:\n]");
+
+                JOptionPane.showMessageDialog(null, "Yes!");
+                String TPNo = scan2.next();
+                JOptionPane.showMessageDialog(null, TPNo);
+                String pw = scan2.next();
+                JOptionPane.showMessageDialog(null, pw);
+                String name = scan2.next();
+                String gender = scan2.next();
+                String address = scan2.next();
+                String contactno = scan2.next();
+                String email = scan2.next();
+                String DOB = scan2.next();   
+                scan2.close();
+
+                JOptionPane.showMessageDialog(null, "Login Successful!");
+                
+                //this does not seem to work yet as I do not have menu class
+                UserInterface formMenu =  new UserInterface();
+                formMenu.setData(TPNo, pw, name, gender, address, contactno, email, DOB);
+                formMenu.setVisible(true);
+                this.dispose();
+                //formMenu.setBackground(Color.yellow);
+                //formMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            }
+
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Invalid Username/Password.");
+                txtTPNo.setText("");
+                txtPassword.setText("");
             }
         }
         catch(Exception e)

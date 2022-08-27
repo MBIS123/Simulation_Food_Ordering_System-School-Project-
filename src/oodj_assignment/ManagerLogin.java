@@ -160,7 +160,7 @@ public class ManagerLogin extends javax.swing.JFrame {
         try
         {
             //you will have to change this according to the local filepath
-            File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\UserDetail.txt");
+            File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
             Scanner scan = new Scanner(filex);
             scan.useDelimiter("[:\n]");
 
@@ -174,6 +174,7 @@ public class ManagerLogin extends javax.swing.JFrame {
                 String contactno = scan.next();
                 String email = scan.next();
                 String DOB = scan.next();
+                scan.close();
 
                 if (managerIDx.equals(managerID) && pwx.equals(pw))
                 {

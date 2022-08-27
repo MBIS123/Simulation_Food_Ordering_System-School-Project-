@@ -552,7 +552,7 @@ public class UserRegistration extends javax.swing.JFrame {
             try
             {
                 //you will have to change this according to the local filepath
-                File file = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\UserDetail.txt");
+                File file = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                 String pattern = "dd/MM/yyyy";
                 DateFormat df = new SimpleDateFormat(pattern);
                 String birthdate = df.format(DOBChooser.getDate());
