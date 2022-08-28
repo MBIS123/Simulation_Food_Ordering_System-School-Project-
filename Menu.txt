@@ -1,0 +1,16 @@
+Local:Nasi Lemak:4.50
+Local:Nasi Goreng:5.50
+Local:Nasi Pataya:4.20
+Local:Curry Mee:4.50
+Local:Roti Canai:2.00
+Local:Chicken Rice:7.50
+Western Food:Spaghetti:8.50
+Western Food:Hamburger:4.50
+Western Food:Pizza:7.50
+Western Food:Chicken Chop:9.50
+Western Food:Sandwiches:3.50
+Western Food:Apple Pie:8.50
+Beverage:Apple Juice:3.50
+Beverage:Orange Juice:3.50
+Beverage:Coca cola:2.50
+Beverage:Soya Bean:2.50
