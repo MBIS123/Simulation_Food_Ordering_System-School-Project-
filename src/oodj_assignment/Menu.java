@@ -17,7 +17,7 @@ import java.util.Arrays;
  */
 public class Menu {
     
-    File menuFile = new File("Menu.txt");
+    File menuFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
 
     public Menu() {
        
@@ -42,7 +42,7 @@ public class Menu {
         }
         return menuArray2D;  
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e+ "jaja");
         }
         return null;
     }   
