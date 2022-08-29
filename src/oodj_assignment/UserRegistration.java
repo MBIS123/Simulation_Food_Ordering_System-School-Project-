@@ -23,8 +23,7 @@ public class UserRegistration extends javax.swing.JFrame {
      */
     public UserRegistration() {
         initComponents();
-        DOBChooser.setEnabled(false);
-        DOBChooser.getCalendarButton().setEnabled(true);
+
     }
     
     //registration flags -> set to fail by default
@@ -57,7 +56,6 @@ public class UserRegistration extends javax.swing.JFrame {
         RadioMale = new javax.swing.JRadioButton();
         RadioFemale = new javax.swing.JRadioButton();
         txtContact = new javax.swing.JTextField();
-        DOBChooser = new com.toedter.calendar.JDateChooser();
         lblEmail = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
@@ -123,13 +121,6 @@ public class UserRegistration extends javax.swing.JFrame {
         txtContact.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtContactKeyPressed(evt);
-            }
-        });
-
-        DOBChooser.setDateFormatString("dd/MM/yyyy");
-        DOBChooser.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                DOBChooserKeyPressed(evt);
             }
         });
 
@@ -203,8 +194,7 @@ public class UserRegistration extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(RadioMale, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(RadioFemale, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(RadioFemale, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelRegDetailsLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,8 +222,7 @@ public class UserRegistration extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegDetailsLayout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(txtContact)
-                            .addComponent(DOBChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(txtContact))))
                 .addGap(144, 144, 144))
         );
         PanelRegDetailsLayout.setVerticalGroup(
@@ -255,10 +244,8 @@ public class UserRegistration extends javax.swing.JFrame {
                     .addComponent(RadioMale)
                     .addComponent(RadioFemale))
                 .addGap(18, 18, 18)
-                .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblContact2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DOBChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblContact2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
                 .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtContact, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblContact, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -402,7 +389,7 @@ public class UserRegistration extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(PanelRegDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                .addComponent(PanelRegDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 711, Short.MAX_VALUE))
                             .addComponent(lblWelcome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
@@ -492,7 +479,7 @@ public class UserRegistration extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Gender is invalid!");
         }
         
-        if (DOBChooser.getDate() != null)
+        /*if (DOBChooser.getDate() != null)
         {
             JOptionPane.showMessageDialog(null, "DOB is valid!");
             DOBSuccess = 1;
@@ -500,7 +487,7 @@ public class UserRegistration extends javax.swing.JFrame {
         else
         {
             JOptionPane.showMessageDialog(null, "DOB is invalid!");
-        }
+        }*/
         
         if (val.isContact(txtContact.getText()))
         {
@@ -555,12 +542,12 @@ public class UserRegistration extends javax.swing.JFrame {
                 File file = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                 String pattern = "dd/MM/yyyy";
                 DateFormat df = new SimpleDateFormat(pattern);
-                String birthdate = df.format(DOBChooser.getDate());
+                //String birthdate = df.format(DOBChooser.getDate());
 
                 try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(file, true))))
                 {
                     writer.print("\n");
-                    writer.append("TP" + txtTPNo.getText() + ":" + txtNewPW.getText() + ":" + txtName.getText() + ":" + Genderchoice + ":" + txtAddress.getText() + ":" + txtContact.getText() + ":" + txtEmail.getText() + ":" + birthdate);
+                    //writer.append("TP" + txtTPNo.getText() + ":" + txtNewPW.getText() + ":" + txtName.getText() + ":" + Genderchoice + ":" + txtAddress.getText() + ":" + txtContact.getText() + ":" + txtEmail.getText() + ":" + birthdate);
                     JOptionPane.showMessageDialog(null, "Registration Successful!");
                     txtTPNo.setText("");
                     txtNewPW.setText("");
@@ -569,7 +556,7 @@ public class UserRegistration extends javax.swing.JFrame {
                     txtAddress.setText("");
                     txtContact.setText("");
                     txtEmail.setText("");
-                    DOBChooser.setDate(null);
+                    //DOBChooser.setDate(null);
                     txtTPNo.setText("");
                     RadioMale.setSelected(false);
                     RadioFemale.setSelected(false);
@@ -661,10 +648,6 @@ public class UserRegistration extends javax.swing.JFrame {
         } 
     }//GEN-LAST:event_txtContactKeyPressed
 
-    private void DOBChooserKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DOBChooserKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DOBChooserKeyPressed
-
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
         txtTPNo.setText("");
@@ -674,7 +657,7 @@ public class UserRegistration extends javax.swing.JFrame {
         txtAddress.setText("");
         txtContact.setText("");
         txtEmail.setText("");
-        DOBChooser.setDate(null);
+        //DOBChooser.setDate(null);
         txtTPNo.setText("");
         RadioMale.setSelected(false);
         RadioFemale.setSelected(false);
@@ -716,7 +699,6 @@ public class UserRegistration extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser DOBChooser;
     private javax.swing.JPanel PanelPassword;
     private javax.swing.JPanel PanelRegDetails;
     private javax.swing.JRadioButton RadioFemale;
