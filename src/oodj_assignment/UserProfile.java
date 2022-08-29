@@ -28,22 +28,23 @@ public class UserProfile extends javax.swing.JFrame {
 
         lblMyProfile = new javax.swing.JLabel();
         btnUpdateUserProfile = new javax.swing.JButton();
-        PanelRegDetails = new javax.swing.JPanel();
-        lblUserName = new javax.swing.JLabel();
-        lblUserTPNo = new javax.swing.JLabel();
-        lblUserContact = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtUserTPNo = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtUserName = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        txtUserContact = new javax.swing.JTextArea();
-        lblUserIC = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        txtUserIC = new javax.swing.JTextArea();
-        lblUserDOB = new javax.swing.JLabel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        txtUserDOB = new javax.swing.JTextArea();
+        PanelRegDetails1 = new javax.swing.JPanel();
+        lblName = new javax.swing.JLabel();
+        lblTPNo = new javax.swing.JLabel();
+        lblContact = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
+        lblGender = new javax.swing.JLabel();
+        lblDOB = new javax.swing.JLabel();
+        lblAddress = new javax.swing.JLabel();
+        txtTPNo = new javax.swing.JTextField();
+        txtName = new javax.swing.JTextField();
+        txtGender = new javax.swing.JTextField();
+        txtDOB = new javax.swing.JTextField();
+        txtContact = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txtAddress = new javax.swing.JTextArea();
+        btnExit1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,123 +66,157 @@ public class UserProfile extends javax.swing.JFrame {
         btnUpdateUserProfile.setBorderPainted(false);
         btnUpdateUserProfile.setIconTextGap(30);
 
-        PanelRegDetails.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        PanelRegDetails1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        lblUserName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblUserName.setText("                            Name :");
+        lblName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblName.setText("                            Name :");
 
-        lblUserTPNo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblUserTPNo.setText("                   TP Number :");
+        lblTPNo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblTPNo.setText("                           TP No. :");
 
-        lblUserContact.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblUserContact.setText("                  Contact No. :");
+        lblContact.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblContact.setText("                  Contact No. :");
 
-        txtUserTPNo.setColumns(20);
-        txtUserTPNo.setRows(5);
-        jScrollPane1.setViewportView(txtUserTPNo);
+        lblEmail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblEmail.setText("                             Email :");
 
-        txtUserName.setColumns(20);
-        txtUserName.setRows(5);
-        jScrollPane2.setViewportView(txtUserName);
+        lblGender.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblGender.setText("                          Gender :");
 
-        txtUserContact.setColumns(20);
-        txtUserContact.setRows(5);
-        jScrollPane3.setViewportView(txtUserContact);
+        lblDOB.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblDOB.setText("                               DOB :");
 
-        lblUserIC.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblUserIC.setText("                   I.C Number :");
+        lblAddress.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblAddress.setText("                        Address :");
 
-        txtUserIC.setColumns(20);
-        txtUserIC.setRows(5);
-        jScrollPane6.setViewportView(txtUserIC);
+        txtTPNo.setEditable(false);
 
-        lblUserDOB.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblUserDOB.setText("     DOB (dd/mm/yyyy) :");
+        txtName.setEditable(false);
 
-        txtUserDOB.setColumns(20);
-        txtUserDOB.setRows(5);
-        jScrollPane7.setViewportView(txtUserDOB);
+        txtGender.setEditable(false);
 
-        javax.swing.GroupLayout PanelRegDetailsLayout = new javax.swing.GroupLayout(PanelRegDetails);
-        PanelRegDetails.setLayout(PanelRegDetailsLayout);
-        PanelRegDetailsLayout.setHorizontalGroup(
-            PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelRegDetailsLayout.createSequentialGroup()
+        txtDOB.setEditable(false);
+
+        txtContact.setEditable(false);
+
+        txtEmail.setEditable(false);
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailActionPerformed(evt);
+            }
+        });
+
+        txtAddress.setEditable(false);
+        txtAddress.setColumns(20);
+        txtAddress.setRows(5);
+        jScrollPane4.setViewportView(txtAddress);
+
+        javax.swing.GroupLayout PanelRegDetails1Layout = new javax.swing.GroupLayout(PanelRegDetails1);
+        PanelRegDetails1.setLayout(PanelRegDetails1Layout);
+        PanelRegDetails1Layout.setHorizontalGroup(
+            PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelRegDetails1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                        .addComponent(lblUserTPNo, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                        .addComponent(lblUserContact, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                        .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                        .addComponent(lblUserIC, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                        .addComponent(lblUserDOB, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(PanelRegDetails1Layout.createSequentialGroup()
+                                .addComponent(lblTPNo, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtTPNo, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PanelRegDetails1Layout.createSequentialGroup()
+                                .addComponent(lblContact, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtContact, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PanelRegDetails1Layout.createSequentialGroup()
+                                .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PanelRegDetails1Layout.createSequentialGroup()
+                                .addComponent(lblGender, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtGender))
+                            .addGroup(PanelRegDetails1Layout.createSequentialGroup()
+                                .addComponent(lblDOB, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtDOB, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PanelRegDetails1Layout.createSequentialGroup()
+                            .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
-        PanelRegDetailsLayout.setVerticalGroup(
-            PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblUserTPNo))
-                .addGap(19, 19, 19)
-                .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(lblUserName)))
-                .addGap(14, 14, 14)
-                .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(lblUserIC))
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(lblUserDOB))
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(lblUserContact))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51))
+        PanelRegDetails1Layout.setVerticalGroup(
+            PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelRegDetails1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTPNo)
+                    .addComponent(txtTPNo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblName)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblGender)
+                    .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
+                .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDOB)
+                    .addComponent(txtDOB, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
+                .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblContact)
+                    .addComponent(txtContact, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
+                .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEmail)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelRegDetails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelRegDetails1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(lblAddress))
+                    .addGroup(PanelRegDetails1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
+
+        btnExit1.setBackground(new java.awt.Color(254, 120, 83));
+        btnExit1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnExit1.setForeground(new java.awt.Color(242, 242, 242));
+        btnExit1.setText("EXIT");
+        btnExit1.setAlignmentY(0.0F);
+        btnExit1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnExit1.setBorderPainted(false);
+        btnExit1.setIconTextGap(30);
+        btnExit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExit1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 609, Short.MAX_VALUE)
-                .addComponent(lblMyProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(btnExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(475, 475, 475)
+                .addComponent(btnUpdateUserProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnUpdateUserProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25))
+                        .addComponent(PanelRegDetails1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(PanelRegDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(125, 125, 125))))
+                        .addComponent(lblMyProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(209, 209, 209))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,10 +224,13 @@ public class UserProfile extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblMyProfile)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(PanelRegDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnUpdateUserProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnExit1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(PanelRegDetails1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnUpdateUserProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         pack();
@@ -201,6 +239,15 @@ public class UserProfile extends javax.swing.JFrame {
     private void lblMyProfileMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMyProfileMousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_lblMyProfileMousePressed
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void btnExit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExit1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnExit1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,23 +288,24 @@ public class UserProfile extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PanelRegDetails;
+    private javax.swing.JPanel PanelRegDetails1;
+    private javax.swing.JButton btnExit1;
     private javax.swing.JButton btnUpdateUserProfile;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblContact;
+    private javax.swing.JLabel lblDOB;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblGender;
     private javax.swing.JLabel lblMyProfile;
-    private javax.swing.JLabel lblUserContact;
-    private javax.swing.JLabel lblUserDOB;
-    private javax.swing.JLabel lblUserIC;
-    private javax.swing.JLabel lblUserName;
-    private javax.swing.JLabel lblUserTPNo;
-    private javax.swing.JTextArea txtUserContact;
-    private javax.swing.JTextArea txtUserDOB;
-    private javax.swing.JTextArea txtUserIC;
-    private javax.swing.JTextArea txtUserName;
-    private javax.swing.JTextArea txtUserTPNo;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblTPNo;
+    private javax.swing.JTextArea txtAddress;
+    private javax.swing.JTextField txtContact;
+    private javax.swing.JTextField txtDOB;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtGender;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtTPNo;
     // End of variables declaration//GEN-END:variables
 }

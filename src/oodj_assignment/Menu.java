@@ -17,7 +17,11 @@ import java.util.Arrays;
  */
 public class Menu {
     
-    File menuFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
+    //for jinhao
+    //File menuFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
+    
+    //for jayren
+    File menuFile = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
 
     public Menu() {
        

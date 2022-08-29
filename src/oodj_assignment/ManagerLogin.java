@@ -153,7 +153,6 @@ public class ManagerLogin extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-        // no validation done yet
         String managerIDx = txtManagerID.getText();
         String pwx = String.valueOf(txtPassword.getPassword());
         
@@ -173,14 +172,14 @@ public class ManagerLogin extends javax.swing.JFrame {
                 String address = scan.next();
                 String contactno = scan.next();
                 String email = scan.next();
-                String DOB = scan.next();
+                String date = scan.next();
                 scan.close();
 
                 if (managerIDx.equals(managerID) && pwx.equals(pw))
                 {
                     JOptionPane.showMessageDialog(null, "Login Successful!");
                     ManagerHome formManagerHome = new ManagerHome();
-                    formManagerHome.setData(managerID, pw, name, gender, address, contactno, email, DOB);
+                    formManagerHome.setData(managerID, pw, name, gender, address, contactno, email, date);
                     formManagerHome.setVisible(true);
                     this.dispose();
                 }

@@ -3,9 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package oodj_assignment;
+import java.time.format.DateTimeFormatter;
+import java.time.format.ResolverStyle;
 import java.util.regex.*;
-import java.time.*;
-import java.time.format.*;
+import java.util.Locale;
 
 /**
  *
@@ -29,6 +30,21 @@ public class DataValidation {
             stat = input.chars().allMatch(Character::isLetter); //true or false
         }
         return stat;
+    }
+    
+    public boolean isDate(String input)
+    {
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/uuuu", Locale.UK).withResolverStyle(ResolverStyle.STRICT);
+        
+        try
+        {
+            df.parse(input);
+            return true;
+        }
+        catch(Exception e)
+        {
+            return false;
+        }
     }
     
     public boolean isContact(String input)

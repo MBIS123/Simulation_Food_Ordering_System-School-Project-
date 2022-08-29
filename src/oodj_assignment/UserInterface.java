@@ -146,6 +146,7 @@ public class UserInterface extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         apuLogo = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -258,7 +259,7 @@ public class UserInterface extends javax.swing.JFrame {
         label2.setForeground(new java.awt.Color(254, 120, 83));
         label2.setText("Western Food");
         menuPanel.add(label2);
-        label2.setBounds(264, 23, 148, 34);
+        label2.setBounds(264, 23, 150, 34);
 
         label3.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         label3.setForeground(new java.awt.Color(254, 120, 83));
@@ -361,7 +362,12 @@ public class UserInterface extends javax.swing.JFrame {
         jLabel3.setText("Order History");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setText("Feedback");
+        jLabel4.setText("Profile");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(254, 120, 83));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -383,6 +389,9 @@ public class UserInterface extends javax.swing.JFrame {
         apuLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oodj_assignment/Pictures/apcafelogo.png"))); // NOI18N
         apuLogo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setText("Feedback");
+
         javax.swing.GroupLayout headPanelMenuLayout = new javax.swing.GroupLayout(headPanelMenu);
         headPanelMenu.setLayout(headPanelMenuLayout);
         headPanelMenuLayout.setHorizontalGroup(
@@ -395,27 +404,29 @@ public class UserInterface extends javax.swing.JFrame {
                     .addGroup(headPanelMenuLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(apuLogo)
-                        .addGap(105, 105, 105)
+                        .addGap(46, 46, 46)
                         .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)
+                        .addGap(31, 31, 31)
                         .addComponent(jLabel3)
-                        .addGap(81, 81, 81)
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel5)
+                        .addGap(54, 54, 54)
                         .addComponent(jLabel4)
-                        .addGap(45, 45, 45)
+                        .addGap(34, 34, 34)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         headPanelMenuLayout.setVerticalGroup(
             headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headPanelMenuLayout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(apuLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblMenu)
-                        .addComponent(jLabel3))
+                    .addComponent(lblMenu, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelPic1))
         );
@@ -560,6 +571,13 @@ public class UserInterface extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null,localFoodList.getSelectedValue()+ " Do u want this ?");
     }//GEN-LAST:event_localFoodListMouseClicked
 
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+        //open up userprofile
+        //UserProfile prof = new UserProfile(TPNo, pw, name, gender, address, contactno, email, DOB);
+        //prof.setVisible(true);
+    }//GEN-LAST:event_jLabel4MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -614,6 +632,7 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel72;

@@ -148,77 +148,82 @@ public class UserLogin extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
+        
         String TPNox = txtTPNo.getText();
         String pwx = String.valueOf(txtPassword.getPassword());
         
-        try
+        if ((TPNox.length() > 0) && (pwx.length() > 0))
         {
-            //you will have to change this according to the local filepath
-            File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
-            Scanner scan1 = new Scanner(filex);
-            boolean flag = false;
-
-            while(scan1.hasNext())
+            try
             {
-                
-                line = scan1.nextLine();
-                JOptionPane.showMessageDialog(null, line);
-                
-                if((line.contains(TPNox)) && (line.contains(pwx)))
+                //you will have to change this according to the local filepath
+                File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                Scanner scan1 = new Scanner(filex);
+                boolean flag = false;
+
+                while(scan1.hasNext() && flag == false)
                 {
-                    flag = true;
+
+                    line = scan1.nextLine();
+                    if((line.contains(TPNox)) && (line.contains(pwx)))
+                    {
+                        flag = true;
+                    }
+                }    
+
+                scan1.close();
+                if (flag == true)
+                {
+                    //create temporary user file
+                    File file = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                    FileWriter fw = new FileWriter(file);
+
+                    fw.write(line);
+                    fw.close();
+
+                    Scanner scan2 = new Scanner(file);
+                    scan2.useDelimiter("[:\n]");
+
+                    String TPNo = scan2.next();
+                    String pw = scan2.next();
+                    String name = scan2.next();
+                    String gender = scan2.next();
+                    String address = scan2.next();
+                    String contactno = scan2.next();
+                    String email = scan2.next();
+                    String DOB = scan2.next();   
+                    scan2.close();
+
+                    JOptionPane.showMessageDialog(null, "Login Successful!");
+
+                    UserInterface formMenu =  new UserInterface();
+                    formMenu.setData(TPNo, pw, name, gender, address, contactno, email, DOB);
+                    formMenu.setVisible(true);
+                    
+
+                    this.dispose();
+                    //formMenu.setBackground(Color.yellow);
+                    //formMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
                 }
-            }    
-            
-            JOptionPane.showMessageDialog(null, flag);
-            
-            if (flag == true)
-            {
-                //create temporary user file
-                File file = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
-                FileWriter fw = new FileWriter(file);
-                
-                fw.write(line);
-                fw.close();
 
-                Scanner scan2 = new Scanner(file);
-                scan2.useDelimiter("[:\n]");
-
-                JOptionPane.showMessageDialog(null, "Yes!");
-                String TPNo = scan2.next();
-                JOptionPane.showMessageDialog(null, TPNo);
-                String pw = scan2.next();
-                JOptionPane.showMessageDialog(null, pw);
-                String name = scan2.next();
-                String gender = scan2.next();
-                String address = scan2.next();
-                String contactno = scan2.next();
-                String email = scan2.next();
-                String DOB = scan2.next();   
-                scan2.close();
-
-                JOptionPane.showMessageDialog(null, "Login Successful!");
-                
-                //this does not seem to work yet as I do not have menu class
-                UserInterface formMenu =  new UserInterface();
-                formMenu.setData(TPNo, pw, name, gender, address, contactno, email, DOB);
-                formMenu.setVisible(true);
-                this.dispose();
-                //formMenu.setBackground(Color.yellow);
-                //formMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Invalid Username/Password.");
+                    txtTPNo.setText("");
+                    txtPassword.setText("");
+                }
             }
-
-            else
+            catch(Exception e)
             {
-                JOptionPane.showMessageDialog(null, "Invalid Username/Password.");
-                txtTPNo.setText("");
-                txtPassword.setText("");
+                //JOptionPane.showMessageDialog(null, "An Error Occured!" + e);
             }
         }
-        catch(Exception e)
+        else
         {
-            //JOptionPane.showMessageDialog(null, "An Error Occured!" + e);
+            JOptionPane.showMessageDialog(null, "Invalid Username/Password.");
+            txtTPNo.setText("");
+            txtPassword.setText("");
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 

@@ -216,7 +216,9 @@ public class ManagerHome extends javax.swing.JFrame {
 
     private void btnViewProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfActionPerformed
         // TODO add your handling code here:
-        ManagerProfile formManagerProfile = new ManagerProfile();
+        ManagerProfile formManagerProfile = new ManagerProfile(managerID, pw, name, gender, address, contactno, email, DOB);
+        //formManagerProfile.LoadManagerProfile();
+        //ManagerProfile formManagerProfile = new ManagerProfile();
         formManagerProfile.setVisible(true);
     }//GEN-LAST:event_btnViewProfActionPerformed
 

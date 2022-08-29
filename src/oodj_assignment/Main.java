@@ -30,10 +30,13 @@ public class Main {
         //start from pre-login page
         PreLogin formPreLogin = new PreLogin();
         formPreLogin.setVisible(true);         
+        
         //new UserFeedBack().setVisible(true);
        
         //UserRegistration formUserRegistration = new UserRegistration();
         //formUserRegistration.setVisible(true);
+        
+
     }
     
 }

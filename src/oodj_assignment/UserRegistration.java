@@ -10,6 +10,7 @@ import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
@@ -36,6 +37,10 @@ public class UserRegistration extends javax.swing.JFrame {
     private int EmailSuccess = 0;
     private int AddressSuccess = 0;
     private int PWSuccess = 0;
+    
+    //date of birth combiner
+    private String dob;
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,6 +71,12 @@ public class UserRegistration extends javax.swing.JFrame {
         lblAddress = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAddress = new javax.swing.JTextArea();
+        txtDay = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtMonth = new javax.swing.JTextField();
+        txtYear = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
         PanelPassword = new javax.swing.JPanel();
         lblNewPW = new javax.swing.JLabel();
         lblConfPW = new javax.swing.JLabel();
@@ -107,7 +118,7 @@ public class UserRegistration extends javax.swing.JFrame {
         lblGender.setText("                   Gender ");
 
         lblContact2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblContact2.setText("                   DOB ");
+        lblContact2.setText("                   DOB (dd/MM/yyyy) ");
 
         RadioMale.setText("Male");
 
@@ -170,41 +181,41 @@ public class UserRegistration extends javax.swing.JFrame {
         txtAddress.setRows(5);
         jScrollPane1.setViewportView(txtAddress);
 
+        jLabel4.setText("/");
+
+        jLabel5.setText("/");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel6.setText("e.g. 01/02/2003");
+
         javax.swing.GroupLayout PanelRegDetailsLayout = new javax.swing.GroupLayout(PanelRegDetails);
         PanelRegDetails.setLayout(PanelRegDetailsLayout);
         PanelRegDetailsLayout.setHorizontalGroup(
             PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                .addGap(86, 86, 86)
+                .addGap(40, 40, 40)
                 .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelRegDetailsLayout.createSequentialGroup()
                         .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(64, 64, 64)
                         .addComponent(jScrollPane1))
                     .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                        .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtName))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegDetailsLayout.createSequentialGroup()
-                        .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblTPNo, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblGender, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(237, 237, 237)
                         .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtName)
+                            .addComponent(txtTPNo)
                             .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(RadioMale, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(RadioFemale, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
                                 .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(txtTPNo)))))
+                                        .addComponent(RadioMale, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(RadioFemale, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(PanelRegDetailsLayout.createSequentialGroup()
                         .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(64, 64, 64)
                         .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelRegDetailsLayout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -212,17 +223,29 @@ public class UserRegistration extends javax.swing.JFrame {
                             .addComponent(txtEmail)))
                     .addGroup(PanelRegDetailsLayout.createSequentialGroup()
                         .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                                .addComponent(lblContact2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(25, 25, 25))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegDetailsLayout.createSequentialGroup()
-                                .addComponent(lblContact, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)))
+                            .addComponent(lblGender, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblContact2)
+                            .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTPNo, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblContact, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
                         .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegDetailsLayout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(txtContact))))
+                            .addComponent(txtContact)
+                            .addGroup(PanelRegDetailsLayout.createSequentialGroup()
+                                .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
+                                        .addComponent(txtDay, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(144, 144, 144))
         );
         PanelRegDetailsLayout.setVerticalGroup(
@@ -244,24 +267,32 @@ public class UserRegistration extends javax.swing.JFrame {
                     .addComponent(RadioMale)
                     .addComponent(RadioFemale))
                 .addGap(18, 18, 18)
-                .addComponent(lblContact2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
+                .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblContact2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDay, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(txtMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtContact, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblContact, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEmail)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblAddress)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         PanelPassword.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -293,13 +324,11 @@ public class UserRegistration extends javax.swing.JFrame {
         PanelPasswordLayout.setHorizontalGroup(
             PanelPasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelPasswordLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
                 .addGroup(PanelPasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelPasswordLayout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(lblConfPW, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPasswordLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblNewPW, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblNewPW, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblConfPW, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(54, 54, 54)
                 .addGroup(PanelPasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelPasswordLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -398,7 +427,7 @@ public class UserRegistration extends javax.swing.JFrame {
                                 .addComponent(btnExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(PanelPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
@@ -409,15 +438,16 @@ public class UserRegistration extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addComponent(lblWelcome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PanelRegDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PanelRegDetails, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnExit1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -443,136 +473,198 @@ public class UserRegistration extends javax.swing.JFrame {
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
         //if valid, pass values to variables
+        
         DataValidation val = new DataValidation();
+        dob = (txtDay.getText() + "/" + txtMonth.getText() + "/" + txtYear.getText());
+        String line;
+        boolean duplicate_checker_TP = false;
+        boolean duplicate_checker_name = false;
         
         if (val.isTP(txtTPNo.getText()))
         {
-            JOptionPane.showMessageDialog(null, "TP is valid!");
-            TPSuccess = 1;
+            try
+            {
+                File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                Scanner scan1 = new Scanner(filex);
+                
+                while(scan1.hasNext() && duplicate_checker_TP == false)
+                {
+
+                    line = scan1.nextLine();
+                    if((line.contains("TP" + txtTPNo.getText()))) 
+                    {
+                        duplicate_checker_TP = true;
+                    }
+                }    
+                scan1.close();
+            }
+            catch(Exception e)
+            {
+            
+            }
+            
+            if (duplicate_checker_TP == true)
+            {
+                JOptionPane.showMessageDialog(null, "Invalid Registration! Student already has account.");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "TP is valid!");
+                TPSuccess = 1;
+                
+                if (val.isName(txtName.getText()))
+                {
+                    try
+                    {
+                        File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                        Scanner scan2 = new Scanner(filex);
+
+                        while(scan2.hasNext() && duplicate_checker_name == false)
+                        {
+                            line = scan2.nextLine();
+                            if((line.contains(txtName.getText()))) 
+                            {
+                                duplicate_checker_name = true;
+                            }
+                        }    
+                        scan2.close();
+                    }
+                    catch(Exception e)
+                    {
+
+                    }
+                    
+                    if (duplicate_checker_name == true)
+                    {
+                        JOptionPane.showMessageDialog(null, "Invalid Registration! Student already has account.");
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null, "Name is valid!");
+                        NameSuccess = 1;     
+                        if (RadioMale.isSelected() || RadioFemale.isSelected())
+                        {
+                            JOptionPane.showMessageDialog(null, "Gender is valid!");
+                            GenderSuccess = 1;
+                            if (RadioMale.isSelected())
+                                Genderchoice = "Male";
+                            else
+                                Genderchoice = "Female";
+                        }
+                        else
+                        {
+                            JOptionPane.showMessageDialog(null, "Gender is invalid!");
+                        }
+
+                        if (val.isDate(dob))
+                        {
+                            JOptionPane.showMessageDialog(null, "DOB is valid!");
+                            DOBSuccess = 1;
+                        }
+                        else
+                        {
+                            JOptionPane.showMessageDialog(null, "DOB is invalid!");
+                        }
+
+                        if (val.isContact(txtContact.getText()))
+                        {
+                            JOptionPane.showMessageDialog(null, "Contact is valid!");
+                            ContSuccess = 1;
+                        }
+                        else
+                        {
+                            JOptionPane.showMessageDialog(null, "Contact is invalid!");
+                        }
+
+                        if (val.isEmail(txtEmail.getText()))
+                        {
+                            JOptionPane.showMessageDialog(null, "Email is valid!");
+                            EmailSuccess = 1;
+                        }
+                        else
+                        {
+                            JOptionPane.showMessageDialog(null, "Email is invalid!");
+                        }
+
+                        if (val.isAddress(txtAddress.getText()))
+                        {
+                            JOptionPane.showMessageDialog(null, "Address is valid!");
+                            AddressSuccess = 1;
+                        }
+
+                        if (val.isPassword(txtNewPW.getText()))
+                        {
+                           JOptionPane.showMessageDialog(null, "Password is valid!");
+                           if (txtNewPW.getText().equals(txtConfPW.getText()))
+                           {
+                                JOptionPane.showMessageDialog(null, "Password confirmed!");
+                                PWSuccess = 1;
+                           }
+                           else
+                           {
+                                JOptionPane.showMessageDialog(null, "Password not the same!");                
+                           }
+                        }
+                        else
+                        {
+                           JOptionPane.showMessageDialog(null, "Password is invalid!");      
+                        }
+
+                        if ((TPSuccess == 1) && (NameSuccess == 1) && (GenderSuccess == 1) && (DOBSuccess == 1) && 
+                                (EmailSuccess == 1) && (AddressSuccess == 1) && (PWSuccess == 1))
+                        {
+                            try
+                            {
+                                //you will have to change this according to the local filepath
+                                File file = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+
+                                try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(file, true))))
+                                {
+                                    writer.print("\n");
+                                    writer.append("TP" + txtTPNo.getText() + ":" + txtNewPW.getText() + ":" + txtName.getText() + ":" + Genderchoice + ":" + txtAddress.getText() + ":" + txtContact.getText() + ":" + txtEmail.getText() + ":" + dob);
+                                    JOptionPane.showMessageDialog(null, "Registration Successful!");
+                                    txtTPNo.setText("");
+                                    txtNewPW.setText("");
+                                    txtConfPW.setText("");
+                                    txtName.setText("");
+                                    txtDay.setText("");
+                                    txtMonth.setText("");
+                                    txtYear.setText("");
+                                    txtAddress.setText("");
+                                    txtContact.setText("");
+                                    txtEmail.setText("");
+                                    //DOBChooser.setDate(null);
+                                    txtTPNo.setText("");
+                                    RadioMale.setSelected(false);
+                                    RadioFemale.setSelected(false);
+                                    writer.close();
+
+                                }
+                                catch(IOException e)
+                                {
+
+                                }
+                            }
+                            catch (Exception e)
+                            {
+
+                            }
+                        }
+                        else
+                        {
+                            JOptionPane.showMessageDialog(null, "Registration Unsuccessful! Please try again.");
+                        }
+                    }
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Name is invalid!");
+                }
+            }
         }
         else
         {
             JOptionPane.showMessageDialog(null, "TP is invalid!");
-        }
-        
-        if (val.isName(txtName.getText()))
-        {
-            JOptionPane.showMessageDialog(null, "Name is valid!");
-            NameSuccess = 1;            
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Name is invalid!");
-        }
-        
-        if (RadioMale.isSelected() || RadioFemale.isSelected())
-        {
-            JOptionPane.showMessageDialog(null, "Gender is valid!");
-            GenderSuccess = 1;
-            if (RadioMale.isSelected())
-                Genderchoice = "Male";
-            else
-                Genderchoice = "Female";
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Gender is invalid!");
-        }
-        
-        /*if (DOBChooser.getDate() != null)
-        {
-            JOptionPane.showMessageDialog(null, "DOB is valid!");
-            DOBSuccess = 1;
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "DOB is invalid!");
-        }*/
-        
-        if (val.isContact(txtContact.getText()))
-        {
-            JOptionPane.showMessageDialog(null, "Contact is valid!");
-            ContSuccess = 1;
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Contact is invalid!");
-        }
-        
-        if (val.isEmail(txtEmail.getText()))
-        {
-            JOptionPane.showMessageDialog(null, "Email is valid!");
-            EmailSuccess = 1;
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Email is invalid!");
-        }
-        
-        if (val.isAddress(txtAddress.getText()))
-        {
-            JOptionPane.showMessageDialog(null, "Address is valid!");
-            AddressSuccess = 1;
-        }
-        
-        if (val.isPassword(txtNewPW.getText()))
-        {
-           JOptionPane.showMessageDialog(null, "Password is valid!");
-           if (txtNewPW.getText().equals(txtConfPW.getText()))
-           {
-                JOptionPane.showMessageDialog(null, "Password confirmed!");
-                PWSuccess = 1;
-           }
-           else
-           {
-                JOptionPane.showMessageDialog(null, "Password not the same!");                
-           }
-        }
-        else
-        {
-           JOptionPane.showMessageDialog(null, "Password is invalid!");      
-        }
-        
-        if ((TPSuccess == 1) && (NameSuccess == 1) && (GenderSuccess == 1) && (DOBSuccess == 1) && 
-                (EmailSuccess == 1) && (AddressSuccess == 1) && (PWSuccess == 1))
-        {
-            try
-            {
-                //you will have to change this according to the local filepath
-                File file = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
-                String pattern = "dd/MM/yyyy";
-                DateFormat df = new SimpleDateFormat(pattern);
-                //String birthdate = df.format(DOBChooser.getDate());
-
-                try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(file, true))))
-                {
-                    writer.print("\n");
-                    //writer.append("TP" + txtTPNo.getText() + ":" + txtNewPW.getText() + ":" + txtName.getText() + ":" + Genderchoice + ":" + txtAddress.getText() + ":" + txtContact.getText() + ":" + txtEmail.getText() + ":" + birthdate);
-                    JOptionPane.showMessageDialog(null, "Registration Successful!");
-                    txtTPNo.setText("");
-                    txtNewPW.setText("");
-                    txtConfPW.setText("");
-                    txtName.setText("");
-                    txtAddress.setText("");
-                    txtContact.setText("");
-                    txtEmail.setText("");
-                    //DOBChooser.setDate(null);
-                    txtTPNo.setText("");
-                    RadioMale.setSelected(false);
-                    RadioFemale.setSelected(false);
-                    writer.close();
-
-                }
-                catch(IOException e)
-                {
-
-                }
-            }
-            catch (Exception e)
-            {
-            
-            }
-            //save into text file
         }
     }//GEN-LAST:event_btnRegisterActionPerformed
 
@@ -654,6 +746,9 @@ public class UserRegistration extends javax.swing.JFrame {
         txtNewPW.setText("");
         txtConfPW.setText("");
         txtName.setText("");
+        txtDay.setText("");
+        txtMonth.setText("");
+        txtYear.setText("");
         txtAddress.setText("");
         txtContact.setText("");
         txtEmail.setText("");
@@ -709,6 +804,9 @@ public class UserRegistration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl8;
     private javax.swing.JLabel lblAddress;
@@ -727,9 +825,12 @@ public class UserRegistration extends javax.swing.JFrame {
     private javax.swing.JTextArea txtAddress;
     private javax.swing.JTextField txtConfPW;
     private javax.swing.JTextField txtContact;
+    private javax.swing.JTextField txtDay;
     private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtMonth;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtNewPW;
     private javax.swing.JTextField txtTPNo;
+    private javax.swing.JTextField txtYear;
     // End of variables declaration//GEN-END:variables
 }
