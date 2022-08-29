@@ -65,6 +65,11 @@ public class UserProfile extends javax.swing.JFrame {
         btnUpdateUserProfile.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btnUpdateUserProfile.setBorderPainted(false);
         btnUpdateUserProfile.setIconTextGap(30);
+        btnUpdateUserProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateUserProfileActionPerformed(evt);
+            }
+        });
 
         PanelRegDetails1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -248,6 +253,10 @@ public class UserProfile extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btnExit1ActionPerformed
+
+    private void btnUpdateUserProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateUserProfileActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUpdateUserProfileActionPerformed
 
     /**
      * @param args the command line arguments

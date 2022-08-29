@@ -99,6 +99,9 @@
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="iconTextGap" type="int" value="30"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateUserProfileActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="PanelRegDetails1">
       <Properties>
