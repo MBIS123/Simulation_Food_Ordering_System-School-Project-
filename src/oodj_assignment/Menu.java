@@ -18,13 +18,15 @@ import java.util.Arrays;
 public class Menu {
     
     //for jinhao
-    //File menuFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
+    File menuFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
     
-    //for jayren
-    File menuFile = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
+    String [][] nested_Menu_Array;
+    
+    //for jayren  thx bro
+    //File menuFile = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
 
     public Menu() {
-       
+        nested_Menu_Array = load_Menu_Data();
     }
     
     String[][] load_Menu_Data (){
@@ -46,7 +48,7 @@ public class Menu {
         }
         return menuArray2D;  
         } catch (Exception e) {
-            System.out.println(e+ "jaja");
+            System.out.println(e);
         }
         return null;
     }   
