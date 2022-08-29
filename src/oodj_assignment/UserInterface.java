@@ -34,6 +34,7 @@ public class UserInterface extends javax.swing.JFrame {
     private String contactno;
     private String email;
     private String DOB;
+    String[][] menu = new Menu().load_Menu_Data();
     
     void setData(String tp, String pass, String nm, String gen, String add, String cont, String em, String birth)
     {
@@ -46,16 +47,12 @@ public class UserInterface extends javax.swing.JFrame {
         email = em;
         DOB = birth;        
     }
-
-    //String[][] menu = new Menu().load_Menu_Data();
-   
     // * Creates new form UserInterface
      //*/
     public UserInterface() {
         initComponents();
-    
-        
-        /*DefaultListModel temp1 = new DefaultListModel();
+
+        DefaultListModel temp1 = new DefaultListModel();
         localFoodList.setModel(temp1);
         for(int i=0; i< menu.length;i++){
             if("Local".equals(menu[i][0])){
@@ -132,7 +129,6 @@ public class UserInterface extends javax.swing.JFrame {
         label3 = new java.awt.Label();
         jScrollPane4 = new javax.swing.JScrollPane();
         WesternFoodList = new javax.swing.JList<>();
-        jSpinner1 = new javax.swing.JSpinner();
         jScrollPane5 = new javax.swing.JScrollPane();
         localFoodList = new javax.swing.JList<>();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -246,7 +242,6 @@ public class UserInterface extends javax.swing.JFrame {
         jScrollPane1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        jScrollPane1.setAutoscrolls(true);
 
         menuPanel.setBackground(new java.awt.Color(222, 222, 222));
         menuPanel.setMaximumSize(new java.awt.Dimension(1800, 32767));
@@ -282,8 +277,6 @@ public class UserInterface extends javax.swing.JFrame {
 
         menuPanel.add(jScrollPane4);
         jScrollPane4.setBounds(260, 60, 160, 302);
-        menuPanel.add(jSpinner1);
-        jSpinner1.setBounds(618, 1014, 64, 22);
 
         localFoodList.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         localFoodList.setForeground(new java.awt.Color(255, 51, 0));
@@ -640,7 +633,6 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JSpinner jSpinner1;
     private java.awt.Label label1;
     private java.awt.Label label2;
     private java.awt.Label label3;
