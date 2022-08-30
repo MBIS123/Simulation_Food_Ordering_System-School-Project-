@@ -39,6 +39,9 @@ public class UserInterface extends javax.swing.JFrame {
     Menu obj_menu = new Menu();
     String[][] menu = obj_menu.nested_Menu_Array;
     
+    UserPayment formPayment = new UserPayment();
+    UserFeedBack formFeedBack = new UserFeedBack();
+    
     void setData(String tp, String pass, String nm, String gen, String add, String cont, String em, String birth)
     {
         TPNo = tp;
@@ -54,6 +57,7 @@ public class UserInterface extends javax.swing.JFrame {
      //*/
     public UserInterface() {
         initComponents();
+        lblUserName.setText(name);
         // to load the data from the menu array into the jlist of the form
         objCart.clearCart();
         DefaultListModel temp1 = new DefaultListModel();
@@ -152,18 +156,20 @@ public class UserInterface extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         apuLogo = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        lblUserName = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btnCheckOut = new javax.swing.JButton();
         lblGrandTotal = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane10 = new javax.swing.JScrollPane();
         cartItemList = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         cartTotalList = new javax.swing.JList<>();
+        btnClearCart = new javax.swing.JButton();
 
         jPopupMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -415,29 +421,35 @@ public class UserInterface extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Feedback");
 
+        lblUserName.setText("UserName");
+
         javax.swing.GroupLayout headPanelMenuLayout = new javax.swing.GroupLayout(headPanelMenu);
         headPanelMenu.setLayout(headPanelMenuLayout);
         headPanelMenuLayout.setHorizontalGroup(
             headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headPanelMenuLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(labelPic1)
+                .addContainerGap(739, Short.MAX_VALUE))
+            .addGroup(headPanelMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(apuLogo)
                 .addGroup(headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(headPanelMenuLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(labelPic1))
-                    .addGroup(headPanelMenuLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(apuLogo)
                         .addGap(46, 46, 46)
                         .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
                         .addComponent(jLabel3)
                         .addGap(55, 55, 55)
                         .addComponent(jLabel5)
-                        .addGap(54, 54, 54)
-                        .addComponent(jLabel4)
-                        .addGap(34, 34, 34)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                        .addGap(48, 48, 48)
+                        .addComponent(jLabel4))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headPanelMenuLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblUserName)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))))
         );
         headPanelMenuLayout.setVerticalGroup(
             headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -448,38 +460,49 @@ public class UserInterface extends javax.swing.JFrame {
                     .addComponent(lblMenu, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton1)
+                        .addComponent(lblUserName)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelPic1))
         );
 
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setText("YOUR CART");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 132, -1));
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 18, 99, -1));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 18, 99, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel7.setText("GRAND TOTAL : RM");
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 510, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(254, 120, 83));
-        jButton2.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(242, 242, 242));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oodj_assignment/Pictures/cartIcon.png"))); // NOI18N
-        jButton2.setText("CHECK OUT");
-        jButton2.setAlignmentY(0.0F);
-        jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jButton2.setBorderPainted(false);
-        jButton2.setIconTextGap(30);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnCheckOut.setBackground(new java.awt.Color(254, 120, 83));
+        btnCheckOut.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
+        btnCheckOut.setForeground(new java.awt.Color(242, 242, 242));
+        btnCheckOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oodj_assignment/Pictures/cartIcon.png"))); // NOI18N
+        btnCheckOut.setText("CHECK OUT");
+        btnCheckOut.setAlignmentY(0.0F);
+        btnCheckOut.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnCheckOut.setBorderPainted(false);
+        btnCheckOut.setIconTextGap(30);
+        btnCheckOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnCheckOutActionPerformed(evt);
             }
         });
+        jPanel3.add(btnCheckOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 540, 227, 42));
 
         lblGrandTotal.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         lblGrandTotal.setText("9.60");
+        jPanel3.add(lblGrandTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, 42, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("Total");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, -1, -1));
 
         cartItemList.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cartItemList.setAutoscrolls(false);
@@ -487,70 +510,25 @@ public class UserInterface extends javax.swing.JFrame {
         cartItemList.setVisibleRowCount(15);
         jScrollPane10.setViewportView(cartItemList);
 
+        jPanel3.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 81, 219, 411));
+
         cartTotalList.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cartTotalList.setAutoscrolls(false);
         cartTotalList.setEnabled(false);
         cartTotalList.setVisibleRowCount(15);
         jScrollPane2.setViewportView(cartTotalList);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(91, 91, 91)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(jLabel7)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(lblGrandTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(8, 8, 8))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 10, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
-                .addGap(4, 4, 4)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(lblGrandTotal))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 81, 53, 410));
+
+        btnClearCart.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnClearCart.setForeground(new java.awt.Color(255, 0, 51));
+        btnClearCart.setText("Clear Cart");
+        btnClearCart.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnClearCartMouseClicked(evt);
+            }
+        });
+        jPanel3.add(btnClearCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -581,9 +559,10 @@ public class UserInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnCheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckOutActionPerformed
+        formPayment.setVisible(true);
+        
+    }//GEN-LAST:event_btnCheckOutActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -613,7 +592,7 @@ public class UserInterface extends javax.swing.JFrame {
 
     private void localFoodListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_localFoodListMouseClicked
         // TODO add your handling code here:
-        int reply =JOptionPane.showConfirmDialog(null," Do u want add " + localFoodList.getSelectedValue()+" to the cart ?");
+         int reply =JOptionPane.showConfirmDialog(null," Do u want add " + localFoodList.getSelectedValue()+" to the cart ?","Confirmation",JOptionPane.YES_NO_OPTION);
         if(reply == JOptionPane.YES_OPTION){
             int quantity;
             while (true) {
@@ -625,9 +604,10 @@ public class UserInterface extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,"Please enter an integer","Warning",JOptionPane.WARNING_MESSAGE);
             }
             }   
-            Cart objCart = new Cart();
+            
             objCart.write_Order_To_Cart(localFoodList.getSelectedValue(),quantity); // store order data to txtfile
-            objCart.read_Order_From_Cart(cartItemList, cartTotalList,lblGrandTotal); // display order data on the form
+            objCart.read_Order_From_Cart(cartItemList, cartTotalList); // display order data on the form
+            lblGrandTotal.setText(objCart.calc_GrandTotal());
         }
         
     }//GEN-LAST:event_localFoodListMouseClicked
@@ -640,7 +620,7 @@ public class UserInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void WesternFoodListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesternFoodListMouseClicked
-        int reply =JOptionPane.showConfirmDialog(null," Do u want add " + WesternFoodList.getSelectedValue()+" to the cart ?");
+          int reply =JOptionPane.showConfirmDialog(null," Do u want add " + WesternFoodList.getSelectedValue()+" to the cart ?","Confirmation",JOptionPane.YES_NO_OPTION);
         if(reply == JOptionPane.YES_OPTION){
             int quantity;
             while (true) {
@@ -651,15 +631,15 @@ public class UserInterface extends javax.swing.JFrame {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null,"Please enter an integer","Warning",JOptionPane.WARNING_MESSAGE);
             }
-            }   
-            Cart objCart = new Cart();
+            }
             objCart.write_Order_To_Cart(WesternFoodList.getSelectedValue(),quantity); // store order data to txtfile
-            objCart.read_Order_From_Cart(cartItemList, cartTotalList,lblGrandTotal); // display order data on the form
+            objCart.read_Order_From_Cart(cartItemList, cartTotalList); // display order data on the form
+            lblGrandTotal.setText(objCart.calc_GrandTotal());
         }
     }//GEN-LAST:event_WesternFoodListMouseClicked
 
     private void BeverageListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BeverageListMouseClicked
-        int reply =JOptionPane.showConfirmDialog(null," Do u want add " + BeverageList.getSelectedValue()+" to the cart ?");
+        int reply =JOptionPane.showConfirmDialog(null," Do u want add " + BeverageList.getSelectedValue()+" to the cart ?","Confirmation",JOptionPane.YES_NO_OPTION);
         if(reply == JOptionPane.YES_OPTION){
             int quantity;
             while (true) {
@@ -672,9 +652,18 @@ public class UserInterface extends javax.swing.JFrame {
             }
             }   
             objCart.write_Order_To_Cart(BeverageList.getSelectedValue(),quantity); // store order data to txtfile
-            objCart.read_Order_From_Cart(cartItemList, cartTotalList,lblGrandTotal); // display order data on the form
+            objCart.read_Order_From_Cart(cartItemList, cartTotalList); // display order data on the form
+            lblGrandTotal.setText(objCart.calc_GrandTotal());
         }        // TODO add your handling code here:
     }//GEN-LAST:event_BeverageListMouseClicked
+
+    private void btnClearCartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearCartMouseClicked
+        int reply = JOptionPane.showConfirmDialog(null,"Do you want to clear the cart? \n It will remove every item in the cart.","Reminder", JOptionPane.YES_NO_OPTION);
+        if (reply == JOptionPane.YES_OPTION) {
+            objCart.clearCart(cartItemList,cartTotalList);
+        }
+        
+    }//GEN-LAST:event_btnClearCartMouseClicked
 
     /**
      * @param args the command line arguments
@@ -718,13 +707,14 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JList<String> BeverageList;
     private javax.swing.JList<String> WesternFoodList;
     private javax.swing.JLabel apuLogo;
+    private javax.swing.JButton btnCheckOut;
+    private javax.swing.JButton btnClearCart;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JList<String> cartItemList;
     private javax.swing.JList<String> cartTotalList;
     private javax.swing.JPanel headPanelMenu;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton35;
     private javax.swing.JComboBox<String> jComboBox33;
     private javax.swing.JLabel jLabel1;
@@ -759,6 +749,7 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JLabel labelPic1;
     private javax.swing.JLabel lblGrandTotal;
     private javax.swing.JLabel lblMenu;
+    private javax.swing.JLabel lblUserName;
     private javax.swing.JList<String> localFoodList;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JList<String> priceBeverageList;
