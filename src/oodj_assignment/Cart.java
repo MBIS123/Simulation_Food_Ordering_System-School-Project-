@@ -11,6 +11,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -40,7 +41,6 @@ public class Cart extends Menu{
                 foodIndex = i;
                 
                 foodPrice =  Integer.parseInt(menu[i][2]);
-                System.out.println("here");
                 break;
             }
         }
@@ -68,11 +68,24 @@ public class Cart extends Menu{
             PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
             pw.write("");
             pw.close();
+            
         } catch (Exception e) {
         }
-    
     }
-    public void read_Order_From_Cart (JList cartList, JList totalList, JLabel lblGrandTotal){
+    
+       public void clearCart(JList cartList, JList totalList){  //clearCart() method overloading
+    try { 
+            PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
+            pw.write("");
+            pw.close();
+            read_Order_From_Cart(cartList, totalList);
+            cartItem = load_Menu_Data();
+            System.out.println(cartItem.length);
+            System.out.println(Arrays.toString(cartItem));
+        } catch (Exception e) {
+        }
+    }
+    public void read_Order_From_Cart (JList cartList, JList totalList){ // read order from carttxt and display to form
            cartItem = load_cartItem();
            DefaultListModel tempCart =  new DefaultListModel();
            cartList.setModel(tempCart);
@@ -84,14 +97,25 @@ public class Cart extends Menu{
            totalList.setModel(tempTotal);
            for(int i =0; i<cartItem.length ;i++){
                tempTotal.addElement("RM "+cartItem[i][2]);}
-           int grandtotal= 0;
-           for(int i=0; i < cartItem.length; i++){
-           grandtotal = grandtotal + Integer.parseInt(cartItem[i][2]);
-           lblGrandTotal.setText( Integer.toString(grandtotal));
-           }
            
-       
-        
+           }
+
+    String calc_GrandTotal(){
+        int grandTotal=0;
+        for(int i=0; i < cartItem.length; i++){
+           grandTotal = grandTotal + Integer.parseInt(cartItem[i][2]);
+        }
+        String sGrandTotal= Integer.toString(grandTotal);
+
+        return sGrandTotal;
+      
+    }
+    
+    Boolean checkCartEmpty(){
+        if (cartItem.length <= 0 ) {
+            System.out.println("hi");
+        }
+        return null;
     }
     
     
