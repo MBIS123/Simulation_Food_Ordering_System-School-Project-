@@ -11,6 +11,7 @@ import java.util.Arrays;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import org.xml.sax.Attributes;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -148,6 +149,9 @@ public class UserInterface extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         priceBeverageList = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         headPanelMenu = new javax.swing.JPanel();
         labelPic1 = new javax.swing.JLabel();
         lblMenu = new javax.swing.JLabel();
@@ -369,12 +373,27 @@ public class UserInterface extends javax.swing.JFrame {
         jScrollPane8.setViewportView(priceBeverageList);
 
         menuPanel.add(jScrollPane8);
-        jScrollPane8.setBounds(660, 60, 70, 300);
+        jScrollPane8.setBounds(660, 60, 60, 300);
 
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Double click the item name to add into cart");
         menuPanel.add(jLabel2);
         jLabel2.setBounds(20, 390, 310, 16);
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel10.setText("Price");
+        menuPanel.add(jLabel10);
+        jLabel10.setBounds(670, 40, 43, 16);
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel11.setText("Price");
+        menuPanel.add(jLabel11);
+        jLabel11.setBounds(150, 40, 43, 16);
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel12.setText("Price");
+        menuPanel.add(jLabel12);
+        jLabel12.setBounds(430, 40, 43, 16);
 
         jScrollPane1.setViewportView(menuPanel);
 
@@ -718,6 +737,9 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JButton jButton35;
     private javax.swing.JComboBox<String> jComboBox33;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
