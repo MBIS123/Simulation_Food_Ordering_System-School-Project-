@@ -30,7 +30,7 @@ public class UserPayment extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         paymentConfirmBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbBxPaymentMethod = new javax.swing.JComboBox<>();
         label1 = new java.awt.Label();
         jTextField3 = new javax.swing.JTextField();
         CardPanel = new javax.swing.JPanel();
@@ -49,10 +49,12 @@ public class UserPayment extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(254, 120, 83));
         jLabel22.setText("Payment");
+        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 15, -1, -1));
 
         paymentConfirmBtn.setText("Confirm");
         paymentConfirmBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -60,14 +62,24 @@ public class UserPayment extends javax.swing.JFrame {
                 paymentConfirmBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(paymentConfirmBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 390, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("Payment Method :");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 68, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Online Banking", "Credit Card", "Debit Card", " " }));
+        cbBxPaymentMethod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Online Banking", "Credit Card", "Debit Card", " " }));
+        cbBxPaymentMethod.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                cbBxPaymentMethodPropertyChange(evt);
+            }
+        });
+        getContentPane().add(cbBxPaymentMethod, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 65, -1, -1));
 
         label1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         label1.setText("Account Holder name :");
+        getContentPane().add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 106, -1, -1));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 106, 307, -1));
 
         CardPanel.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -149,49 +161,7 @@ public class UserPayment extends javax.swing.JFrame {
                 .addContainerGap(142, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(paymentConfirmBtn)
-                .addGap(26, 26, 26))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel22))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(405, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel22)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(paymentConfirmBtn)
-                .addGap(16, 16, 16))
-        );
+        getContentPane().add(CardPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -200,6 +170,10 @@ public class UserPayment extends javax.swing.JFrame {
         // TODO add your handling code here:
         CardPanel.setVisible(true);
     }//GEN-LAST:event_paymentConfirmBtnActionPerformed
+
+    private void cbBxPaymentMethodPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_cbBxPaymentMethodPropertyChange
+             // TODO add your handling code here:
+    }//GEN-LAST:event_cbBxPaymentMethodPropertyChange
 
     /**
      * @param args the command line arguments
@@ -238,7 +212,7 @@ public class UserPayment extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CardPanel;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cbBxPaymentMethod;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
