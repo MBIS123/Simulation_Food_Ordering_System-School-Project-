@@ -397,6 +397,9 @@ public class UserInterface extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(menuPanel);
 
+        headPanelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        headPanelMenu.add(labelPic1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 93, -1, -1));
+
         lblMenu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblMenu.setForeground(new java.awt.Color(254, 120, 83));
         lblMenu.setText("Menu");
@@ -405,9 +408,11 @@ public class UserInterface extends javax.swing.JFrame {
                 lblMenuMousePressed(evt);
             }
         });
+        headPanelMenu.add(lblMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 67, 46, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Order History");
+        headPanelMenu.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 67, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Profile");
@@ -416,6 +421,7 @@ public class UserInterface extends javax.swing.JFrame {
                 jLabel4MouseClicked(evt);
             }
         });
+        headPanelMenu.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(593, 67, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(254, 120, 83));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -433,59 +439,18 @@ public class UserInterface extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        headPanelMenu.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(686, 22, 56, -1));
 
         apuLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oodj_assignment/Pictures/apcafelogo.png"))); // NOI18N
         apuLogo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        headPanelMenu.add(apuLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 22, -1, 65));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Feedback");
+        headPanelMenu.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(481, 67, -1, -1));
 
         lblUserName.setText("UserName");
-
-        javax.swing.GroupLayout headPanelMenuLayout = new javax.swing.GroupLayout(headPanelMenu);
-        headPanelMenu.setLayout(headPanelMenuLayout);
-        headPanelMenuLayout.setHorizontalGroup(
-            headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headPanelMenuLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(labelPic1)
-                .addContainerGap(739, Short.MAX_VALUE))
-            .addGroup(headPanelMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(apuLogo)
-                .addGroup(headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(headPanelMenuLayout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel3)
-                        .addGap(55, 55, 55)
-                        .addComponent(jLabel5)
-                        .addGap(48, 48, 48)
-                        .addComponent(jLabel4))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headPanelMenuLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblUserName)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17))))
-        );
-        headPanelMenuLayout.setVerticalGroup(
-            headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headPanelMenuLayout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addGroup(headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(apuLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMenu, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1)
-                        .addComponent(lblUserName)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelPic1))
-        );
+        headPanelMenu.add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(619, 23, -1, -1));
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -634,8 +599,8 @@ public class UserInterface extends javax.swing.JFrame {
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
         //open up userprofile
-        //UserProfile prof = new UserProfile(TPNo, pw, name, gender, address, contactno, email, DOB);
-        //prof.setVisible(true);
+        UserProfile prof = new UserProfile(TPNo, pw, name, gender, address, contactno, email, DOB);
+        prof.setVisible(true);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void WesternFoodListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesternFoodListMouseClicked

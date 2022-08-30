@@ -4,11 +4,24 @@
  */
 package oodj_assignment;
 
+import java.io.File;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hp
  */
 public class UserProfile extends javax.swing.JFrame {
+    
+   String UserTP;
+   String UserPW;
+   String UserName;
+   String UserGender;
+   String UserAddress;
+   String UserContact;
+   String UserEmail;
+   String UserDOB;
 
     /**
      * Creates new form ManagerProfile
@@ -16,6 +29,29 @@ public class UserProfile extends javax.swing.JFrame {
     public UserProfile() {
         initComponents();
     }
+
+        //constructor method
+    public UserProfile(String ID, String Pass, String Name, String gen, String add, String cont, String email, String date)
+    {
+        initComponents();
+
+        UserTP = ID;
+        UserPW = Pass;
+        UserName = Name;
+        UserGender = gen;
+        UserAddress = add;
+        UserContact = cont;
+        UserEmail = email;
+        UserDOB = date;
+        
+        txtTPNo.setText(UserTP);
+        txtName.setText(UserName);
+        txtContact.setText(UserContact);
+        txtEmail.setText(UserEmail);
+        txtDOB.setText(UserDOB);
+        txtGender.setText(UserGender);
+        txtAddress.setText(UserAddress);
+    }   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -256,6 +292,10 @@ public class UserProfile extends javax.swing.JFrame {
 
     private void btnUpdateUserProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateUserProfileActionPerformed
         // TODO add your handling code here:
+        UpdateUserProfile up = new UpdateUserProfile();
+        up.ViewUpdateUserProfile(UserContact, UserEmail, UserAddress);
+        up.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnUpdateUserProfileActionPerformed
 
     /**

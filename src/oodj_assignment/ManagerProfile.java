@@ -29,7 +29,6 @@ public class ManagerProfile extends javax.swing.JFrame{
      */
     public ManagerProfile() {
         initComponents();
-        txtManagerID.setText("SIU");
     }
     
     //constructor method

@@ -4,11 +4,26 @@
  */
 package oodj_assignment;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hp
  */
 public class UpdateUserProfile extends javax.swing.JFrame {
+
+    boolean ContactSuccess = false;
+    boolean EmailSuccess = false;
+    boolean AddressSuccess = false;
+    boolean PassSuccess = false;
 
     /**
      * Creates new form UpdateCustomerProfile
@@ -17,6 +32,12 @@ public class UpdateUserProfile extends javax.swing.JFrame {
         initComponents();
     }
 
+    void ViewUpdateUserProfile(String cont, String email, String add) 
+    {
+        txtUpdateContact.setText(cont);
+        txtUpdateEmail.setText(email);
+        txtUpdateAddress.setText(add);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,59 +47,155 @@ public class UpdateUserProfile extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblWelcome = new javax.swing.JLabel();
-        PanelPassword = new javax.swing.JPanel();
-        lblNewPW = new javax.swing.JLabel();
-        lblConfPW = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea5 = new javax.swing.JTextArea();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea6 = new javax.swing.JTextArea();
-        lblNewPW1 = new javax.swing.JLabel();
         PanelRegDetails = new javax.swing.JPanel();
-        lblContact = new javax.swing.JLabel();
+        lblUpdateContact = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        txtContact = new javax.swing.JTextArea();
-        btnViewOrders = new javax.swing.JButton();
-        btnViewOrders1 = new javax.swing.JButton();
+        txtUpdateContact = new javax.swing.JTextArea();
+        lblAddress = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        txtUpdateAddress = new javax.swing.JTextArea();
+        lblEmail = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        txtUpdateEmail = new javax.swing.JTextArea();
+        btnUpdateDetails = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        lblUpdate = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        PanelPassword = new javax.swing.JPanel();
+        lblUpdateNewPW = new javax.swing.JLabel();
+        lblUpdateConfPW = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        txtUpdateConfPW = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txtUpdateNewPW = new javax.swing.JTextArea();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        txtCurrentPW = new javax.swing.JTextArea();
+        lblCurrentPW = new javax.swing.JLabel();
+        btnUpdatePW = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblWelcome.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
-        lblWelcome.setForeground(new java.awt.Color(254, 120, 83));
-        lblWelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblWelcome.setText("UPDATE PROFILE");
-        lblWelcome.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblWelcomeMousePressed(evt);
+        PanelRegDetails.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        lblUpdateContact.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblUpdateContact.setText("                  Contact No. :");
+
+        txtUpdateContact.setColumns(20);
+        txtUpdateContact.setRows(5);
+        jScrollPane3.setViewportView(txtUpdateContact);
+
+        lblAddress.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblAddress.setText("                        Address :");
+
+        txtUpdateAddress.setColumns(20);
+        txtUpdateAddress.setRows(5);
+        jScrollPane7.setViewportView(txtUpdateAddress);
+
+        lblEmail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblEmail.setText("                             Email :");
+
+        txtUpdateEmail.setColumns(20);
+        txtUpdateEmail.setRows(5);
+        jScrollPane8.setViewportView(txtUpdateEmail);
+
+        javax.swing.GroupLayout PanelRegDetailsLayout = new javax.swing.GroupLayout(PanelRegDetails);
+        PanelRegDetails.setLayout(PanelRegDetailsLayout);
+        PanelRegDetailsLayout.setHorizontalGroup(
+            PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelRegDetailsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
+                        .addComponent(lblUpdateContact, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
+                        .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
+                        .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+        PanelRegDetailsLayout.setVerticalGroup(
+            PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelRegDetailsLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(lblUpdateContact))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(lblEmail)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(lblAddress)))
+                .addGap(29, 29, 29))
+        );
+
+        btnUpdateDetails.setBackground(new java.awt.Color(254, 120, 83));
+        btnUpdateDetails.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnUpdateDetails.setForeground(new java.awt.Color(242, 242, 242));
+        btnUpdateDetails.setText("UPDATE DETAILS");
+        btnUpdateDetails.setAlignmentY(0.0F);
+        btnUpdateDetails.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnUpdateDetails.setBorderPainted(false);
+        btnUpdateDetails.setIconTextGap(30);
+        btnUpdateDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateDetailsActionPerformed(evt);
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel1.setText("Change Details");
+
+        lblUpdate.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        lblUpdate.setForeground(new java.awt.Color(254, 120, 83));
+        lblUpdate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblUpdate.setText("UPDATE PROFILE");
+        lblUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblUpdateMousePressed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel2.setText("Change Password");
+
         PanelPassword.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        lblNewPW.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblNewPW.setText("              New Password :");
+        lblUpdateNewPW.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblUpdateNewPW.setText("     Enter New Password :");
 
-        lblConfPW.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblConfPW.setText("Confirm New Password :");
+        lblUpdateConfPW.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblUpdateConfPW.setText("Confirm New Password :");
 
-        jTextArea5.setColumns(20);
-        jTextArea5.setRows(5);
-        jScrollPane5.setViewportView(jTextArea5);
+        txtUpdateConfPW.setColumns(20);
+        txtUpdateConfPW.setRows(5);
+        jScrollPane5.setViewportView(txtUpdateConfPW);
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane4.setViewportView(jTextArea4);
+        txtUpdateNewPW.setColumns(20);
+        txtUpdateNewPW.setRows(5);
+        jScrollPane4.setViewportView(txtUpdateNewPW);
 
-        jTextArea6.setColumns(20);
-        jTextArea6.setRows(5);
-        jScrollPane6.setViewportView(jTextArea6);
+        txtCurrentPW.setColumns(20);
+        txtCurrentPW.setRows(5);
+        jScrollPane6.setViewportView(txtCurrentPW);
 
-        lblNewPW1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblNewPW1.setText("         Current Password :");
+        lblCurrentPW.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblCurrentPW.setText("Enter Current Password :");
 
         javax.swing.GroupLayout PanelPasswordLayout = new javax.swing.GroupLayout(PanelPassword);
         PanelPassword.setLayout(PanelPasswordLayout);
@@ -87,9 +204,9 @@ public class UpdateUserProfile extends javax.swing.JFrame {
             .addGroup(PanelPasswordLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelPasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblNewPW, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblConfPW, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                    .addComponent(lblNewPW1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblUpdateNewPW, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblUpdateConfPW, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                    .addComponent(lblCurrentPW, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelPasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -106,14 +223,14 @@ public class UpdateUserProfile extends javax.swing.JFrame {
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPasswordLayout.createSequentialGroup()
-                        .addComponent(lblNewPW1)
+                        .addComponent(lblCurrentPW)
                         .addGap(26, 26, 26)))
                 .addGroup(PanelPasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelPasswordLayout.createSequentialGroup()
                         .addGap(8, 8, 8)
-                        .addComponent(lblNewPW)
+                        .addComponent(lblUpdateNewPW)
                         .addGap(30, 30, 30)
-                        .addComponent(lblConfPW))
+                        .addComponent(lblUpdateConfPW))
                     .addGroup(PanelPasswordLayout.createSequentialGroup()
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -121,55 +238,19 @@ public class UpdateUserProfile extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
-        PanelRegDetails.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        lblContact.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblContact.setText("                  Contact No. :");
-
-        txtContact.setColumns(20);
-        txtContact.setRows(5);
-        jScrollPane3.setViewportView(txtContact);
-
-        javax.swing.GroupLayout PanelRegDetailsLayout = new javax.swing.GroupLayout(PanelRegDetails);
-        PanelRegDetails.setLayout(PanelRegDetailsLayout);
-        PanelRegDetailsLayout.setHorizontalGroup(
-            PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblContact, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
-        PanelRegDetailsLayout.setVerticalGroup(
-            PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(PanelRegDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelRegDetailsLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(lblContact))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
-
-        btnViewOrders.setBackground(new java.awt.Color(254, 120, 83));
-        btnViewOrders.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        btnViewOrders.setForeground(new java.awt.Color(242, 242, 242));
-        btnViewOrders.setText("UPDATE PASSWORD");
-        btnViewOrders.setAlignmentY(0.0F);
-        btnViewOrders.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        btnViewOrders.setBorderPainted(false);
-        btnViewOrders.setIconTextGap(30);
-
-        btnViewOrders1.setBackground(new java.awt.Color(254, 120, 83));
-        btnViewOrders1.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        btnViewOrders1.setForeground(new java.awt.Color(242, 242, 242));
-        btnViewOrders1.setText("UPDATE CONTACT NO.");
-        btnViewOrders1.setAlignmentY(0.0F);
-        btnViewOrders1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        btnViewOrders1.setBorderPainted(false);
-        btnViewOrders1.setIconTextGap(30);
+        btnUpdatePW.setBackground(new java.awt.Color(254, 120, 83));
+        btnUpdatePW.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnUpdatePW.setForeground(new java.awt.Color(242, 242, 242));
+        btnUpdatePW.setText("UPDATE PASSWORD");
+        btnUpdatePW.setAlignmentY(0.0F);
+        btnUpdatePW.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnUpdatePW.setBorderPainted(false);
+        btnUpdatePW.setIconTextGap(30);
+        btnUpdatePW.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdatePWActionPerformed(evt);
+            }
+        });
 
         btnExit.setBackground(new java.awt.Color(254, 120, 83));
         btnExit.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -192,31 +273,45 @@ public class UpdateUserProfile extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblWelcome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PanelRegDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnExit)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnViewOrders, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnViewOrders1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(163, 163, 163))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnExit)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(PanelPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnUpdateDetails, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PanelRegDetails, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnUpdatePW, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap())
+                    .addComponent(lblUpdate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
-                .addComponent(lblWelcome)
-                .addGap(18, 18, 18)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblUpdate)
+                .addGap(15, 15, 15)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelRegDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnViewOrders1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(PanelPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnViewOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnUpdateDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PanelPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnUpdatePW, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -224,13 +319,208 @@ public class UpdateUserProfile extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lblWelcomeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblWelcomeMousePressed
+    private void btnUpdateDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateDetailsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblWelcomeMousePressed
+        DataValidation val = new DataValidation();
+        String newcont = txtUpdateContact.getText();
+        String newem = txtUpdateEmail.getText();
+        String newaddress = txtUpdateAddress.getText();
+
+        if (val.isContact(newcont))
+        {
+            JOptionPane.showMessageDialog(null, "New Contact No. is valid!");
+            ContactSuccess = true;
+        }
+
+        if (val.isEmail(newem))
+        {
+            JOptionPane.showMessageDialog(null, "New Email is valid!");
+            EmailSuccess = true;
+        }
+
+        if (val.isAddress(newaddress))
+        {
+            JOptionPane.showMessageDialog(null, "New Address is valid!");
+            AddressSuccess = true;
+        }
+
+        if ((ContactSuccess == true) && (EmailSuccess == true) && (AddressSuccess == true))
+        {          
+            try
+            {
+                //you will have to change this according to the local filepath
+                File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                
+                //read temp file to variables
+                //change those variables in both temp file and original file
+                Scanner scan2 = new Scanner(filex);              
+                scan2.useDelimiter("[:\n]");
+
+                String TPNo = scan2.next();
+                String pw = scan2.next();
+                String name = scan2.next();
+                String gender = scan2.next();
+                String address = scan2.next();
+                String contactno = scan2.next();
+                String email = scan2.next();
+                String DOB = scan2.next();   
+                scan2.close();
+
+                //write to file (https://stackoverflow.com/questions/3935791/find-and-replace-words-lines-in-a-file)
+                Path detailspath = Paths.get("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                Path temppath = Paths.get("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                
+                Charset charset = StandardCharsets.UTF_8;
+
+                String detailscontent = new String(Files.readAllBytes(detailspath), charset);
+                String tempcontent = new String(Files.readAllBytes(temppath), charset);
+
+                detailscontent = detailscontent.replaceAll(contactno, newcont);
+                detailscontent = detailscontent.replaceAll(email, newem);
+                detailscontent = detailscontent.replaceAll(address, newaddress);
+                Files.write(detailspath, detailscontent.getBytes(charset));
+                
+                tempcontent = tempcontent.replaceAll(contactno, newcont);
+                tempcontent = tempcontent.replaceAll(email, newem);
+                tempcontent = tempcontent.replaceAll(address, newaddress);
+                Files.write(temppath, tempcontent.getBytes(charset));
+
+                FileOutputStream.nullOutputStream();
+            }
+            catch(Exception e)
+            {
+                //JOptionPane.showMessageDialog(null, "An Error Occured!" + e);
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Update Unsuccessful! Please try again.");
+        }
+    }//GEN-LAST:event_btnUpdateDetailsActionPerformed
+
+    private void lblUpdateMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUpdateMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblUpdateMousePressed
+
+    private void btnUpdatePWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdatePWActionPerformed
+        // TODO add your handling code here:
+        DataValidation val = new DataValidation();
+        String user_password = txtCurrentPW.getText();
+        String new_password = txtUpdateNewPW.getText();
+
+        try
+        {
+            //you will have to change this according to the local filepath
+            File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+
+            //read temp file to variables
+            //change those variables in both temp file and original file
+            Scanner scan2 = new Scanner(filex);              
+            scan2.useDelimiter("[:\n]");
+
+            String TPNo = scan2.next();
+            String pw = scan2.next();
+            String name = scan2.next();
+            String gender = scan2.next();
+            String address = scan2.next();
+            String contactno = scan2.next();
+            String email = scan2.next();
+            String DOB = scan2.next();   
+            scan2.close();
+           
+            if (pw.equals(user_password))
+            {
+                if (val.isPassword(new_password))
+                {
+                    if (new_password.equals(txtUpdateConfPW.getText()))
+                    {
+                        //write to file (https://stackoverflow.com/questions/3935791/find-and-replace-words-lines-in-a-file)
+                        Path detailspath = Paths.get("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                        Path temppath = Paths.get("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                        
+                        Charset charset = StandardCharsets.UTF_8;
+
+                        String detailscontent = new String(Files.readAllBytes(detailspath), charset);
+                        String tempcontent = new String(Files.readAllBytes(temppath), charset);
+
+                        detailscontent = detailscontent.replaceAll(pw, new_password);
+                        Files.write(detailspath, detailscontent.getBytes(charset));
+
+                        tempcontent = tempcontent.replaceAll(pw, new_password);
+                        Files.write(temppath, tempcontent.getBytes(charset));
+
+                        FileOutputStream.nullOutputStream();
+                        
+                        JOptionPane.showMessageDialog(null, "Password Updated!");
+
+                        txtCurrentPW.setText("");
+                        txtUpdateNewPW.setText("");
+                        txtUpdateConfPW.setText("");
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null, "Your new password does not match. Try again.");
+                        txtCurrentPW.setText("");
+                        txtUpdateNewPW.setText("");
+                        txtUpdateConfPW.setText("");
+                    }
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "New Password is not valid. Try again.");
+                    txtCurrentPW.setText("");
+                    txtUpdateNewPW.setText("");
+                    txtUpdateConfPW.setText("");
+                }
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Input does not match current password. Try again.");
+                txtCurrentPW.setText("");
+                txtUpdateNewPW.setText("");
+                txtUpdateConfPW.setText("");
+            }
+        }
+        catch(Exception e)
+        {
+
+        }
+    }//GEN-LAST:event_btnUpdatePWActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
+        try
+        {
+            //you will have to change this according to the local filepath
+            File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+            Scanner scan = new Scanner(filex);
+            scan.useDelimiter("[:\n]");
+
+            while(scan.hasNext())
+            {
+                String TPNo = scan.next();
+                String pw = scan.next();
+                String name = scan.next();
+                String gender = scan.next();
+                String add = scan.next();
+                String contactno = scan.next();
+                String email = scan.next();
+                String date = scan.next();
+
+                UserInterface form = new UserInterface();
+                form.setData(TPNo, pw, name, gender, add, contactno, email, date);
+                form.setVisible(true);
+
+                scan.close();
+            }
+        }
+        catch(Exception e)
+        {
+            //JOptionPane.showMessageDialog(null, "An Error Occured!" + e);
+        }
+
         this.dispose();
+
     }//GEN-LAST:event_btnExitActionPerformed
 
     /**
@@ -273,20 +563,28 @@ public class UpdateUserProfile extends javax.swing.JFrame {
     private javax.swing.JPanel PanelPassword;
     private javax.swing.JPanel PanelRegDetails;
     private javax.swing.JButton btnExit;
-    private javax.swing.JButton btnViewOrders;
-    private javax.swing.JButton btnViewOrders1;
+    private javax.swing.JButton btnUpdateDetails;
+    private javax.swing.JButton btnUpdatePW;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextArea jTextArea6;
-    private javax.swing.JLabel lblConfPW;
-    private javax.swing.JLabel lblContact;
-    private javax.swing.JLabel lblNewPW;
-    private javax.swing.JLabel lblNewPW1;
-    private javax.swing.JLabel lblWelcome;
-    private javax.swing.JTextArea txtContact;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblCurrentPW;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblUpdate;
+    private javax.swing.JLabel lblUpdateConfPW;
+    private javax.swing.JLabel lblUpdateContact;
+    private javax.swing.JLabel lblUpdateNewPW;
+    private javax.swing.JTextArea txtCurrentPW;
+    private javax.swing.JTextArea txtUpdateAddress;
+    private javax.swing.JTextArea txtUpdateConfPW;
+    private javax.swing.JTextArea txtUpdateContact;
+    private javax.swing.JTextArea txtUpdateEmail;
+    private javax.swing.JTextArea txtUpdateNewPW;
     // End of variables declaration//GEN-END:variables
 }

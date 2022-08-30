@@ -26,7 +26,10 @@ public class Cart extends Menu{
     
     String[][] menu = super.nested_Menu_Array;
     String[][] cartItem;
-    File cart  =  new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt");
+    //for jinhao
+    //File cart  =  new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt");
+    //for jayren
+    File cart  =  new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Cart.txt");
 
     public Cart() {
         
@@ -65,7 +68,11 @@ public class Cart extends Menu{
     
     public void clearCart(){
     try { 
-            PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
+            //for jinhao
+            //PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
+            //for jayren
+            PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
+
             pw.write("");
             pw.close();
             
@@ -75,7 +82,11 @@ public class Cart extends Menu{
     
        public void clearCart(JList cartList, JList totalList){  //clearCart() method overloading
     try { 
-            PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
+            //for jinhao
+            //PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
+            //for jayren
+            PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
+
             pw.write("");
             pw.close();
             read_Order_From_Cart(cartList, totalList);

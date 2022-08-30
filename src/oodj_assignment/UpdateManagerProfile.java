@@ -472,10 +472,20 @@ public class UpdateManagerProfile extends javax.swing.JFrame {
                             Charset charset = StandardCharsets.UTF_8;
 
                             String content = new String(Files.readAllBytes(path), charset);
+                            content = content.replaceAll(pw, new_password);
+                            
+                            Files.write(path, content.getBytes(charset));
 
+                            
                             FileOutputStream.nullOutputStream();
 
                             scan.close();
+                            
+                            JOptionPane.showMessageDialog(null, "Password Updated!");
+                            
+                            txtCurrentPW.setText("");
+                            txtUpdateNewPW.setText("");
+                            txtUpdateConfPW.setText("");
                         }
                         else
                         {
