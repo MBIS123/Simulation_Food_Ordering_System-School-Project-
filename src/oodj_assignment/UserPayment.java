@@ -3,6 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package oodj_assignment;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 import org.xml.sax.Attributes;
 
 /**
@@ -14,9 +20,16 @@ public class UserPayment extends javax.swing.JFrame {
     /**
      * Creates new form UserPayment
      */
+    String grandTotal;
+    
     public UserPayment() {
         initComponents();
-        CardPanel.hide();
+        CardPanel.hide(); 
+        onlineBankingPanel.hide();
+    }
+    
+    void set_GrandTotal(String grandTotal){
+        this.grandTotal = grandTotal;
     }
 
     /**
@@ -29,58 +42,142 @@ public class UserPayment extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel22 = new javax.swing.JLabel();
-        paymentConfirmBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        cbBxPaymentMethod = new javax.swing.JComboBox<>();
         label1 = new java.awt.Label();
-        jTextField3 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        cbBxPaymentMethod1 = new javax.swing.JComboBox<>();
+        onlineBankingPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        cbBxOnlineBanking = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        textFieldAccNo = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        lblGTotalOnline = new javax.swing.JLabel();
+        btnOnlineBankingPay = new javax.swing.JButton();
         CardPanel = new javax.swing.JPanel();
         label3 = new java.awt.Label();
-        jTextField4 = new javax.swing.JTextField();
+        txtCardNum1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtCardNum2 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtCardNum3 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        label4 = new java.awt.Label();
-        jTextField8 = new javax.swing.JTextField();
+        txtCardNum4 = new javax.swing.JTextField();
         label2 = new java.awt.Label();
-        jTextField7 = new javax.swing.JTextField();
+        txtFldSecurityCode = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        btnCardPay = new javax.swing.JButton();
+        lblGTotalCard = new javax.swing.JLabel();
+        textFieldAccountHolder = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(254, 120, 83));
         jLabel22.setText("Payment");
-        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 15, -1, -1));
-
-        paymentConfirmBtn.setText("Confirm");
-        paymentConfirmBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                paymentConfirmBtnActionPerformed(evt);
-            }
-        });
-        getContentPane().add(paymentConfirmBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 390, -1, -1));
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setText("Payment Method :");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 68, -1, -1));
-
-        cbBxPaymentMethod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Online Banking", "Credit Card", "Debit Card", " " }));
-        cbBxPaymentMethod.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                cbBxPaymentMethodPropertyChange(evt);
-            }
-        });
-        getContentPane().add(cbBxPaymentMethod, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 65, -1, -1));
 
         label1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         label1.setText("Account Holder name :");
-        getContentPane().add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 106, -1, -1));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 106, 307, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel5.setText("Payment Method :");
+
+        cbBxPaymentMethod1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Online Banking", "Credit Card", "Debit Card", " " }));
+        cbBxPaymentMethod1.setSelectedIndex(-1);
+        cbBxPaymentMethod1.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+                cbBxPaymentMethod1PopupMenuWillBecomeVisible(evt);
+            }
+        });
+        cbBxPaymentMethod1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbBxPaymentMethod1ActionPerformed(evt);
+            }
+        });
+
+        onlineBankingPanel.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setText("Online Banking with:");
+
+        cbBxOnlineBanking.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maybank2u", "CIMB Clicks", "Public Bank", "RHB Now", "Hong Leong Connect", "Ambank", "MyBSN", "Bank Rakyat", "UOB", "Affin Bank", "Bank Islam", "HSBC Online", " " }));
+        cbBxOnlineBanking.setSelectedIndex(-1);
+        cbBxOnlineBanking.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                cbBxOnlineBankingPropertyChange(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel6.setText("Account No :");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel7.setText("Amount to paid : RM");
+
+        lblGTotalOnline.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblGTotalOnline.setForeground(new java.awt.Color(51, 51, 255));
+        lblGTotalOnline.setText("0.00");
+
+        btnOnlineBankingPay.setText("Pay");
+        btnOnlineBankingPay.setAlignmentX(0.5F);
+        btnOnlineBankingPay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOnlineBankingPayActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout onlineBankingPanelLayout = new javax.swing.GroupLayout(onlineBankingPanel);
+        onlineBankingPanel.setLayout(onlineBankingPanelLayout);
+        onlineBankingPanelLayout.setHorizontalGroup(
+            onlineBankingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(onlineBankingPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(onlineBankingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(onlineBankingPanelLayout.createSequentialGroup()
+                        .addGroup(onlineBankingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(onlineBankingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textFieldAccNo, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbBxOnlineBanking, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(onlineBankingPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblGTotalOnline)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnOnlineBankingPay)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        onlineBankingPanelLayout.setVerticalGroup(
+            onlineBankingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(onlineBankingPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(onlineBankingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(cbBxOnlineBanking, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(onlineBankingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textFieldAccNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGroup(onlineBankingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(onlineBankingPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(onlineBankingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(lblGTotalOnline))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, onlineBankingPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                        .addComponent(btnOnlineBankingPay)
+                        .addGap(40, 40, 40))))
+        );
 
         CardPanel.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -96,11 +193,24 @@ public class UserPayment extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("-");
 
-        label4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        label4.setText("EXPIRES :");
-
         label2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        label2.setText("CVV :");
+        label2.setText("Security Code:");
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel10.setText("Amount to paid : RM");
+
+        btnCardPay.setText("Pay");
+        btnCardPay.setAlignmentX(0.5F);
+        btnCardPay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCardPayActionPerformed(evt);
+            }
+        });
+
+        lblGTotalCard.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblGTotalCard.setForeground(new java.awt.Color(51, 51, 255));
+        lblGTotalCard.setText("0.00");
 
         javax.swing.GroupLayout CardPanelLayout = new javax.swing.GroupLayout(CardPanel);
         CardPanel.setLayout(CardPanelLayout);
@@ -109,72 +219,193 @@ public class UserPayment extends javax.swing.JFrame {
             .addGroup(CardPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(CardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(CardPanelLayout.createSequentialGroup()
-                        .addGroup(CardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(CardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(CardPanelLayout.createSequentialGroup()
-                                .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(CardPanelLayout.createSequentialGroup()
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCardNum1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCardNum2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtCardNum3, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtCardNum4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(CardPanelLayout.createSequentialGroup()
+                                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(2, 2, 2)
+                                .addComponent(txtFldSecurityCode, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(25, Short.MAX_VALUE))
                     .addGroup(CardPanelLayout.createSequentialGroup()
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(98, Short.MAX_VALUE))
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblGTotalCard)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCardPay)
+                        .addGap(26, 26, 26))))
         );
         CardPanelLayout.setVerticalGroup(
             CardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CardPanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
                 .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(2, 2, 2)
                 .addGroup(CardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(CardPanelLayout.createSequentialGroup()
                         .addGroup(CardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCardNum1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCardNum2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCardNum3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24)
-                        .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtCardNum4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFldSecurityCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
                 .addGroup(CardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(142, Short.MAX_VALUE))
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+                    .addComponent(lblGTotalCard)
+                    .addComponent(btnCardPay)))
         );
 
-        getContentPane().add(CardPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(textFieldAccountHolder, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(cbBxPaymentMethod1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton1))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(onlineBankingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel22)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(cbBxPaymentMethod1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldAccountHolder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(onlineBankingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void paymentConfirmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paymentConfirmBtnActionPerformed
-        // TODO add your handling code here:
-        CardPanel.setVisible(true);
-    }//GEN-LAST:event_paymentConfirmBtnActionPerformed
+    private void btnCardPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCardPayActionPerformed
+        int checklist = 3;
+        Payment objPayment =  new Payment();
+        if (!(objPayment.verifyAccountHolderName(textFieldAccountHolder))){ 
+            JOptionPane.showMessageDialog(null,"Please enter valid Account Holder name","Warning" ,JOptionPane.WARNING_MESSAGE);
+            checklist--;
+        }     
+        if ( !(objPayment.verifyCardNo(txtCardNum1) &&objPayment.verifyCardNo(txtCardNum2)&&objPayment.verifyCardNo(txtCardNum3) &&objPayment.verifyCardNo(txtCardNum4))){
+            JOptionPane.showMessageDialog(null,"Please enter valid card number.","Warning" ,JOptionPane.WARNING_MESSAGE);
+            checklist--;
+        }
+        if (!(objPayment.verifySecurityCode(txtFldSecurityCode))){
+            JOptionPane.showMessageDialog(null,"Please enter valid 3 digit security code.","Warning" ,JOptionPane.WARNING_MESSAGE);
+            checklist--;
+            }
+        if(checklist ==3){JOptionPane.showMessageDialog(null, "Payment done succesfully");
+        new UserInterface().setVisible(true);
+        }
+            
+        
+        
+    }//GEN-LAST:event_btnCardPayActionPerformed
 
-    private void cbBxPaymentMethodPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_cbBxPaymentMethodPropertyChange
-             // TODO add your handling code here:
-    }//GEN-LAST:event_cbBxPaymentMethodPropertyChange
+    private void cbBxPaymentMethod1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbBxPaymentMethod1ActionPerformed
+        onlineBankingPanel.show();
+        CardPanel.show();
+        
+        if (cbBxPaymentMethod1.getSelectedIndex()==0) {
+            CardPanel.hide();
+            onlineBankingPanel.show(); 
+            lblGTotalOnline.setText(grandTotal);
+        }
+        else if (cbBxPaymentMethod1.getSelectedIndex()==1 ||cbBxPaymentMethod1.getSelectedIndex()==2 ) {
+            onlineBankingPanel.hide();
+            CardPanel.show();
+            lblGTotalCard.setText(grandTotal);}  
+    }//GEN-LAST:event_cbBxPaymentMethod1ActionPerformed
+
+    private void cbBxPaymentMethod1PopupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_cbBxPaymentMethod1PopupMenuWillBecomeVisible
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbBxPaymentMethod1PopupMenuWillBecomeVisible
+
+    private void btnOnlineBankingPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOnlineBankingPayActionPerformed
+        Payment objPayment = new Payment();
+        int checklist = 3;
+        if (!(objPayment.verifyAccountHolderName(textFieldAccountHolder))) {
+            JOptionPane.showMessageDialog(null,"Please enter valid Account Holder name","Warning" ,JOptionPane.WARNING_MESSAGE);
+            checklist--;
+        }
+        if (cbBxOnlineBanking.getSelectedIndex()== -1){
+            JOptionPane.showMessageDialog(null,"Please select online banking platform.","Warning" ,JOptionPane.WARNING_MESSAGE);
+            checklist--;
+        }
+        if (!objPayment.verifyAccountNo(textFieldAccNo)) {
+                JOptionPane.showMessageDialog(null,"Please enter valid Account no","Warning" ,JOptionPane.WARNING_MESSAGE);
+                checklist--;
+        }
+        if(checklist ==3){JOptionPane.showMessageDialog(null, "Payment done succesfully");
+        new Order().write_Order_to_OrderFIle();
+        this.hide();
+        new UserInterface().setVisible(true);
+        }
+            
+    }//GEN-LAST:event_btnOnlineBankingPayActionPerformed
+
+    private void cbBxOnlineBankingPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_cbBxOnlineBankingPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbBxOnlineBankingPropertyChange
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.hide();
+        new UserInterface().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,23 +444,32 @@ public class UserPayment extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CardPanel;
-    private javax.swing.JComboBox<String> cbBxPaymentMethod;
+    private javax.swing.JButton btnCardPay;
+    private javax.swing.JButton btnOnlineBankingPay;
+    private javax.swing.JComboBox<String> cbBxOnlineBanking;
+    private javax.swing.JComboBox<String> cbBxPaymentMethod1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private java.awt.Label label1;
     private java.awt.Label label2;
     private java.awt.Label label3;
-    private java.awt.Label label4;
-    private javax.swing.JButton paymentConfirmBtn;
+    private javax.swing.JLabel lblGTotalCard;
+    private javax.swing.JLabel lblGTotalOnline;
+    private javax.swing.JPanel onlineBankingPanel;
+    private javax.swing.JTextField textFieldAccNo;
+    private javax.swing.JTextField textFieldAccountHolder;
+    private javax.swing.JTextField txtCardNum1;
+    private javax.swing.JTextField txtCardNum2;
+    private javax.swing.JTextField txtCardNum3;
+    private javax.swing.JTextField txtCardNum4;
+    private javax.swing.JTextField txtFldSecurityCode;
     // End of variables declaration//GEN-END:variables
 }

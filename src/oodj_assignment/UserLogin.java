@@ -157,7 +157,9 @@ public class UserLogin extends javax.swing.JFrame {
             try
             {
                 //you will have to change this according to the local filepath
-                File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+               // File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                
+                File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                 Scanner scan1 = new Scanner(filex);
                 boolean flag = false;
 
@@ -175,7 +177,12 @@ public class UserLogin extends javax.swing.JFrame {
                 if (flag == true)
                 {
                     //create temporary user file
-                    File file = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                    // Jay ren
+                    //File file = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                    // HAO :
+                    File file = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                    
+                    
                     FileWriter fw = new FileWriter(file);
 
                     fw.write(line);
@@ -196,7 +203,7 @@ public class UserLogin extends javax.swing.JFrame {
 
                     JOptionPane.showMessageDialog(null, "Login Successful!");
 
-                    UserInterface formMenu =  new UserInterface();
+                    UserInterface formMenu =  new UserInterface(name);
                     formMenu.setData(TPNo, pw, name, gender, address, contactno, email, DOB);
                     formMenu.setVisible(true);
                     

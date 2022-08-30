@@ -29,7 +29,7 @@ public class UserInterface extends javax.swing.JFrame {
     //declare class variables that can be called from child classes
     private String TPNo;
     private String pw;
-    private String name;
+    static private String name;
     private String gender;
     private String address;
     private String contactno;
@@ -42,6 +42,7 @@ public class UserInterface extends javax.swing.JFrame {
     
     UserPayment formPayment = new UserPayment();
     UserFeedBack formFeedBack = new UserFeedBack();
+    
     
     void setData(String tp, String pass, String nm, String gen, String add, String cont, String em, String birth)
     {
@@ -56,10 +57,12 @@ public class UserInterface extends javax.swing.JFrame {
     }
     // * Creates new form UserInterface
      //*/
-    public UserInterface() {
+    
+           
+    public UserInterface(String name){
         initComponents();
-        lblUserName.setText(name);
-        // to load the data from the menu array into the jlist of the form
+        this.name = name;
+        lblUserName.setText(name+ " Welcome Back ");
         objCart.clearCart();
         DefaultListModel temp1 = new DefaultListModel();
         localFoodList.setModel(temp1);
@@ -67,7 +70,6 @@ public class UserInterface extends javax.swing.JFrame {
             if("Local".equals(menu[i][0])){
                 temp1.addElement(menu[i][1]);   }
     }
-
         DefaultListModel temp2 = new DefaultListModel();
         BeverageList.setModel(temp2);
         for(int i=0; i< menu.length;i++){
@@ -98,16 +100,48 @@ public class UserInterface extends javax.swing.JFrame {
             if("Beverage".equals(menu[i][0])){
                 price3.addElement("RM"+menu[i][2]);   }
     }
-        
-        /*try {
-            
-            PrintWriter pw = new PrintWriter(new FileWriter(new File("Menu.txt"),true));
-            pw.write("Local,"+"Nasi Lemak,"+"4.50\n");
-            pw.close();
-        } catch (Exception e) {
-            System.out.println("gt error"); 
-        } */
-        
+    }
+    public UserInterface() {
+        initComponents();
+        // to load the data from the menu array into the jlist of the form
+        objCart.clearCart();
+        lblUserName.setText(name+ " Welcome Back ");
+        DefaultListModel temp1 = new DefaultListModel();
+        localFoodList.setModel(temp1);
+        for(int i=0; i< menu.length;i++){
+            if("Local".equals(menu[i][0])){
+                temp1.addElement(menu[i][1]);   }
+    }
+        DefaultListModel temp2 = new DefaultListModel();
+        BeverageList.setModel(temp2);
+        for(int i=0; i< menu.length;i++){
+            if("Beverage".equals(menu[i][0])){
+                temp2.addElement(menu[i][1]);   }
+    }
+        DefaultListModel temp3 = new DefaultListModel();
+        WesternFoodList.setModel(temp3);
+        for(int i=0; i< menu.length;i++){
+            if("Western Food".equals(menu[i][0])){
+                temp3.addElement(menu[i][1]);   }
+    }
+        DefaultListModel price1 = new DefaultListModel();
+        priceLocalFoodList.setModel(price1);
+        for(int i=0; i< menu.length;i++){
+            if("Local".equals(menu[i][0])){
+                price1.addElement("RM"+menu[i][2]);   }
+    }
+        DefaultListModel price2 = new DefaultListModel();
+        priceWesternList.setModel(price2);
+        for(int i=0; i< menu.length;i++){
+            if("Western Food".equals(menu[i][0])){
+                price2.addElement("RM"+menu[i][2]);   }
+    }
+        DefaultListModel price3 = new DefaultListModel();
+        priceBeverageList.setModel(price3);
+        for(int i=0; i< menu.length;i++){
+            if("Beverage".equals(menu[i][0])){
+                price3.addElement("RM"+menu[i][2]);   }
+    }
     }
 
     /**
@@ -157,9 +191,8 @@ public class UserInterface extends javax.swing.JFrame {
         lblMenu = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnLogOut = new javax.swing.JButton();
         apuLogo = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         lblUserName = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -397,9 +430,6 @@ public class UserInterface extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(menuPanel);
 
-        headPanelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        headPanelMenu.add(labelPic1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 93, -1, -1));
-
         lblMenu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblMenu.setForeground(new java.awt.Color(254, 120, 83));
         lblMenu.setText("Menu");
@@ -408,11 +438,9 @@ public class UserInterface extends javax.swing.JFrame {
                 lblMenuMousePressed(evt);
             }
         });
-        headPanelMenu.add(lblMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 67, 46, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Order History");
-        headPanelMenu.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 67, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Profile");
@@ -421,36 +449,72 @@ public class UserInterface extends javax.swing.JFrame {
                 jLabel4MouseClicked(evt);
             }
         });
-        headPanelMenu.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(593, 67, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(254, 120, 83));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Logout  ");
-        jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        buttonGroup1.add(jButton1);
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnLogOut.setBackground(new java.awt.Color(254, 120, 83));
+        btnLogOut.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnLogOut.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogOut.setText("Logout  ");
+        btnLogOut.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        buttonGroup1.add(btnLogOut);
+        btnLogOut.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton1MouseEntered(evt);
+                btnLogOutMouseEntered(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnLogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnLogOutActionPerformed(evt);
             }
         });
-        headPanelMenu.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(686, 22, 56, -1));
 
         apuLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oodj_assignment/Pictures/apcafelogo.png"))); // NOI18N
         apuLogo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        headPanelMenu.add(apuLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 22, -1, 65));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel5.setText("Feedback");
-        headPanelMenu.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(481, 67, -1, -1));
-
+        lblUserName.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblUserName.setText("UserName");
-        headPanelMenu.add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(619, 23, -1, -1));
+
+        javax.swing.GroupLayout headPanelMenuLayout = new javax.swing.GroupLayout(headPanelMenu);
+        headPanelMenu.setLayout(headPanelMenuLayout);
+        headPanelMenuLayout.setHorizontalGroup(
+            headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headPanelMenuLayout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(apuLogo)
+                .addGap(46, 46, 46)
+                .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(headPanelMenuLayout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(headPanelMenuLayout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel3)
+                        .addGap(109, 109, 109)
+                        .addComponent(jLabel4)))
+                .addGap(6, 6, 6)
+                .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        headPanelMenuLayout.setVerticalGroup(
+            headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headPanelMenuLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(headPanelMenuLayout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(apuLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(headPanelMenuLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addGroup(headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblMenu)
+                            .addComponent(jLabel3)))
+                    .addGroup(headPanelMenuLayout.createSequentialGroup()
+                        .addComponent(lblUserName)
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel4))
+                    .addGroup(headPanelMenuLayout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(btnLogOut))))
+        );
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -481,7 +545,7 @@ public class UserInterface extends javax.swing.JFrame {
         jPanel3.add(btnCheckOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 540, 227, 42));
 
         lblGrandTotal.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        lblGrandTotal.setText("9.60");
+        lblGrandTotal.setText("0.00");
         jPanel3.add(lblGrandTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, 42, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -544,19 +608,25 @@ public class UserInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckOutActionPerformed
+        if (cartItemList.getModel().getSize() ==0) {
+            JOptionPane.showMessageDialog(null,"There is nothing in your cart right now.");
+        }
+        else{
         formPayment.setVisible(true);
+        this.hide();}
         
     }//GEN-LAST:event_btnCheckOutActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
+        this.hide();
+        new PreLogin().setVisible(true);
+    }//GEN-LAST:event_btnLogOutActionPerformed
 
-    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
-        jButton1.setToolTipText("log out");
+    private void btnLogOutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogOutMouseEntered
+        btnLogOut.setToolTipText("log out");
         //JOptionPane.showMessageDialog(null,"hello");
 
-    }//GEN-LAST:event_jButton1MouseEntered
+    }//GEN-LAST:event_btnLogOutMouseEntered
 
     private void lblMenuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMenuMousePressed
         lblMenu.setForeground(new Color(255,119,83));
@@ -578,20 +648,22 @@ public class UserInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
          int reply =JOptionPane.showConfirmDialog(null," Do u want add " + localFoodList.getSelectedValue()+" to the cart ?","Confirmation",JOptionPane.YES_NO_OPTION);
         if(reply == JOptionPane.YES_OPTION){
-            int quantity;
-            while (true) {
+            int quantity =0;
             try {
                 int i =Integer.parseInt(JOptionPane.showInputDialog("Please enter the quantity"));
                 quantity =i;
-                break;
+               
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null,"Please enter an integer","Warning",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Item added uncessfully","Warning",JOptionPane.WARNING_MESSAGE);
             }
-            }   
-            
+               
+            if (quantity != 0) {
             objCart.write_Order_To_Cart(localFoodList.getSelectedValue(),quantity); // store order data to txtfile
             objCart.read_Order_From_Cart(cartItemList, cartTotalList); // display order data on the form
             lblGrandTotal.setText(objCart.calc_GrandTotal());
+            formPayment.set_GrandTotal(objCart.calc_GrandTotal());
+            
+            }
         }
         
     }//GEN-LAST:event_localFoodListMouseClicked
@@ -606,38 +678,42 @@ public class UserInterface extends javax.swing.JFrame {
     private void WesternFoodListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WesternFoodListMouseClicked
           int reply =JOptionPane.showConfirmDialog(null," Do u want add " + WesternFoodList.getSelectedValue()+" to the cart ?","Confirmation",JOptionPane.YES_NO_OPTION);
         if(reply == JOptionPane.YES_OPTION){
-            int quantity;
-            while (true) {
+            int quantity=0;
+            
             try {
                 int i =Integer.parseInt(JOptionPane.showInputDialog("Please enter the quantity"));
                 quantity =i;
-                break;
+                
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null,"Please enter an integer","Warning",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Item added unsucessfully","Warning",JOptionPane.WARNING_MESSAGE);
             }
-            }
+           
+            if (quantity != 0) {
             objCart.write_Order_To_Cart(WesternFoodList.getSelectedValue(),quantity); // store order data to txtfile
             objCart.read_Order_From_Cart(cartItemList, cartTotalList); // display order data on the form
             lblGrandTotal.setText(objCart.calc_GrandTotal());
+            formPayment.set_GrandTotal(objCart.calc_GrandTotal());}
         }
     }//GEN-LAST:event_WesternFoodListMouseClicked
 
     private void BeverageListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BeverageListMouseClicked
         int reply =JOptionPane.showConfirmDialog(null," Do u want add " + BeverageList.getSelectedValue()+" to the cart ?","Confirmation",JOptionPane.YES_NO_OPTION);
         if(reply == JOptionPane.YES_OPTION){
-            int quantity;
-            while (true) {
+            int quantity=0;
+           
             try {
                 int i =Integer.parseInt(JOptionPane.showInputDialog("Please enter the quantity"));
                 quantity =i;
-                break;
+               
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null,"Please enter an integer","Warning",JOptionPane.WARNING_MESSAGE);
             }
-            }   
+               
+            if (quantity != 0) {
             objCart.write_Order_To_Cart(BeverageList.getSelectedValue(),quantity); // store order data to txtfile
             objCart.read_Order_From_Cart(cartItemList, cartTotalList); // display order data on the form
             lblGrandTotal.setText(objCart.calc_GrandTotal());
+            formPayment.set_GrandTotal(objCart.calc_GrandTotal());}
         }        // TODO add your handling code here:
     }//GEN-LAST:event_BeverageListMouseClicked
 
@@ -693,12 +769,12 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JLabel apuLogo;
     private javax.swing.JButton btnCheckOut;
     private javax.swing.JButton btnClearCart;
+    private javax.swing.JButton btnLogOut;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JList<String> cartItemList;
     private javax.swing.JList<String> cartTotalList;
     private javax.swing.JPanel headPanelMenu;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton35;
     private javax.swing.JComboBox<String> jComboBox33;
     private javax.swing.JLabel jLabel1;
@@ -709,7 +785,6 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel72;

@@ -27,9 +27,9 @@ public class Cart extends Menu{
     String[][] menu = super.nested_Menu_Array;
     String[][] cartItem;
     //for jinhao
-    //File cart  =  new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt");
+    File cart  =  new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt");
     //for jayren
-    File cart  =  new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Cart.txt");
+    //File cart  =  new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Cart.txt");
 
     public Cart() {
         
@@ -69,10 +69,9 @@ public class Cart extends Menu{
     public void clearCart(){
     try { 
             //for jinhao
-            //PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
+            PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
             //for jayren
-            PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
-
+            //PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
             pw.write("");
             pw.close();
             
@@ -83,16 +82,13 @@ public class Cart extends Menu{
        public void clearCart(JList cartList, JList totalList){  //clearCart() method overloading
     try { 
             //for jinhao
-            //PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
+            PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
             //for jayren
-            PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
-
+           // PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
             pw.write("");
             pw.close();
             read_Order_From_Cart(cartList, totalList);
             cartItem = load_Menu_Data();
-            System.out.println(cartItem.length);
-            System.out.println(Arrays.toString(cartItem));
         } catch (Exception e) {
         }
     }
@@ -109,6 +105,7 @@ public class Cart extends Menu{
            for(int i =0; i<cartItem.length ;i++){
                tempTotal.addElement("RM "+cartItem[i][2]);}
            
+           new Order().setOrderedItem(cartItem);
            }
 
     String calc_GrandTotal(){
