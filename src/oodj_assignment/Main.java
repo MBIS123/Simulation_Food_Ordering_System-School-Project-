@@ -30,10 +30,11 @@ public class Main {
         
         //new UserPayment().setVisible(true);
         //new UserInterface().setVisible(true);
-        new ManagerManageOrders().setVisible(true);
+        //new ManagerManageOrders().setVisible(true);
         //start from pre-login page
-        //PreLogin formPreLogin = new PreLogin();
-        //formPreLogin.setVisible(true);         
+       // PreLogin formPreLogin = new PreLogin();
+      //  formPreLogin.setVisible(true);    
+       
         
         
         //new UserFeedBack().setVisible(true);

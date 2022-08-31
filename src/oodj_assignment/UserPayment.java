@@ -356,11 +356,11 @@ public class UserPayment extends javax.swing.JFrame {
         objOrder.write_Order_to_OrderFIle();
         int reply = JOptionPane.showConfirmDialog(null,"Are you enjoying the order process? \n Give us some feedback.","Reminder", JOptionPane.YES_NO_OPTION);
         if (reply == JOptionPane.YES_OPTION) {
-            this.hide();
+            this.dispose();
             objFeedBack.setVisible(true);
         }
         else{
-            this.hide();
+            this.dispose();
             new UserInterface().setVisible(true);
         }
         }

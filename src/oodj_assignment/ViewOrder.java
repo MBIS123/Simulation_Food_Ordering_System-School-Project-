@@ -10,6 +10,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.DefaultListModel;
+import javax.swing.JLabel;
 import javax.swing.JList;
 
 /**
@@ -22,18 +23,31 @@ public class ViewOrder extends Menu{
     
     String[][] customerOrderHistory;
 
-    public ViewOrder(JList orderHistoryList) {
+    public ViewOrder(JList orderIdList,JList orderItemList,JList grandTotalList) {
         customerOrderHistory = load_orderHistory();
-        showCustomerOrderHistory(orderHistoryList);
+        showCustomerOrderHistory(orderIdList,orderItemList,grandTotalList);
     }
     
-    void showCustomerOrderHistory (JList orderHistoryList){
+    void showUserName(JLabel userNameLabel){
+    userNameLabel.setText(customerName+ " Welcome back.");
+    }
+    
+    void showCustomerOrderHistory (JList orderIdList,JList orderItemList,JList grandTotalList){
         
         DefaultListModel temp = new DefaultListModel();
-        orderHistoryList.setModel(temp);
-        System.out.println(customerOrderHistory[1]);
+        orderIdList.setModel(temp);
         for(int i=0; i< customerOrderHistory.length;i++){
-            temp.addElement( customerOrderHistory[i][0]+customerOrderHistory[i][3]+customerOrderHistory[i][5]);   
+            temp.addElement(" "+ customerOrderHistory[i][0]);   
+    }
+        DefaultListModel temp2 = new DefaultListModel();
+        orderItemList.setModel(temp2);
+        for(int i=0; i< customerOrderHistory.length;i++){
+            temp2.addElement(" "+ customerOrderHistory[i][3]);   
+    }
+        DefaultListModel temp3 = new DefaultListModel();
+        grandTotalList.setModel(temp3);
+        for(int i=0; i< customerOrderHistory.length;i++){
+            temp3.addElement(" RM"+customerOrderHistory[i][5]);   
     }
     }
   
@@ -50,7 +64,6 @@ public class ViewOrder extends Menu{
         for(int i=0; i< customerOrderHistory.length ; i++){
             for(int j=0; j<6; j++){
                 cusOrderHistory2D[i][j] = customerOrderHistory[i].split(":")[j]; 
-                System.out.println(Arrays.toString(cusOrderHistory2D[i])+ "hahaha");
             }
         }
         int i =0;
@@ -61,13 +74,20 @@ public class ViewOrder extends Menu{
             }
             i++;
         }
+         
         String[][] cusHistory = new String[cnt][6];
-            for (int k = 0; k < cusHistory.length; k++) {
+            int x =0;
+            for (int k = 0; k < cusOrderHistory2D.length; k++) {
                 if (cusOrderHistory2D[k][2].equals(customerTpNO)) {
-                    cusHistory[k] = cusOrderHistory2D[k];
+                    cusHistory[x] = cusOrderHistory2D[k];
+                    System.out.println(Arrays.toString(cusHistory[x])+ x);
+                    x++;
                 }   
             }
-            System.out.println( Arrays.toString( cusHistory[0])); 
+        for(int m = 0; m < cusHistory.length; m++){
+            System.out.println(Arrays.toString(cusHistory[m]));
+        }
+        
         return cusHistory;
         } 
        catch (Exception e) {

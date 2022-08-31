@@ -300,7 +300,7 @@ public class UserFeedBack extends javax.swing.JFrame {
         if (objFeedBack.allAnswered(q1Yes, q1No, q2TxtField, q2No, q3Yes, q3No, q4TxtField)) {
             objFeedBack.write_To_FeedbackFile(q1Yes, q1No, q2TxtField, q2No, q3Yes, q3No, q4TxtField);
             JOptionPane.showMessageDialog(null, "Feedback Submitted! \nThank you very much");
-            this.hide();
+            this.dispose();
             new UserInterface().setVisible(true);
         }
         else
@@ -308,8 +308,9 @@ public class UserFeedBack extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.hide();
-        new UserFeedBack().setVisible(true);
+        this.dispose();
+        new UserInterface().setVisible(true);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

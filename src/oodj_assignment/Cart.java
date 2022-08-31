@@ -24,7 +24,7 @@ import javax.swing.JTextArea;
  */
 public class Cart extends Menu{
     
-    String[][] menu = super.nested_Menu_Array;
+    
     String[][] cartItem;
     //for jinhao
     File cart  =  new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt");

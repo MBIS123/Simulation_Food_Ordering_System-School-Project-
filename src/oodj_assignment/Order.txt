@@ -9,3 +9,8 @@ O8:Sue Bird:TP123456:Nasi Pataya x 2,:Online Banking:8
 O9:Sue Bird:TP123456:Curry Mee x 3,:Online Banking:12
 O10:Sue Bird:TP123456:Sandwiches x 2,:Online Banking:6
 O11:Sue Bird:TP123456:Nasi Lemak x 3,Pizza x 2,Coca cola x 2,:Online Banking:30
+O12:Tan Jin Hao:TP060649:Chicken Chop x 2,:Online Banking:18
+O13:Tan Jin Hao:TP060649:Chicken Chop x 3,:Online Banking:27
+O14:Tan Jin Hao:TP060649:Nasi Goreng x 3,Orange Juice x 2,:Online Banking:21
+O15:Tan Jin Hao:TP060649:Roti Canai x 3,Soya Bean x 2,:Debit Card:10
+O16:Tan Jin Hao:TP060649:Orange Juice x 2,:Online Banking:6

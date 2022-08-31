@@ -37,8 +37,6 @@ public class UserInterface extends javax.swing.JFrame {
     static protected String DOB;
     
     Cart objCart = new Cart();
-    Menu obj_menu = new Menu();
-    String[][] menu = obj_menu.nested_Menu_Array;
     
     UserPayment formPayment = new UserPayment();
     UserFeedBack formFeedBack = new UserFeedBack();
@@ -66,43 +64,8 @@ public class UserInterface extends javax.swing.JFrame {
         // to load the data from the menu array into the jlist of the form
         objCart.clearCart();
         objMenu.setCustomerDetails(name, TPNo);
+        objMenu.display_Menu_To_List(localFoodList, WesternFoodList, BeverageList, priceLocalFoodList, priceWesternList, priceBeverageList);
         lblUserName.setText(name+ " Welcome Back ");
-        DefaultListModel temp1 = new DefaultListModel();
-        localFoodList.setModel(temp1);
-        for(int i=0; i< menu.length;i++){
-            if("Local".equals(menu[i][0])){
-                temp1.addElement(menu[i][1]);   }
-    }
-        DefaultListModel temp2 = new DefaultListModel();
-        BeverageList.setModel(temp2);
-        for(int i=0; i< menu.length;i++){
-            if("Beverage".equals(menu[i][0])){
-                temp2.addElement(menu[i][1]);   }
-    }
-        DefaultListModel temp3 = new DefaultListModel();
-        WesternFoodList.setModel(temp3);
-        for(int i=0; i< menu.length;i++){
-            if("Western Food".equals(menu[i][0])){
-                temp3.addElement(menu[i][1]);   }
-    }
-        DefaultListModel price1 = new DefaultListModel();
-        priceLocalFoodList.setModel(price1);
-        for(int i=0; i< menu.length;i++){
-            if("Local".equals(menu[i][0])){
-                price1.addElement("RM"+menu[i][2]);   }
-    }
-        DefaultListModel price2 = new DefaultListModel();
-        priceWesternList.setModel(price2);
-        for(int i=0; i< menu.length;i++){
-            if("Western Food".equals(menu[i][0])){
-                price2.addElement("RM"+menu[i][2]);   }
-    }
-        DefaultListModel price3 = new DefaultListModel();
-        priceBeverageList.setModel(price3);
-        for(int i=0; i< menu.length;i++){
-            if("Beverage".equals(menu[i][0])){
-                price3.addElement("RM"+menu[i][2]);   }
-    }
     }
 
     /**
@@ -286,6 +249,7 @@ public class UserInterface extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        WesternFoodList.setSelectionBackground(new java.awt.Color(153, 255, 204));
         WesternFoodList.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 WesternFoodListMouseClicked(evt);
@@ -303,6 +267,7 @@ public class UserInterface extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        localFoodList.setSelectionBackground(new java.awt.Color(51, 204, 255));
         localFoodList.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 localFoodListMouseClicked(evt);
@@ -320,6 +285,7 @@ public class UserInterface extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        BeverageList.setSelectionBackground(new java.awt.Color(153, 255, 204));
         BeverageList.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BeverageListMouseClicked(evt);
@@ -444,42 +410,40 @@ public class UserInterface extends javax.swing.JFrame {
         headPanelMenuLayout.setHorizontalGroup(
             headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headPanelMenuLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(apuLogo)
-                .addGap(46, 46, 46)
-                .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
                 .addGroup(headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(headPanelMenuLayout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(apuLogo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(headPanelMenuLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(89, 89, 89)
                         .addComponent(lblOrderHistory)
-                        .addGap(109, 109, 109)
-                        .addComponent(jLabel4)))
-                .addGap(6, 6, 6)
-                .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
+                        .addGap(103, 103, 103))))
         );
         headPanelMenuLayout.setVerticalGroup(
             headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headPanelMenuLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
                 .addGroup(headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(headPanelMenuLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(apuLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(headPanelMenuLayout.createSequentialGroup()
-                        .addGap(47, 47, 47)
+                        .addContainerGap()
+                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
                         .addGroup(headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblMenu)
-                            .addComponent(lblOrderHistory)))
+                            .addComponent(lblOrderHistory)
+                            .addComponent(jLabel4)))
                     .addGroup(headPanelMenuLayout.createSequentialGroup()
-                        .addComponent(lblUserName)
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel4))
-                    .addGroup(headPanelMenuLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(btnLogOut))))
+                        .addComponent(apuLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblUserName)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -579,12 +543,12 @@ public class UserInterface extends javax.swing.JFrame {
         }
         else{
         formPayment.setVisible(true);
-        this.hide();}
+        this.dispose();}
         
     }//GEN-LAST:event_btnCheckOutActionPerformed
 
     private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
-        this.hide();
+        this.dispose();
         new PreLogin().setVisible(true);
     }//GEN-LAST:event_btnLogOutActionPerformed
 
@@ -637,6 +601,7 @@ public class UserInterface extends javax.swing.JFrame {
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
         //open up userprofile
+        
         UserProfile prof = new UserProfile(TPNo, pw, name, gender, address, contactno, email, DOB);
         prof.setVisible(true);
     }//GEN-LAST:event_jLabel4MouseClicked
@@ -692,7 +657,10 @@ public class UserInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClearCartMouseClicked
 
     private void lblOrderHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrderHistoryMouseClicked
-     new UserOrderHistory().setVisible(true);
+     UserOrderHistory objH = new UserOrderHistory();
+     objH.setData(TPNo, pw, pw, TPNo, pw, TPNo, pw, TPNo);
+     this.dispose();
+     objH.setVisible(true);
     }//GEN-LAST:event_lblOrderHistoryMouseClicked
 
     /**

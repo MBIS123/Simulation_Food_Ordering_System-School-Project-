@@ -10,6 +10,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 
 /**
  *
@@ -21,7 +23,7 @@ public class Menu {
     
     File menuFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
     
-    String [][] nested_Menu_Array;
+    String [][] menu;
     static  protected String customerName;
     static  protected String customerTpNO;
     
@@ -29,7 +31,7 @@ public class Menu {
     //File menuFile = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
 
     public Menu() {
-        nested_Menu_Array = load_Menu_Data();
+        menu = load_Menu_Data();
     }
     
     void setCustomerDetails(String cusName, String cusTpNo){
@@ -61,5 +63,46 @@ public class Menu {
             System.out.println(e);
         }
         return null;
-    }   
+    }
+    
+    void display_Menu_To_List(JList localFoodList, JList WesternFoodList,JList BeverageList,JList priceLocalFoodList,JList priceWesternList,JList priceBeverageList){
+        DefaultListModel temp1 = new DefaultListModel();
+        localFoodList.setModel(temp1);
+        for(int i=0; i< menu.length;i++){
+            if("Local".equals(menu[i][0])){
+                temp1.addElement(menu[i][1]);   }
+    }
+    
+        DefaultListModel temp3 = new DefaultListModel();
+        WesternFoodList.setModel(temp3);
+        for(int i=0; i< menu.length;i++){
+            if("Western Food".equals(menu[i][0])){
+                temp3.addElement(menu[i][1]);   }
+        }
+        
+        DefaultListModel temp2 = new DefaultListModel();
+        BeverageList.setModel(temp2);
+        for(int i=0; i< menu.length;i++){
+            if("Beverage".equals(menu[i][0])){
+                temp2.addElement(menu[i][1]);   }
+    }
+        DefaultListModel price1 = new DefaultListModel();
+        priceLocalFoodList.setModel(price1);
+        for(int i=0; i< menu.length;i++){
+            if("Local".equals(menu[i][0])){
+                price1.addElement("RM"+menu[i][2]);   }
+    }
+        DefaultListModel price2 = new DefaultListModel();
+        priceWesternList.setModel(price2);
+        for(int i=0; i< menu.length;i++){
+            if("Western Food".equals(menu[i][0])){
+                price2.addElement("RM"+menu[i][2]);   }
+    }
+        DefaultListModel price3 = new DefaultListModel();
+        priceBeverageList.setModel(price3);
+        for(int i=0; i< menu.length;i++){
+            if("Beverage".equals(menu[i][0])){
+                price3.addElement("RM"+menu[i][2]);   }
+    }
+    }
 }
