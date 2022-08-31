@@ -210,7 +210,7 @@ public class ManagerHome extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnViewMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewMenuActionPerformed
-       new EditMenu().setVisible(true);
+       //new EditMenu().setVisible(true);
        this.dispose();
         
     }//GEN-LAST:event_btnViewMenuActionPerformed

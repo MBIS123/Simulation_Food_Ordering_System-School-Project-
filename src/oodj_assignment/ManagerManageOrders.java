@@ -18,8 +18,11 @@ public class ManagerManageOrders extends javax.swing.JFrame {
     /**
      * Creates new form ManagerViewOrders
      */
+    // Jayren
+    //File viewFeedbackFile = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Feedback.txt");
+    // Hao
+     File viewFeedbackFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Feedback.txt");
     
-    File viewFeedbackFile = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Feedback.txt");
     
     ViewOrder obj_orders = new ViewOrder();
     String[][] allorders = obj_orders.managerOrderHistory; 

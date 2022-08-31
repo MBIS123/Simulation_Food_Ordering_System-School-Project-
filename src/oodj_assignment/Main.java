@@ -27,13 +27,13 @@ public class Main {
         
         //new UserInterface().setVisible(true);
         //new UserPayment().setVisible(true);
-        
+        new ManagerHome().setVisible(true);
         //new UserPayment().setVisible(true);
         //new UserInterface().setVisible(true);
         //new ManagerManageOrders().setVisible(true);
         //start from pre-login page
-       // PreLogin formPreLogin = new PreLogin();
-      //  formPreLogin.setVisible(true);    
+       //PreLogin formPreLogin = new PreLogin();
+      // formPreLogin.setVisible(true);    
        
         
         

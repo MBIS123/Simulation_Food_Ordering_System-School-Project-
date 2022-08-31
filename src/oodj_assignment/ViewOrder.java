@@ -20,9 +20,9 @@ import javax.swing.JList;
 public class ViewOrder extends Menu{
     
     //for jinhao
-    //File orderFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Order.txt");
+    File orderFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Order.txt");
     //for jayren
-    File orderFile = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Order.txt");
+    //File orderFile = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Order.txt");
     
     String[][] customerOrderHistory;
     String[][] managerOrderHistory;
@@ -38,6 +38,8 @@ public class ViewOrder extends Menu{
     }
     
     void showCustomerOrderHistory (JList orderHistoryList){
+        
+    }
     void showUserName(JLabel userNameLabel){
     userNameLabel.setText(customerName+ " Welcome back.");
     }
