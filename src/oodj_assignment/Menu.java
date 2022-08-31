@@ -18,15 +18,24 @@ import java.util.Arrays;
 public class Menu {
     
     //for jinhao
+    
     File menuFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
     
     String [][] nested_Menu_Array;
+    static  protected String customerName;
+    static  protected String customerTpNO;
     
     //for jayren  thx bro
     //File menuFile = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
 
     public Menu() {
         nested_Menu_Array = load_Menu_Data();
+    }
+    
+    void setCustomerDetails(String cusName, String cusTpNo){
+        customerName = cusName;
+        customerTpNO = cusTpNo;
+    
     }
     
     String[][] load_Menu_Data (){

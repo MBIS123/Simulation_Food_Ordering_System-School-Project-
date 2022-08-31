@@ -1,0 +1,2 @@
+f1:O8:User is satisfied with order process:No unnessary steps:User think it is not convenient:sdfsdf
+f2:O9:User is not satisfied with order process:No unnessary steps:User think it is not convenient:

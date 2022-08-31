@@ -1,1 +1,10 @@
-Nasi Lemakhihi
+O1:Tan Jin Hao:TP060649:Coca cola x 3,Hamburger x 2,:Online Banking:14
+O2:Tan Jin Hao:TP060649:Curry Mee x 2,:Credit Card:8
+O3:Tan Jin Hao:TP060649:Hamburger x 2,:Online Banking:8
+O4:Tan Jin Hao:TP060649:Coca cola x 1,:Online Banking:2
+O5:Sue Bird:TP123456:Sandwiches x 2,Coca cola x 2,:Online Banking:10
+O6:Sue Bird:TP123456:Sandwiches x 4,:Credit Card:12
+O7:Sue Bird:TP123456:Curry Mee x 3,:Debit Card:12
+O8:Sue Bird:TP123456:Nasi Pataya x 2,:Online Banking:8
+O9:Sue Bird:TP123456:Curry Mee x 3,:Online Banking:12
+O10:Sue Bird:TP123456:Sandwiches x 2,:Online Banking:6

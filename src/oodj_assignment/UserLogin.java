@@ -203,8 +203,9 @@ public class UserLogin extends javax.swing.JFrame {
 
                     JOptionPane.showMessageDialog(null, "Login Successful!");
 
-                    UserInterface formMenu =  new UserInterface(name);
-                    formMenu.setData(TPNo, pw, name, gender, address, contactno, email, DOB);
+                    UserInterface passingData =  new UserInterface();
+                    passingData.setData(TPNo, pw, name, gender, address, contactno, email, DOB);
+                    UserInterface formMenu =  new UserInterface();
                     formMenu.setVisible(true);
                     
 

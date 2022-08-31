@@ -27,14 +27,14 @@ public class UserInterface extends javax.swing.JFrame {
     //following code is to pass login variables into form
     
     //declare class variables that can be called from child classes
-    private String TPNo;
-    private String pw;
-    static private String name;
-    private String gender;
-    private String address;
-    private String contactno;
-    private String email;
-    private String DOB;
+    static protected String TPNo;
+    static protected String pw;
+    static protected String name;
+    static protected String gender;
+    static protected String address;
+    static protected String contactno;
+    static protected String email;
+    static protected String DOB;
     
     Cart objCart = new Cart();
     Menu obj_menu = new Menu();
@@ -42,6 +42,8 @@ public class UserInterface extends javax.swing.JFrame {
     
     UserPayment formPayment = new UserPayment();
     UserFeedBack formFeedBack = new UserFeedBack();
+    Order objOrder = new Order();
+    Menu objMenu = new Menu();
     
     
     void setData(String tp, String pass, String nm, String gen, String add, String cont, String em, String birth)
@@ -57,54 +59,13 @@ public class UserInterface extends javax.swing.JFrame {
     }
     // * Creates new form UserInterface
      //*/
-    
-           
-    public UserInterface(String name){
-        initComponents();
-        this.name = name;
-        lblUserName.setText(name+ " Welcome Back ");
-        objCart.clearCart();
-        DefaultListModel temp1 = new DefaultListModel();
-        localFoodList.setModel(temp1);
-        for(int i=0; i< menu.length;i++){
-            if("Local".equals(menu[i][0])){
-                temp1.addElement(menu[i][1]);   }
-    }
-        DefaultListModel temp2 = new DefaultListModel();
-        BeverageList.setModel(temp2);
-        for(int i=0; i< menu.length;i++){
-            if("Beverage".equals(menu[i][0])){
-                temp2.addElement(menu[i][1]);   }
-    }
-        DefaultListModel temp3 = new DefaultListModel();
-        WesternFoodList.setModel(temp3);
-        for(int i=0; i< menu.length;i++){
-            if("Western Food".equals(menu[i][0])){
-                temp3.addElement(menu[i][1]);   }
-    }
-        DefaultListModel price1 = new DefaultListModel();
-        priceLocalFoodList.setModel(price1);
-        for(int i=0; i< menu.length;i++){
-            if("Local".equals(menu[i][0])){
-                price1.addElement("RM"+menu[i][2]);   }
-    }
-        DefaultListModel price2 = new DefaultListModel();
-        priceWesternList.setModel(price2);
-        for(int i=0; i< menu.length;i++){
-            if("Western Food".equals(menu[i][0])){
-                price2.addElement("RM"+menu[i][2]);   }
-    }
-        DefaultListModel price3 = new DefaultListModel();
-        priceBeverageList.setModel(price3);
-        for(int i=0; i< menu.length;i++){
-            if("Beverage".equals(menu[i][0])){
-                price3.addElement("RM"+menu[i][2]);   }
-    }
-    }
+ 
+ 
     public UserInterface() {
         initComponents();
         // to load the data from the menu array into the jlist of the form
         objCart.clearCart();
+        objMenu.setCustomerDetails(name, TPNo);
         lblUserName.setText(name+ " Welcome Back ");
         DefaultListModel temp1 = new DefaultListModel();
         localFoodList.setModel(temp1);

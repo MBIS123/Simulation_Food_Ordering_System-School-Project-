@@ -21,6 +21,7 @@ public class UserPayment extends javax.swing.JFrame {
      * Creates new form UserPayment
      */
     String grandTotal;
+    UserFeedBack objFeedBack =  new UserFeedBack();
     
     public UserPayment() {
         initComponents();
@@ -349,7 +350,19 @@ public class UserPayment extends javax.swing.JFrame {
             checklist--;
             }
         if(checklist ==3){JOptionPane.showMessageDialog(null, "Payment done succesfully");
-        new UserInterface().setVisible(true);
+        Order objOrder = new Order();
+        objOrder.setPaymentDetails(cbBxPaymentMethod1.getSelectedItem().toString(), grandTotal);
+        objOrder.generate_Order_Id();
+        objOrder.write_Order_to_OrderFIle();
+        int reply = JOptionPane.showConfirmDialog(null,"Are you enjoying the order process? \n Give us some feedback.","Reminder", JOptionPane.YES_NO_OPTION);
+        if (reply == JOptionPane.YES_OPTION) {
+            this.hide();
+            objFeedBack.setVisible(true);
+        }
+        else{
+            this.hide();
+            new UserInterface().setVisible(true);
+        }
         }
             
         
@@ -391,9 +404,19 @@ public class UserPayment extends javax.swing.JFrame {
                 checklist--;
         }
         if(checklist ==3){JOptionPane.showMessageDialog(null, "Payment done succesfully");
-        new Order().write_Order_to_OrderFIle();
-        this.hide();
-        new UserInterface().setVisible(true);
+        Order objOrder = new Order();
+        objOrder.setPaymentDetails(cbBxPaymentMethod1.getSelectedItem().toString(), grandTotal);
+        objOrder.generate_Order_Id();
+        objOrder.write_Order_to_OrderFIle();
+        int reply = JOptionPane.showConfirmDialog(null,"Are you enjoying the order process? \n Give us some feedback.","Reminder", JOptionPane.YES_NO_OPTION);
+        if (reply == JOptionPane.YES_OPTION) {
+            this.hide();
+            objFeedBack.setVisible(true);
+        }
+        else{
+            this.hide();
+            new UserInterface().setVisible(true);
+        }
         }
             
     }//GEN-LAST:event_btnOnlineBankingPayActionPerformed
