@@ -296,6 +296,7 @@ public class UserProfile extends javax.swing.JFrame {
         up.ViewUpdateUserProfile(UserContact, UserEmail, UserAddress);
         up.setVisible(true);
         this.dispose();
+        new UserInterface().setVisible(true);
     }//GEN-LAST:event_btnUpdateUserProfileActionPerformed
 
     /**

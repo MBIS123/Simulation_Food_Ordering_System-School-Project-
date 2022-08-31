@@ -24,15 +24,15 @@ public class Main {
         /*formMenu.setBackground(Color.yellow);
             formMenu.setVisible(true);
             formMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);*/
-        
+        new ManagerHome().setVisible(true);
         //new UserInterface().setVisible(true);
         //new UserPayment().setVisible(true);
-        new ManagerHome().setVisible(true);
+        //new ManagerHome().setVisible(true);
         //new UserPayment().setVisible(true);
         //new UserInterface().setVisible(true);
         //new ManagerManageOrders().setVisible(true);
         //start from pre-login page
-       //PreLogin formPreLogin = new PreLogin();
+      // PreLogin formPreLogin = new PreLogin();
       // formPreLogin.setVisible(true);    
        
         
