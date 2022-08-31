@@ -4,6 +4,9 @@
  */
 package oodj_assignment;
 
+import java.io.File;
+import java.util.Scanner;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,8 +18,22 @@ public class ManagerManageOrders extends javax.swing.JFrame {
     /**
      * Creates new form ManagerViewOrders
      */
+    
+    File viewFeedbackFile = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Feedback.txt");
+    
+    ViewOrder obj_orders = new ViewOrder();
+    String[][] allorders = obj_orders.managerOrderHistory; 
+    
     public ManagerManageOrders() {
         initComponents();
+        
+        //allOrderList
+        DefaultListModel temp1 = new DefaultListModel();
+        allOrderList.setModel(temp1);
+        for(int i = 0; i < allorders.length; i++)
+        {
+            temp1.addElement(allorders[i][0] + ": " + allorders[i][1]);
+        }
     }
 
     /**
@@ -38,8 +55,8 @@ public class ManagerManageOrders extends javax.swing.JFrame {
         apuLogo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         allOrderList = new javax.swing.JList<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        ViewFeedback = new javax.swing.JButton();
+        ViewPayment = new javax.swing.JButton();
 
         PanelOrders1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.orange));
 
@@ -131,17 +148,17 @@ public class ManagerManageOrders extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(allOrderList);
 
-        jButton1.setText("View Feedback");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ViewFeedback.setText("View Feedback");
+        ViewFeedback.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ViewFeedbackActionPerformed(evt);
             }
         });
 
-        jButton2.setText("ViewPayment");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        ViewPayment.setText("View Payment");
+        ViewPayment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ViewPaymentActionPerformed(evt);
             }
         });
 
@@ -157,9 +174,9 @@ public class ManagerManageOrders extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(ViewFeedback)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2))
+                        .addComponent(ViewPayment))
                     .addComponent(lblRecentOrders2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(81, Short.MAX_VALUE))
@@ -179,8 +196,8 @@ public class ManagerManageOrders extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(ViewFeedback)
+                    .addComponent(ViewPayment))
                 .addGap(18, 18, 18)
                 .addComponent(btnExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -198,13 +215,83 @@ public class ManagerManageOrders extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnViewOrders1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       JOptionPane.showMessageDialog(null ,"1.User is satisfied with order process\n2.No unnessary steps\n3.User think it is more convenient\n4.Suggestion:nothing","Feedback", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void ViewFeedbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewFeedbackActionPerformed
+       //JOptionPane.showMessageDialog(null ,"1.User is satisfied with order process\n2.No unnessary steps\n3.User think it is more convenient\n4.Suggestion:nothing","Feedback", JOptionPane.INFORMATION_MESSAGE);
+       
+       if (allOrderList.isSelectionEmpty())
+       {
+           JOptionPane.showMessageDialog(null, "Please select an Order!", "Error!", JOptionPane.INFORMATION_MESSAGE);
+       }
+       else
+       {
+            //get orderID on its own
+            String order = allOrderList.getSelectedValue();
+            String[] splitorder = order.split(":");
+            String orderid = splitorder[0];
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    JOptionPane.showMessageDialog(null ,"1.\n2.\n3.\n4.","Feedback", JOptionPane.INFORMATION_MESSAGE);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+            String satisfy = null;
+            String neccessary = null;
+            String convenient = null;
+            String suggestion = null;
+            Boolean hasfeedbackflag = false;
+
+            //check feedback txt for orderid
+            try
+            {
+                 Scanner scan = new Scanner(viewFeedbackFile);
+                 scan.useDelimiter("[:\n]");
+
+                //check if orderid equals
+                //then only read the next few 
+
+                while (scan.hasNext())
+                {
+                     if (scan.next().equals(orderid))
+                     {
+                         hasfeedbackflag = true;
+                         satisfy = scan.next();
+                         neccessary = scan.next();
+                         convenient = scan.next();
+                         suggestion = scan.next();
+
+                         JOptionPane.showMessageDialog(null, "1. " + satisfy + "\n2. " + neccessary + "\n3. " + convenient + "\n4. Suggestions: " + suggestion, "Feedback", JOptionPane.INFORMATION_MESSAGE);
+                         scan.close();
+                     }
+                }
+
+                if (hasfeedbackflag == false)
+                {
+                     JOptionPane.showMessageDialog(null, "No Feedback From User!", "Feedback", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+            catch(Exception e)
+            {
+
+            }
+       }
+    }//GEN-LAST:event_ViewFeedbackActionPerformed
+
+    private void ViewPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewPaymentActionPerformed
+    
+    //JOptionPane.showMessageDialog(null ,"1.\n2.\n3.\n4.","Feedback", JOptionPane.INFORMATION_MESSAGE);        // TODO add your handling code here:
+    
+    //get index of selection from list
+    //use existing allorders[i][] list
+    //take allorders[i][3], [i][4], [i][5]
+
+       if (allOrderList.isSelectionEmpty())
+       {
+           JOptionPane.showMessageDialog(null, "Please select an Order!", "Error!", JOptionPane.INFORMATION_MESSAGE);
+       }
+       else
+       {
+           int index = allOrderList.getSelectedIndex();
+           String order = allorders[index][3];
+           String paymentmethod = allorders[index][4];
+           String total = allorders[index][5];
+           JOptionPane.showMessageDialog(null, "Order: " + order + "\nPayment Method: " + paymentmethod + "\nTotal: RM" + total);
+       }
+    }//GEN-LAST:event_ViewPaymentActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,12 +332,12 @@ public class ManagerManageOrders extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelOrders1;
     private javax.swing.JTable TableOrders1;
+    private javax.swing.JButton ViewFeedback;
+    private javax.swing.JButton ViewPayment;
     private javax.swing.JList<String> allOrderList;
     private javax.swing.JLabel apuLogo;
     private javax.swing.JButton btnExit1;
     private javax.swing.JButton btnViewOrders1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblRecentOrders1;

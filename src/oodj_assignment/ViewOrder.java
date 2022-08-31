@@ -18,13 +18,22 @@ import javax.swing.JList;
  */
 public class ViewOrder extends Menu{
     
-    File orderFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Order.txt");
+    //for jinhao
+    //File orderFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Order.txt");
+    //for jayren
+    File orderFile = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Order.txt");
     
     String[][] customerOrderHistory;
+    String[][] managerOrderHistory;
 
     public ViewOrder(JList orderHistoryList) {
         customerOrderHistory = load_orderHistory();
         showCustomerOrderHistory(orderHistoryList);
+    }
+    
+    public ViewOrder()
+    {
+        managerOrderHistory = managerload_orderHistory();
     }
     
     void showCustomerOrderHistory (JList orderHistoryList){
@@ -69,6 +78,29 @@ public class ViewOrder extends Menu{
             }
             System.out.println( Arrays.toString( cusHistory[0])); 
         return cusHistory;
+        } 
+       catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
+    }
+    
+    public String[][] managerload_orderHistory(){
+        try {
+             BufferedReader rd = new BufferedReader(new FileReader(orderFile));
+             ArrayList<String> allOrders = new ArrayList<String>();
+             String line;
+        while (( line = rd.readLine())!= null) {
+            allOrders.add(line);
+        }
+        String[] allcustomerOrders = allOrders.toArray(new String[0]);
+        String[][] allcustomerOrders2D = new String[allcustomerOrders.length][6];
+        for(int i=0; i< allcustomerOrders.length ; i++){
+            for(int j=0; j<6; j++){
+                allcustomerOrders2D[i][j] = allcustomerOrders[i].split(":")[j]; 
+            }
+        }
+        return allcustomerOrders2D;
         } 
        catch (Exception e) {
             System.out.println(e);
