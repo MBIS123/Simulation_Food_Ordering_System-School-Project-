@@ -78,7 +78,7 @@ public class Feedback extends Menu{
             unnecessarySteps = q2YesJTextField.getText();
         }
         else if (q2No.isSelected()) {
-            unnecessarySteps = "No unnessary steps";
+            unnecessarySteps = "No unnescessary steps";
         }
         return unnecessarySteps;
     }

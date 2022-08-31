@@ -48,6 +48,7 @@ public class Menu {
             menuAL.add(line);
         }
         rd.close();
+        
         String[] menuArray = menuAL.toArray(new String[0]);
         String[][] menuArray2D = new String[menuArray.length][3];
         for(int i=0; i< menuArray.length ; i++){

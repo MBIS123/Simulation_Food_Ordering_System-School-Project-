@@ -15,6 +15,7 @@ public class UserOrderHistory extends javax.swing.JFrame {
      */
     public UserOrderHistory() {
         initComponents();
+        new ViewOrder(orderHistoryList);
     }
 
     /**
@@ -27,22 +28,22 @@ public class UserOrderHistory extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel22 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
         headPanelMenu2 = new javax.swing.JPanel();
         labelPic3 = new javax.swing.JLabel();
         lblMenu2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        apuLogo = new javax.swing.JLabel();
+        btnLogOut = new javax.swing.JButton();
+        lblUserName = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        orderHistoryList = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(254, 120, 83));
         jLabel22.setText("Order History");
-
-        jScrollPane1.setViewportView(jTextPane1);
 
         lblMenu2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblMenu2.setText("Menu");
@@ -59,19 +60,26 @@ public class UserOrderHistory extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText("Feedback");
 
-        jButton3.setBackground(new java.awt.Color(242, 242, 242));
-        jButton3.setText("Logout  ");
-        jButton3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        apuLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oodj_assignment/Pictures/apcafelogo.png"))); // NOI18N
+        apuLogo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        btnLogOut.setBackground(new java.awt.Color(254, 120, 83));
+        btnLogOut.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnLogOut.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogOut.setText("Logout  ");
+        btnLogOut.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnLogOut.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton3MouseEntered(evt);
+                btnLogOutMouseEntered(evt);
             }
         });
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnLogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnLogOutActionPerformed(evt);
             }
         });
+
+        lblUserName.setText("jTextField1");
 
         javax.swing.GroupLayout headPanelMenu2Layout = new javax.swing.GroupLayout(headPanelMenu2);
         headPanelMenu2.setLayout(headPanelMenu2Layout);
@@ -82,30 +90,44 @@ public class UserOrderHistory extends javax.swing.JFrame {
                 .addComponent(labelPic3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headPanelMenu2Layout.createSequentialGroup()
-                .addContainerGap(381, Short.MAX_VALUE)
-                .addComponent(lblMenu2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(jLabel7)
-                .addGap(34, 34, 34)
-                .addComponent(jLabel8)
-                .addGap(60, 60, 60)
-                .addComponent(jButton3)
-                .addGap(46, 46, 46))
+                .addContainerGap()
+                .addComponent(apuLogo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
+                .addGroup(headPanelMenu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headPanelMenu2Layout.createSequentialGroup()
+                        .addComponent(lblMenu2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel7)
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel8)
+                        .addGap(152, 152, 152))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headPanelMenu2Layout.createSequentialGroup()
+                        .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16))))
         );
         headPanelMenu2Layout.setVerticalGroup(
             headPanelMenu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headPanelMenu2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(headPanelMenu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLogOut)
+                    .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(headPanelMenu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMenu2)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jButton3))
+                    .addComponent(jLabel8))
                 .addGap(18, 18, 18))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headPanelMenu2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(labelPic3))
+                .addComponent(labelPic3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(apuLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        jScrollPane2.setViewportView(orderHistoryList);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,19 +139,19 @@ public class UserOrderHistory extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel22))))
+                            .addComponent(jLabel22)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(headPanelMenu2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel22)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(134, Short.MAX_VALUE))
         );
 
         pack();
@@ -139,14 +161,15 @@ public class UserOrderHistory extends javax.swing.JFrame {
         //lblMenu.setForeground(new Color(255,119,83));
     }//GEN-LAST:event_lblMenu2MousePressed
 
-    private void jButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseEntered
-        jButton1.setToolTipText("log out");
+    private void btnLogOutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogOutMouseEntered
+        btnLogOut.setToolTipText("log out");
         //JOptionPane.showMessageDialog(null,"hello");
-    }//GEN-LAST:event_jButton3MouseEntered
+    }//GEN-LAST:event_btnLogOutMouseEntered
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
+        this.hide();
+        new PreLogin().setVisible(true);
+    }//GEN-LAST:event_btnLogOutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,26 +207,16 @@ public class UserOrderHistory extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel headPanelMenu;
-    private javax.swing.JPanel headPanelMenu1;
+    private javax.swing.JLabel apuLogo;
+    private javax.swing.JButton btnLogOut;
     private javax.swing.JPanel headPanelMenu2;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JLabel labelPic1;
-    private javax.swing.JLabel labelPic2;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelPic3;
-    private javax.swing.JLabel lblMenu;
-    private javax.swing.JLabel lblMenu1;
     private javax.swing.JLabel lblMenu2;
+    private javax.swing.JTextField lblUserName;
+    private javax.swing.JList<String> orderHistoryList;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,8 @@
  */
 package oodj_assignment;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hp
@@ -32,11 +34,12 @@ public class ManagerManageOrders extends javax.swing.JFrame {
         TableOrders1 = new javax.swing.JTable();
         btnViewOrders1 = new javax.swing.JButton();
         btnExit1 = new javax.swing.JButton();
-        PanelOrders2 = new javax.swing.JPanel();
         lblRecentOrders2 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        TableOrders2 = new javax.swing.JTable();
-        btnViewOrders2 = new javax.swing.JButton();
+        apuLogo = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        allOrderList = new javax.swing.JList<>();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         PanelOrders1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.orange));
 
@@ -115,66 +118,32 @@ public class ManagerManageOrders extends javax.swing.JFrame {
             }
         });
 
-        PanelOrders2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.orange));
-
         lblRecentOrders2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblRecentOrders2.setText("COMPLETED ORDERS:");
 
-        TableOrders2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane3.setViewportView(TableOrders2);
+        apuLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oodj_assignment/Pictures/apcafelogo.png"))); // NOI18N
+        apuLogo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        btnViewOrders2.setBackground(new java.awt.Color(254, 120, 83));
-        btnViewOrders2.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        btnViewOrders2.setForeground(new java.awt.Color(242, 242, 242));
-        btnViewOrders2.setText("VIEW ORDER HISTORY");
-        btnViewOrders2.setAlignmentY(0.0F);
-        btnViewOrders2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        btnViewOrders2.setBorderPainted(false);
-        btnViewOrders2.setIconTextGap(30);
-        btnViewOrders2.addActionListener(new java.awt.event.ActionListener() {
+        allOrderList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "O1     TAN JIN HAO", "O2     TAN JIN HAO", "O3     JAY REN" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(allOrderList);
+
+        jButton1.setText("View Feedback");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewOrders2ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout PanelOrders2Layout = new javax.swing.GroupLayout(PanelOrders2);
-        PanelOrders2.setLayout(PanelOrders2Layout);
-        PanelOrders2Layout.setHorizontalGroup(
-            PanelOrders2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelOrders2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(lblRecentOrders2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(PanelOrders2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelOrders2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 962, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelOrders2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnViewOrders2, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        PanelOrders2Layout.setVerticalGroup(
-            PanelOrders2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelOrders2Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(lblRecentOrders2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnViewOrders2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jButton2.setText("ViewPayment");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -182,21 +151,39 @@ public class ManagerManageOrders extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(apuLogo)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnExit1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(PanelOrders2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2))
+                    .addComponent(lblRecentOrders2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(81, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnExit1)
+                .addGap(50, 50, 50))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PanelOrders2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 265, Short.MAX_VALUE)
+                .addComponent(apuLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(lblRecentOrders2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addGap(18, 18, 18)
                 .addComponent(btnExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
@@ -211,9 +198,13 @@ public class ManagerManageOrders extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnViewOrders1ActionPerformed
 
-    private void btnViewOrders2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrders2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnViewOrders2ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       JOptionPane.showMessageDialog(null ,"1.User is satisfied with order process\n2.No unnessary steps\n3.User think it is more convenient\n4.Suggestion:nothing","Feedback", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    JOptionPane.showMessageDialog(null ,"1.\n2.\n3.\n4.","Feedback", JOptionPane.INFORMATION_MESSAGE);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,14 +244,15 @@ public class ManagerManageOrders extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelOrders1;
-    private javax.swing.JPanel PanelOrders2;
     private javax.swing.JTable TableOrders1;
-    private javax.swing.JTable TableOrders2;
+    private javax.swing.JList<String> allOrderList;
+    private javax.swing.JLabel apuLogo;
     private javax.swing.JButton btnExit1;
     private javax.swing.JButton btnViewOrders1;
-    private javax.swing.JButton btnViewOrders2;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblRecentOrders1;
     private javax.swing.JLabel lblRecentOrders2;
     // End of variables declaration//GEN-END:variables

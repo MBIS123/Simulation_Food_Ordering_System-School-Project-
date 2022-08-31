@@ -8,3 +8,4 @@ O7:Sue Bird:TP123456:Curry Mee x 3,:Debit Card:12
 O8:Sue Bird:TP123456:Nasi Pataya x 2,:Online Banking:8
 O9:Sue Bird:TP123456:Curry Mee x 3,:Online Banking:12
 O10:Sue Bird:TP123456:Sandwiches x 2,:Online Banking:6
+O11:Sue Bird:TP123456:Nasi Lemak x 3,Pizza x 2,Coca cola x 2,:Online Banking:30

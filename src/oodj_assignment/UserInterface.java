@@ -150,7 +150,7 @@ public class UserInterface extends javax.swing.JFrame {
         headPanelMenu = new javax.swing.JPanel();
         labelPic1 = new javax.swing.JLabel();
         lblMenu = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblOrderHistory = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnLogOut = new javax.swing.JButton();
         apuLogo = new javax.swing.JLabel();
@@ -400,8 +400,13 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setText("Order History");
+        lblOrderHistory.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblOrderHistory.setText("Order History");
+        lblOrderHistory.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblOrderHistoryMouseClicked(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Profile");
@@ -449,7 +454,7 @@ public class UserInterface extends javax.swing.JFrame {
                         .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(headPanelMenuLayout.createSequentialGroup()
                         .addGap(89, 89, 89)
-                        .addComponent(jLabel3)
+                        .addComponent(lblOrderHistory)
                         .addGap(109, 109, 109)
                         .addComponent(jLabel4)))
                 .addGap(6, 6, 6)
@@ -467,7 +472,7 @@ public class UserInterface extends javax.swing.JFrame {
                         .addGap(47, 47, 47)
                         .addGroup(headPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblMenu)
-                            .addComponent(jLabel3)))
+                            .addComponent(lblOrderHistory)))
                     .addGroup(headPanelMenuLayout.createSequentialGroup()
                         .addComponent(lblUserName)
                         .addGap(31, 31, 31)
@@ -686,6 +691,10 @@ public class UserInterface extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnClearCartMouseClicked
 
+    private void lblOrderHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrderHistoryMouseClicked
+     new UserOrderHistory().setVisible(true);
+    }//GEN-LAST:event_lblOrderHistoryMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -743,7 +752,6 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel6;
@@ -772,6 +780,7 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JLabel labelPic1;
     private javax.swing.JLabel lblGrandTotal;
     private javax.swing.JLabel lblMenu;
+    private javax.swing.JLabel lblOrderHistory;
     private javax.swing.JLabel lblUserName;
     private javax.swing.JList<String> localFoodList;
     private javax.swing.JPanel menuPanel;
