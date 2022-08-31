@@ -186,7 +186,7 @@ public class UpdateMenu extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(255, 102, 102));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton3.setText("Remove Item");
-        menuPanel.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 420, 110, -1));
+        menuPanel.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 150, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(254, 120, 83));

@@ -66,6 +66,7 @@ public class Menu {
     }
     
     void display_Menu_To_List(JList localFoodList, JList WesternFoodList,JList BeverageList,JList priceLocalFoodList,JList priceWesternList,JList priceBeverageList){
+        menu = load_Menu_Data();
         DefaultListModel temp1 = new DefaultListModel();
         localFoodList.setModel(temp1);
         for(int i=0; i< menu.length;i++){
