@@ -8,30 +8,10 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author HAO
- */
 public class Main {
 
-    //static UserInterface formMenu =  new UserInterface();
-    //static UserFeedBack formFeedBack = new UserFeedBack();
-    
-   
-
     public static void main(String[] args) {
-   
-        
      PreLogin formPreLogin = new PreLogin();
      formPreLogin.setVisible(true);    
-       
-        
-    
-
     }
-    
 }
-//let's hope.
-//double confirming!
-//triple confirming!
-//triple confirming!
