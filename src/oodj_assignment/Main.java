@@ -17,14 +17,15 @@ public class Main {
     //static UserInterface formMenu =  new UserInterface();
     //static UserFeedBack formFeedBack = new UserFeedBack();
     
-    int a = 3;
+   
 
     public static void main(String[] args) {
    
         /*formMenu.setBackground(Color.yellow);
             formMenu.setVisible(true);
             formMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);*/
-        new ManagerHome().setVisible(true);
+        new UpdateMenu().setVisible(true);
+        //new ManagerHome().setVisible(true);
         //new UserInterface().setVisible(true);
         //new UserPayment().setVisible(true);
         //new ManagerHome().setVisible(true);
