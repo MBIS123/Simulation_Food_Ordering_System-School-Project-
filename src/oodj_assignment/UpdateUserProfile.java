@@ -426,7 +426,6 @@ public class UpdateUserProfile extends javax.swing.JFrame {
             String contactno = scan2.next();
             String email = scan2.next();
             String DOB = scan2.next();   
-            scan2.close();
            
             if (pw.equals(user_password))
             {
@@ -451,6 +450,8 @@ public class UpdateUserProfile extends javax.swing.JFrame {
 
                         FileOutputStream.nullOutputStream();
                         
+                        scan2.close();
+                        
                         JOptionPane.showMessageDialog(null, "Password Updated!");
 
                         txtCurrentPW.setText("");
@@ -463,6 +464,7 @@ public class UpdateUserProfile extends javax.swing.JFrame {
                         txtCurrentPW.setText("");
                         txtUpdateNewPW.setText("");
                         txtUpdateConfPW.setText("");
+                        scan2.close();
                     }
                 }
                 else
@@ -471,6 +473,7 @@ public class UpdateUserProfile extends javax.swing.JFrame {
                     txtCurrentPW.setText("");
                     txtUpdateNewPW.setText("");
                     txtUpdateConfPW.setText("");
+                    scan2.close();
                 }
             }
             else
@@ -479,6 +482,7 @@ public class UpdateUserProfile extends javax.swing.JFrame {
                 txtCurrentPW.setText("");
                 txtUpdateNewPW.setText("");
                 txtUpdateConfPW.setText("");
+                scan2.close();
             }
         }
         catch(Exception e)

@@ -638,7 +638,15 @@ public class UserRegistration extends javax.swing.JFrame {
                                     RadioMale.setSelected(false);
                                     RadioFemale.setSelected(false);
                                     writer.close();
-
+                                    
+                                    TPSuccess = 0;
+                                    NameSuccess = 0;
+                                    GenderSuccess = 0;
+                                    DOBSuccess = 0;
+                                    ContSuccess = 0;
+                                    EmailSuccess = 0;
+                                    AddressSuccess = 0;
+                                    PWSuccess = 0;
                                 }
                                 catch(IOException e)
                                 {
@@ -653,6 +661,14 @@ public class UserRegistration extends javax.swing.JFrame {
                         else
                         {
                             JOptionPane.showMessageDialog(null, "Registration Unsuccessful! Please try again.");
+                            TPSuccess = 0;
+                            NameSuccess = 0;
+                            GenderSuccess = 0;
+                            DOBSuccess = 0;
+                            ContSuccess = 0;
+                            EmailSuccess = 0;
+                            AddressSuccess = 0;
+                            PWSuccess = 0;
                         }
                     }
                 }

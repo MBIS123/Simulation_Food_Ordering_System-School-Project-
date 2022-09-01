@@ -423,6 +423,8 @@ public class UpdateManagerProfile extends javax.swing.JFrame {
                     FileOutputStream.nullOutputStream();
 
                     scan.close();
+                    
+                    JOptionPane.showMessageDialog(null, "Update Successful!");
                 }
             }
             catch(Exception e)
@@ -493,6 +495,7 @@ public class UpdateManagerProfile extends javax.swing.JFrame {
                             txtCurrentPW.setText("");
                             txtUpdateNewPW.setText("");
                             txtUpdateConfPW.setText("");
+                            scan.close();
                         }
                     }
                     else
@@ -501,6 +504,7 @@ public class UpdateManagerProfile extends javax.swing.JFrame {
                         txtCurrentPW.setText("");
                         txtUpdateNewPW.setText("");
                         txtUpdateConfPW.setText("");
+                        scan.close();
                     }
                 }
                 else
@@ -509,6 +513,7 @@ public class UpdateManagerProfile extends javax.swing.JFrame {
                     txtCurrentPW.setText("");
                     txtUpdateNewPW.setText("");
                     txtUpdateConfPW.setText("");
+                    scan.close();
                 }
             }
         }
