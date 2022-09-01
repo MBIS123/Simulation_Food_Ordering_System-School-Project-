@@ -14,7 +14,6 @@ import javax.swing.JTextField;
  */
 public class Payment extends Menu{
     
-    
     String grandTotal;
     
     void set_GrandTotal(String grandTotal){
