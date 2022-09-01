@@ -152,16 +152,17 @@ public class UserLogin extends javax.swing.JFrame {
         String TPNox = txtTPNo.getText();
         String pwx = String.valueOf(txtPassword.getPassword());
         
-        if ((TPNox.length() > 0) && (pwx.length() > 0))
+        if (((TPNox.length() >= 8) && (pwx.length() >= 8)))
         {
             try
             {
                 //you will have to change this according to the local filepath
-               // File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+               File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                 
                 // Hao
-                File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
-                Scanner scan1 = new Scanner(filex);
+                //File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                Scanner scan1 = new Scanner(filex);                
+                
                 boolean flag = false;
 
                 while(scan1.hasNext() && flag == false)
@@ -170,18 +171,24 @@ public class UserLogin extends javax.swing.JFrame {
                     line = scan1.nextLine();
                     if((line.contains(TPNox)) && (line.contains(pwx)))
                     {
-                        flag = true;
+                        String[] record = line.split(":");
+                        String ID = record[0];
+                        String pw = record[1];
+                        
+                        if (TPNox.equals(ID) && (pwx.equals(pw)))
+                        {
+                            flag = true;
+                        }                        
                     }
                 }    
 
-                scan1.close();
                 if (flag == true)
                 {
                     //create temporary user file
                     // Jay ren
-                    //File file = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                    File file = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
                     // HAO :
-                    File file = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                    //File file = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
                     
                     
                     FileWriter fw = new FileWriter(file);
@@ -189,18 +196,18 @@ public class UserLogin extends javax.swing.JFrame {
                     fw.write(line);
                     fw.close();
 
-                    Scanner scan2 = new Scanner(file);
-                    scan2.useDelimiter("[:\n]");
+                    Scanner scan3 = new Scanner(file);
+                    scan3.useDelimiter("[:\n]");
 
-                    String TPNo = scan2.next();
-                    String pw = scan2.next();
-                    String name = scan2.next();
-                    String gender = scan2.next();
-                    String address = scan2.next();
-                    String contactno = scan2.next();
-                    String email = scan2.next();
-                    String DOB = scan2.next();   
-                    scan2.close();
+                    String TPNo = scan3.next();
+                    String pw = scan3.next();
+                    String name = scan3.next();
+                    String gender = scan3.next();
+                    String address = scan3.next();
+                    String contactno = scan3.next();
+                    String email = scan3.next();
+                    String DOB = scan3.next();   
+                    scan3.close();
 
                     JOptionPane.showMessageDialog(null, "Login Successful!");
 

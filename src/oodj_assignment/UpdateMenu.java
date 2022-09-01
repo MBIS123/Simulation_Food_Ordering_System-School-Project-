@@ -330,6 +330,7 @@ public class UpdateMenu extends javax.swing.JFrame {
     private void btnExit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExit1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
+        new ManagerHome().setVisible(true);
     }//GEN-LAST:event_btnExit1ActionPerformed
 
     private void btnEditPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditPriceActionPerformed

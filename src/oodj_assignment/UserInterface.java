@@ -361,6 +361,7 @@ public class UserInterface extends javax.swing.JFrame {
         lblMenu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblMenu.setForeground(new java.awt.Color(254, 120, 83));
         lblMenu.setText("Menu");
+        lblMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblMenuMousePressed(evt);
@@ -369,6 +370,7 @@ public class UserInterface extends javax.swing.JFrame {
 
         lblOrderHistory.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblOrderHistory.setText("Order History");
+        lblOrderHistory.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblOrderHistory.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblOrderHistoryMouseClicked(evt);
@@ -377,6 +379,7 @@ public class UserInterface extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Profile");
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);

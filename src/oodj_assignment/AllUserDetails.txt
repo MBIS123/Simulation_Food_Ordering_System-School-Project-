@@ -1,4 +1,4 @@
-MG000001:#pAssword123:Chew Jay Ren:Male:No 23 Jalan Jeriji U8/75D:0134567890:jjolatunji@gmail.com:22/11/2001
+MG000001:!PASSword987:Chew Jay Ren:Male:No 13 Jalan Epal U3/25A:0124038661:jayren@gmail.com:22/11/2001
 TP060649:luka77Doncic#:Tan Jin Hao:Male:No 25, Puchong, 401500 Kuala Lumpur:0198765432:jinhao@gmail.com:01/09/2001
 TP123456:sueBird23!?:Sue Bird:Female:PJU 1/29A, Ara Damansara:01123456789:suebird@outlook.com:12/05/1998
 TP234324:asd23W!asd:LEE CHONG WEI :Male:Bukit Hi,Puchong:0125698:CHONGWEI@gmail.com:02/02/2000
