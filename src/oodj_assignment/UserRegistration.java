@@ -483,8 +483,10 @@ public class UserRegistration extends javax.swing.JFrame {
         if (val.isTP(txtTPNo.getText()))
         {
             try
-            {
-                File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+            {//JayRen
+                //File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                //Hao
+                File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                 Scanner scan1 = new Scanner(filex);
                 
                 while(scan1.hasNext() && duplicate_checker_TP == false)
@@ -515,8 +517,10 @@ public class UserRegistration extends javax.swing.JFrame {
                 if (val.isName(txtName.getText()))
                 {
                     try
-                    {
-                        File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                    {//Jayren
+                        //File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                        //Hao
+                        File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                         Scanner scan2 = new Scanner(filex);
 
                         while(scan2.hasNext() && duplicate_checker_name == false)
@@ -616,7 +620,10 @@ public class UserRegistration extends javax.swing.JFrame {
                             try
                             {
                                 //you will have to change this according to the local filepath
-                                File file = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                               //jAY rEN
+                                // File file = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                                //hAO
+                                File file = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
 
                                 try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(file, true))))
                                 {

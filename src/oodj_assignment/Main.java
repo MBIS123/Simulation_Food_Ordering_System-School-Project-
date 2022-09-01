@@ -21,28 +21,12 @@ public class Main {
 
     public static void main(String[] args) {
    
-        /*formMenu.setBackground(Color.yellow);
-            formMenu.setVisible(true);
-            formMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);*/
-        new UpdateMenu().setVisible(true);
-        //new ManagerHome().setVisible(true);
-        //new UserInterface().setVisible(true);
-        //new UserPayment().setVisible(true);
-        //new ManagerHome().setVisible(true);
-        //new UserPayment().setVisible(true);
-        //new UserInterface().setVisible(true);
-        //new ManagerManageOrders().setVisible(true);
-        //start from pre-login page
-      // PreLogin formPreLogin = new PreLogin();
-      // formPreLogin.setVisible(true);    
+        
+     PreLogin formPreLogin = new PreLogin();
+     formPreLogin.setVisible(true);    
        
         
-        
-        //new UserFeedBack().setVisible(true);
-       
-        //UserRegistration formUserRegistration = new UserRegistration();
-        //formUserRegistration.setVisible(true);
-        
+    
 
     }
     

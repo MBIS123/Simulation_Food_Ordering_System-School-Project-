@@ -349,7 +349,10 @@ public class UpdateUserProfile extends javax.swing.JFrame {
             try
             {
                 //you will have to change this according to the local filepath
-                File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                //Jay Ren
+                //File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                //Hao
+                File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
                 
                 //read temp file to variables
                 //change those variables in both temp file and original file

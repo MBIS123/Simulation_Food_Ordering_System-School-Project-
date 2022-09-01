@@ -332,7 +332,10 @@ public class UpdateManagerProfile extends javax.swing.JFrame {
         try
         {
             //you will have to change this according to the local filepath
-            File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+            //Jayren
+            //File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+            //Hao
+            File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
             Scanner scan = new Scanner(filex);
             scan.useDelimiter("[:\n]");
 
@@ -395,7 +398,10 @@ public class UpdateManagerProfile extends javax.swing.JFrame {
             try
             {
                 //you will have to change this according to the local filepath
-                File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                // Jayren
+                //File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                // Hao
+                File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                 Scanner scan = new Scanner(filex);
                 scan.useDelimiter("[:\n]");
 
@@ -411,7 +417,11 @@ public class UpdateManagerProfile extends javax.swing.JFrame {
                     String date = scan.next();
                     
                     //write to file (https://stackoverflow.com/questions/3935791/find-and-replace-words-lines-in-a-file)
-                    Path path = Paths.get("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                    //jAY rEN
+                    //Path path = Paths.get("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                    //hAO
+                    Path path = Paths.get("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                    
                     Charset charset = StandardCharsets.UTF_8;
 
                     String content = new String(Files.readAllBytes(path), charset);
@@ -445,7 +455,10 @@ public class UpdateManagerProfile extends javax.swing.JFrame {
         try
         {
             //you will have to change this according to the local filepath
-            File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+            //Jay Ren
+            //File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+            //Hao
+            File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
             Scanner scan = new Scanner(filex);
             scan.useDelimiter("[:\n]");
 
@@ -468,6 +481,9 @@ public class UpdateManagerProfile extends javax.swing.JFrame {
                         if (new_password.equals(txtUpdateConfPW.getText()))
                         {
                             //write to file (https://stackoverflow.com/questions/3935791/find-and-replace-words-lines-in-a-file)
+                            //JayRen
+                            //Path path = Paths.get("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                            //Hao
                             Path path = Paths.get("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                             Charset charset = StandardCharsets.UTF_8;
 
