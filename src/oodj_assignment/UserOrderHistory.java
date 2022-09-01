@@ -12,10 +12,6 @@ import java.awt.Color;
  */
 public class UserOrderHistory extends javax.swing.JFrame {
 
-    /**
-     * Creates new form UserOrderHistory
-     */
-
     static protected String TPNo;
     static protected String pw;
     static protected String name;
@@ -73,6 +69,7 @@ public class UserOrderHistory extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
+        setResizable(false);
 
         lblMenu2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblMenu2.setText("Menu");

@@ -213,6 +213,7 @@ public class UserInterface extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
         setForeground(new java.awt.Color(102, 255, 102));
+        setResizable(false);
         setSize(new java.awt.Dimension(800, 800));
 
         jScrollPane1.setBackground(new java.awt.Color(222, 222, 222));

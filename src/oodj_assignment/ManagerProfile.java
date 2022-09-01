@@ -240,6 +240,7 @@ public class ManagerProfile extends javax.swing.JFrame{
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         setSize(new java.awt.Dimension(770, 339));
 
         btnExit1.setBackground(new java.awt.Color(254, 120, 83));

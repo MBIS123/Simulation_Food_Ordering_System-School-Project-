@@ -17,10 +17,13 @@ import org.xml.sax.Attributes;
  */
 public class UserPayment extends javax.swing.JFrame {
 
-    /**
-     * Creates new form UserPayment
-     */
     String grandTotal;
+    
+    void set_GrandTotal(String grandTotal){
+        this.grandTotal = grandTotal;
+    }
+    
+    
     UserFeedBack objFeedBack =  new UserFeedBack();
     
     public UserPayment() {
@@ -28,10 +31,7 @@ public class UserPayment extends javax.swing.JFrame {
         CardPanel.hide(); 
         onlineBankingPanel.hide();
     }
-    
-    void set_GrandTotal(String grandTotal){
-        this.grandTotal = grandTotal;
-    }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.

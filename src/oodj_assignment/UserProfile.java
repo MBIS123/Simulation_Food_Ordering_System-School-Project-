@@ -83,6 +83,7 @@ public class UserProfile extends javax.swing.JFrame {
         btnExit1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         lblMyProfile.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         lblMyProfile.setForeground(new java.awt.Color(254, 120, 83));
