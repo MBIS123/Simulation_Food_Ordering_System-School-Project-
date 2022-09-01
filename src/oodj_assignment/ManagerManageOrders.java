@@ -61,8 +61,8 @@ public class ManagerManageOrders extends javax.swing.JFrame {
         apuLogo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         allOrderList = new javax.swing.JList<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        ViewFeedback = new javax.swing.JButton();
+        ViewPayment = new javax.swing.JButton();
 
         PanelOrders1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.orange, java.awt.Color.orange));
 
@@ -155,17 +155,17 @@ public class ManagerManageOrders extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(allOrderList);
 
-        jButton1.setText("View Feedback");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ViewFeedback.setText("View Feedback");
+        ViewFeedback.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ViewFeedbackActionPerformed(evt);
             }
         });
 
-        jButton2.setText("ViewPayment");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        ViewPayment.setText("ViewPayment");
+        ViewPayment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ViewPaymentActionPerformed(evt);
             }
         });
 
@@ -181,9 +181,9 @@ public class ManagerManageOrders extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(ViewFeedback)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2))
+                        .addComponent(ViewPayment))
                     .addComponent(lblRecentOrders2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(81, Short.MAX_VALUE))
@@ -203,8 +203,8 @@ public class ManagerManageOrders extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(ViewFeedback)
+                    .addComponent(ViewPayment))
                 .addGap(18, 18, 18)
                 .addComponent(btnExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -339,12 +339,12 @@ public class ManagerManageOrders extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelOrders1;
     private javax.swing.JTable TableOrders1;
+    private javax.swing.JButton ViewFeedback;
+    private javax.swing.JButton ViewPayment;
     private javax.swing.JList<String> allOrderList;
     private javax.swing.JLabel apuLogo;
     private javax.swing.JButton btnExit1;
     private javax.swing.JButton btnViewOrders1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblRecentOrders1;
