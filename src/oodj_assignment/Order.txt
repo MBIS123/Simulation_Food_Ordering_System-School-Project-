@@ -15,3 +15,5 @@ O14:Tan Jin Hao:TP060649:Nasi Goreng x 3,Orange Juice x 2,:Online Banking:21
 O15:Tan Jin Hao:TP060649:Roti Canai x 3,Soya Bean x 2,:Debit Card:10
 O16:Tan Jin Hao:TP060649:Orange Juice x 2,:Online Banking:6
 O17:Chew Jay Ren:MG000001:Sky water x 2,:Online Banking:30
+O18:Tan Jin Hao:TP060649:Chicken Chop x 1,Soya Bean x 2,:Online Banking:13
+O19:Tan Jin Hao:TP060649:Sky water x 1,:Online Banking:15

@@ -243,7 +243,7 @@ public class UserOrderHistory extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLogOutActionPerformed
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        this.dispose();
+        
         UserProfile prof = new UserProfile(TPNo, pw, name, gender, address, contactno, email, DOB);
         prof.setVisible(true);          
     }//GEN-LAST:event_jLabel8MouseClicked

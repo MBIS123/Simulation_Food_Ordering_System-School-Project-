@@ -14,4 +14,3 @@ Beverage:Apple Juice:3
 Beverage:Orange Juice:3
 Beverage:Coca cola:2
 Beverage:Soya Bean:2
-Beverage:Sky water:15
