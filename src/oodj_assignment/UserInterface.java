@@ -61,7 +61,6 @@ public class UserInterface extends javax.swing.JFrame {
     public UserInterface() {
         initComponents();
         // to load the data from the menu array into the jlist of the form
-        System.out.println("hah12123");
         objCart.clearCart();
         objMenu.setCustomerDetails(name, TPNo);
         objMenu.display_Menu_To_List(localFoodList, WesternFoodList, BeverageList, priceLocalFoodList, priceWesternList, priceBeverageList);
@@ -224,25 +223,18 @@ public class UserInterface extends javax.swing.JFrame {
         menuPanel.setBackground(new java.awt.Color(222, 222, 222));
         menuPanel.setMaximumSize(new java.awt.Dimension(1800, 32767));
         menuPanel.setPreferredSize(new java.awt.Dimension(1687, 1177));
-        menuPanel.setLayout(null);
 
         label1.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         label1.setForeground(new java.awt.Color(254, 120, 83));
         label1.setText("Local Food");
-        menuPanel.add(label1);
-        label1.setBounds(17, 23, 118, 34);
 
         label2.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         label2.setForeground(new java.awt.Color(254, 120, 83));
         label2.setText("Western Food");
-        menuPanel.add(label2);
-        label2.setBounds(264, 23, 148, 34);
 
         label3.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         label3.setForeground(new java.awt.Color(254, 120, 83));
         label3.setText("Beverage");
-        menuPanel.add(label3);
-        label3.setBounds(533, 23, 101, 34);
 
         WesternFoodList.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         WesternFoodList.setForeground(new java.awt.Color(255, 51, 51));
@@ -259,9 +251,6 @@ public class UserInterface extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(WesternFoodList);
 
-        menuPanel.add(jScrollPane4);
-        jScrollPane4.setBounds(260, 60, 160, 302);
-
         localFoodList.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         localFoodList.setForeground(new java.awt.Color(255, 51, 0));
         localFoodList.setModel(new javax.swing.AbstractListModel<String>() {
@@ -276,9 +265,6 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
         jScrollPane5.setViewportView(localFoodList);
-
-        menuPanel.add(jScrollPane5);
-        jScrollPane5.setBounds(20, 60, 120, 302);
 
         BeverageList.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         BeverageList.setForeground(new java.awt.Color(255, 51, 51));
@@ -295,9 +281,6 @@ public class UserInterface extends javax.swing.JFrame {
         });
         jScrollPane6.setViewportView(BeverageList);
 
-        menuPanel.add(jScrollPane6);
-        jScrollPane6.setBounds(520, 60, 140, 302);
-
         jScrollPane3.setAlignmentY(0.0F);
 
         priceLocalFoodList.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -310,9 +293,6 @@ public class UserInterface extends javax.swing.JFrame {
         priceLocalFoodList.setEnabled(false);
         jScrollPane3.setViewportView(priceLocalFoodList);
 
-        menuPanel.add(jScrollPane3);
-        jScrollPane3.setBounds(140, 60, 60, 302);
-
         priceWesternList.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         priceWesternList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -321,9 +301,6 @@ public class UserInterface extends javax.swing.JFrame {
         });
         priceWesternList.setEnabled(false);
         jScrollPane7.setViewportView(priceWesternList);
-
-        menuPanel.add(jScrollPane7);
-        jScrollPane7.setBounds(420, 60, 60, 300);
 
         priceBeverageList.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         priceBeverageList.setModel(new javax.swing.AbstractListModel<String>() {
@@ -334,28 +311,77 @@ public class UserInterface extends javax.swing.JFrame {
         priceBeverageList.setEnabled(false);
         jScrollPane8.setViewportView(priceBeverageList);
 
-        menuPanel.add(jScrollPane8);
-        jScrollPane8.setBounds(660, 60, 60, 300);
-
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Double click the item name to add into cart");
-        menuPanel.add(jLabel2);
-        jLabel2.setBounds(20, 390, 310, 16);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel10.setText("Price");
-        menuPanel.add(jLabel10);
-        jLabel10.setBounds(670, 40, 43, 16);
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel11.setText("Price");
-        menuPanel.add(jLabel11);
-        jLabel11.setBounds(150, 40, 43, 16);
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel12.setText("Price");
-        menuPanel.add(jLabel12);
-        jLabel12.setBounds(430, 40, 43, 16);
+
+        javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
+        menuPanel.setLayout(menuPanelLayout);
+        menuPanelLayout.setHorizontalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuPanelLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71)
+                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(menuPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(menuPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        menuPanelLayout.setVerticalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuPanelLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel10))))
+                .addGap(3, 3, 3)
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(jLabel2))
+        );
 
         jScrollPane1.setViewportView(menuPanel);
 
@@ -452,17 +478,12 @@ public class UserInterface extends javax.swing.JFrame {
         );
 
         jPanel3.setBackground(new java.awt.Color(222, 222, 222));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setText("YOUR CART");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 132, -1));
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 18, 99, -1));
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 18, 99, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel7.setText("GRAND TOTAL : RM");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 510, -1, -1));
 
         btnCheckOut.setBackground(new java.awt.Color(254, 120, 83));
         btnCheckOut.setFont(new java.awt.Font("Segoe UI Black", 1, 20)); // NOI18N
@@ -478,15 +499,12 @@ public class UserInterface extends javax.swing.JFrame {
                 btnCheckOutActionPerformed(evt);
             }
         });
-        jPanel3.add(btnCheckOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, 227, 42));
 
         lblGrandTotal.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         lblGrandTotal.setText("0.00");
-        jPanel3.add(lblGrandTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, 42, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("Total");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, -1, -1));
 
         cartItemList.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cartItemList.setAutoscrolls(false);
@@ -494,15 +512,11 @@ public class UserInterface extends javax.swing.JFrame {
         cartItemList.setVisibleRowCount(15);
         jScrollPane10.setViewportView(cartItemList);
 
-        jPanel3.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 81, 219, 411));
-
         cartTotalList.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         cartTotalList.setAutoscrolls(false);
         cartTotalList.setEnabled(false);
         cartTotalList.setVisibleRowCount(15);
         jScrollPane2.setViewportView(cartTotalList);
-
-        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 81, 53, 410));
 
         btnClearCart.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnClearCart.setForeground(new java.awt.Color(255, 0, 51));
@@ -512,7 +526,6 @@ public class UserInterface extends javax.swing.JFrame {
                 btnClearCartMouseClicked(evt);
             }
         });
-        jPanel3.add(btnClearCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(222, 222, 222));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -528,7 +541,65 @@ public class UserInterface extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 340, -1));
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(91, 91, 91)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(260, 260, 260)
+                .addComponent(jLabel1))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(217, 217, 217)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel7)
+                .addGap(6, 6, 6)
+                .addComponent(lblGrandTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnClearCart))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(btnCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel8))
+                .addGap(2, 2, 2)
+                .addComponent(jLabel6)
+                .addGap(5, 5, 5)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(jLabel1)
+                .addGap(5, 5, 5)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(lblGrandTotal)
+                    .addComponent(btnClearCart))
+                .addGap(18, 18, 18)
+                .addComponent(btnCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
