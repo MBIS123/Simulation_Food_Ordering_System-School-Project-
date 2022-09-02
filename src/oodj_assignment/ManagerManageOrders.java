@@ -226,57 +226,42 @@ public class ManagerManageOrders extends javax.swing.JFrame {
 
     private void ViewFeedbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewFeedbackActionPerformed
        //JOptionPane.showMessageDialog(null ,"1.User is satisfied with order process\n2.No unnessary steps\n3.User think it is more convenient\n4.Suggestion:nothing","Feedback", JOptionPane.INFORMATION_MESSAGE);
-       
        if (allOrderList.isSelectionEmpty())
        {
            JOptionPane.showMessageDialog(null, "Please select an Order!", "Error!", JOptionPane.INFORMATION_MESSAGE);
        }
        else
-       {
-            //get orderID on its own
+       {//get orderID on its own
             String order = allOrderList.getSelectedValue();
             String[] splitorder = order.split(":");
             String orderid = splitorder[0];
-
             String satisfy = null;
             String neccessary = null;
             String convenient = null;
             String suggestion = null;
             Boolean hasfeedbackflag = false;
-
             //check feedback txt for orderid
             try
-            {
-                 Scanner scan = new Scanner(viewFeedbackFile);
+            {    Scanner scan = new Scanner(viewFeedbackFile);
                  scan.useDelimiter("[:\n]");
-
                 //check if orderid equals
                 //then only read the next few 
-
-                while (scan.hasNext())
-                {
-                     if (scan.next().equals(orderid))
-                     {
+                while (scan.hasNext()){
+                     if (scan.next().equals(orderid)){
                          hasfeedbackflag = true;
                          satisfy = scan.next();
                          neccessary = scan.next();
                          convenient = scan.next();
                          suggestion = scan.next();
-
                          JOptionPane.showMessageDialog(null, "1. " + satisfy + "\n2. " + neccessary + "\n3. " + convenient + "\n4. Suggestions: " + suggestion, "Feedback", JOptionPane.INFORMATION_MESSAGE);
                          scan.close();
                      }
-                }
-
-                if (hasfeedbackflag == false)
-                {
+                }if (hasfeedbackflag == false){
                      JOptionPane.showMessageDialog(null, "No Feedback From User!", "Feedback", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
             catch(Exception e)
-            {
-
-            }
+            {}
        }
     }//GEN-LAST:event_ViewFeedbackActionPerformed
 
