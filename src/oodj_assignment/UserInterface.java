@@ -480,6 +480,7 @@ public class UserInterface extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(222, 222, 222));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(254, 120, 83));
         jLabel6.setText("YOUR CART");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
