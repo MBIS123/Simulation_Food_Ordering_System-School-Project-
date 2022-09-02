@@ -3,7 +3,6 @@ Local:Nasi Goreng:5
 Local:Nasi Pataya:4
 Local:Curry Mee:4
 Local:Roti Canai:2
-Local:Chicken Rice:7
 Western Food:Spaghetti:8
 Western Food:Hamburger:4
 Western Food:Pizza:7
@@ -14,3 +13,4 @@ Beverage:Apple Juice:3
 Beverage:Orange Juice:3
 Beverage:Coca cola:2
 Beverage:Soya Bean:2
+Local:Chicken Rice:6
