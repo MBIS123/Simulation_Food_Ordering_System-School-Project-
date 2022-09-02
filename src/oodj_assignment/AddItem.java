@@ -207,18 +207,15 @@ public class AddItem extends javax.swing.JFrame {
         else
             JOptionPane.showMessageDialog(null,"Please set a price!","Warning",JOptionPane.WARNING_MESSAGE);
         if (flag ==3) {
-            int reply =JOptionPane.showConfirmDialog(null,"Do u want to add " + txtFldItemName.getText()+ " of RM"+priceCbBx.getSelectedItem().toString() +" to the "+ cbBxFoodType.getSelectedItem()+" menu?","Confirmation",JOptionPane.YES_NO_OPTION);
+            int reply =JOptionPane.showConfirmDialog(null,"Do u want to add " + txtFldItemName.getText()+ " of RM"+priceCbBx.getSelectedItem().toString()+
+                    " to the "+ cbBxFoodType.getSelectedItem()+" menu?","Confirmation",JOptionPane.YES_NO_OPTION);
             if(reply == JOptionPane.YES_OPTION){
             objMM.addItem_WriteToMenuFile(cbBxFoodType, txtFldItemName, priceCbBx);
             JOptionPane.showMessageDialog(null,txtFldItemName.getText()+" has been successfully added to the " + cbBxFoodType.getSelectedItem()+" menu!");
             this.dispose();
             new UpdateMenu().setVisible(true);
             }
-            
-            
-            
-        }
-        
+        } 
     }//GEN-LAST:event_btnAddItemActionPerformed
 
     private void cbBxFoodTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbBxFoodTypeActionPerformed

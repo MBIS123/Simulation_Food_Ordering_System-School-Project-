@@ -37,7 +37,6 @@ public class UserInterface extends javax.swing.JFrame {
     static protected String DOB;
     
     Cart objCart = new Cart();
-    
     UserPayment formPayment = new UserPayment();
     UserFeedBack formFeedBack = new UserFeedBack();
     Order objOrder = new Order();
