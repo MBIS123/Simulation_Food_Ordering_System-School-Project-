@@ -5,3 +5,4 @@ f4:O13:User is not satisfied with order process:No unnescessary steps:User think
 f5:O14:User is satisfied with order process:No unnescessary steps:User think it is more convenient:nothing
 f6:O15:User is satisfied with order process:no:User think it is not convenient:no suggestion
 f7:O17:User is satisfied with order process:No unnescessary steps:User think it is more convenient:NO suggestion
+f8:O20:User is satisfied with order process:No unnescessary steps:User think it is more convenient:Good app
