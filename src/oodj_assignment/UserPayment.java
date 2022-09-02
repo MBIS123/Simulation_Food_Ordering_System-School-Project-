@@ -84,7 +84,7 @@ public class UserPayment extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setText("Payment Method :");
 
-        cbBxPaymentMethod1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Online Banking", "Credit Card", "Debit Card", " " }));
+        cbBxPaymentMethod1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Online Banking", "Credit Card", "Debit Card" }));
         cbBxPaymentMethod1.setSelectedIndex(-1);
         cbBxPaymentMethod1.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
             public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
@@ -106,7 +106,7 @@ public class UserPayment extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("Online Banking with:");
 
-        cbBxOnlineBanking.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maybank2u", "CIMB Clicks", "Public Bank", "RHB Now", "Hong Leong Connect", "Ambank", "MyBSN", "Bank Rakyat", "UOB", "Affin Bank", "Bank Islam", "HSBC Online", " " }));
+        cbBxOnlineBanking.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maybank2u", "CIMB Clicks", "Public Bank", "RHB Now", "Hong Leong Connect", "Ambank", "MyBSN", "Bank Rakyat", "UOB", "Affin Bank", "Bank Islam", "HSBC Online" }));
         cbBxOnlineBanking.setSelectedIndex(-1);
         cbBxOnlineBanking.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
