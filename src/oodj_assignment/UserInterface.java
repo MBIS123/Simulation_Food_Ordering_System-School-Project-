@@ -61,6 +61,7 @@ public class UserInterface extends javax.swing.JFrame {
     public UserInterface() {
         initComponents();
         // to load the data from the menu array into the jlist of the form
+        System.out.println("hah12123");
         objCart.clearCart();
         objMenu.setCustomerDetails(name, TPNo);
         objMenu.display_Menu_To_List(localFoodList, WesternFoodList, BeverageList, priceLocalFoodList, priceWesternList, priceBeverageList);

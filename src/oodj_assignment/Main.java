@@ -12,6 +12,9 @@ public class Main {
 
     public static void main(String[] args) {
      PreLogin formPreLogin = new PreLogin();
-     formPreLogin.setVisible(true);    
+    formPreLogin.setVisible(true);    
+    
+
+     
     }
 }

@@ -8,6 +8,8 @@ import java.awt.MenuItem;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.DefaultListModel;
@@ -24,13 +26,17 @@ public class Menu {
     static  protected String customerTpNO;
     
         //for jinhao
-    File menuFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
+    String menuFilePath ;
+
+   File menuFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
     
     //for jayren  thx bro
     //File menuFile = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
 
+    
+    
     public Menu() {
-        menu = load_Menu_Data();
+        menu = load_Menu_Data();    
     }
     
     void setCustomerDetails(String cusName, String cusTpNo){
