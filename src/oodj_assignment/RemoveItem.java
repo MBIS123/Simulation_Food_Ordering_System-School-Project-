@@ -44,7 +44,7 @@ public class RemoveItem extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(254, 120, 83));
-        jLabel1.setText("Edit Price");
+        jLabel1.setText("Remove Item");
 
         btnLocal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnLocal.setForeground(new java.awt.Color(254, 120, 83));
