@@ -333,7 +333,11 @@ public class UpdateManagerProfile extends javax.swing.JFrame {
             //Jayren
             //File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
             //Hao
-            File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+            //File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+            
+            //for test
+            File filex = new File("src/oodj_assignment/AllUserDetails.txt");
+            
             Scanner scan = new Scanner(filex);
             scan.useDelimiter("[:\n]");
 
@@ -399,7 +403,11 @@ public class UpdateManagerProfile extends javax.swing.JFrame {
                 // Jayren
                 //File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                 // Hao
-                File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                //File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                
+                //for test
+                File filex = new File("src/oodj_assignment/AllUserDetails.txt");
+                
                 Scanner scan = new Scanner(filex);
                 scan.useDelimiter("[:\n]");
 
@@ -458,7 +466,11 @@ public class UpdateManagerProfile extends javax.swing.JFrame {
             //Jay Ren
             //File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
             //Hao
-            File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+            //File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+            
+            //for test
+            File filex = new File("src/oodj_assignment/AllUserDetails.txt");
+            
             Scanner scan = new Scanner(filex);
             scan.useDelimiter("[:\n]");
 

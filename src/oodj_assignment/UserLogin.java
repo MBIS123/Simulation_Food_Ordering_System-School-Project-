@@ -160,8 +160,12 @@ public class UserLogin extends javax.swing.JFrame {
                //File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                 
                 // Hao
-                File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
-                Scanner scan1 = new Scanner(filex);                
+                //File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                
+                //for test
+                File filex = new File("src/oodj_assignment/AllUserDetails.txt");
+                
+                Scanner scan1 = new Scanner(filex);     
                 
                 boolean flag = false;
 
@@ -188,8 +192,10 @@ public class UserLogin extends javax.swing.JFrame {
                     // Jay ren
                     //File file = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
                     // HAO :
-                    File file = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                    //File file = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
                     
+                    // for test
+                    File file = new File("src/oodj_assignment/tempuserdetails");
                     
                     FileWriter fw = new FileWriter(file);
 

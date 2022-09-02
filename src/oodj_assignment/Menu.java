@@ -28,10 +28,13 @@ public class Menu {
         //for jinhao
     String menuFilePath ;
 
-   File menuFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
+   //File menuFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
     
     //for jayren  thx bro
     //File menuFile = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Menu.txt");
+   
+   //for test
+   File menuFile = new File("src/oodj_assignment/Menu.txt");
 
     
     

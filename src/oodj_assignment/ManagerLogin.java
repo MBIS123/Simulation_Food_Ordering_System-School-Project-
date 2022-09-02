@@ -160,7 +160,10 @@ public class ManagerLogin extends javax.swing.JFrame {
         {
             //you will have to change this according to the local filepath
             //File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
-            File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+            //File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+            
+            //for test
+            File filex = new File("src/oodj_assignment/AllUserDetails.txt");
             
             Scanner scan = new Scanner(filex);
             scan.useDelimiter("[:\n]");

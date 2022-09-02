@@ -36,8 +36,12 @@ public class Order extends Menu {
     }
     
     //for jinhao
-    File orderFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Order.txt");
-    File cartFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt");
+    //File orderFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Order.txt");
+    //File cartFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt");
+    
+    //for test
+    File orderFile = new File("src/oodj_assignment/Order.txt");
+    File cartFile = new File("src/oodj_assignment/Cart.txt");
 
     void write_Order_to_OrderFIle(){
         String orderFood= "";

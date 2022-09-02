@@ -24,7 +24,9 @@ public class ManagerManageOrders extends javax.swing.JFrame {
     // Jayren
     //File viewFeedbackFile = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Feedback.txt");
     // Hao
-     File viewFeedbackFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Feedback.txt");
+     //File viewFeedbackFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Feedback.txt");
+     //for test
+     File viewFeedbackFile = new File("src/oodj_assignment/Feedback.txt");
     
     
     ViewOrder obj_orders = new ViewOrder();

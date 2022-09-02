@@ -353,7 +353,10 @@ public class UpdateUserProfile extends javax.swing.JFrame {
                 //Jay Ren
                 //File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
                 //Hao
-                File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                //File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                
+                //for test
+                File filex = new File("src/oodj_assignment/tempuserdetails");
                 
                 //read temp file to variables
                 //change those variables in both temp file and original file
@@ -374,8 +377,12 @@ public class UpdateUserProfile extends javax.swing.JFrame {
                // Path detailspath = Paths.get("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                // Path temppath = Paths.get("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
                
-                      Path detailspath = Paths.get("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
-                        Path temppath = Paths.get("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                //Path detailspath = Paths.get("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                //Path temppath = Paths.get("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                
+                //for test
+                Path detailspath = Paths.get("src/oodj_assignment/AllUserDetails.txt");
+                Path temppath = Paths.get("src/oodj_assignment/tempuserdetails");
                 
                 Charset charset = StandardCharsets.UTF_8;
 
@@ -419,7 +426,10 @@ public class UpdateUserProfile extends javax.swing.JFrame {
         {
             //you will have to change this according to the local filepath
            // File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
-             File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+             //File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+            
+            //for test
+            File filex = new File("src/oodj_assignment/tempuserdetails");
              
 
             //read temp file to variables
@@ -446,8 +456,12 @@ public class UpdateUserProfile extends javax.swing.JFrame {
                        // Path detailspath = Paths.get("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                        // Path temppath = Paths.get("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
 
-                        Path detailspath = Paths.get("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
-                        Path temppath = Paths.get("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                        //Path detailspath = Paths.get("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                        //Path temppath = Paths.get("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+                        
+                        Path detailspath = Paths.get("src/oodj_assignment/AllUserDetails.txt");
+                        Path temppath = Paths.get("src/oodj_assignment/tempuserdetails");
+                        
                         Charset charset = StandardCharsets.UTF_8;
 
                         String detailscontent = new String(Files.readAllBytes(detailspath), charset);
@@ -508,7 +522,11 @@ public class UpdateUserProfile extends javax.swing.JFrame {
         {
             //you will have to change this according to the local filepath
            // File filex = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
-             File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+             //File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
+            
+            //for test
+            File filex = new File("src/oodj_assignment/tempuserdetails");
+            
             Scanner scan = new Scanner(filex);
             scan.useDelimiter("[:\n]");
 
