@@ -213,6 +213,8 @@ public class UserLogin extends javax.swing.JFrame {
 
                     UserInterface passingData =  new UserInterface();
                     passingData.setData(TPNo, pw, name, gender, address, contactno, email, DOB);
+                    UserOrderHistory passDetailHistory =  new UserOrderHistory();
+                    passDetailHistory.setData(TPNo, pw, name, gender, address, contactno, email, DOB);
                     UserInterface formMenu =  new UserInterface();
                     formMenu.setVisible(true);
                     

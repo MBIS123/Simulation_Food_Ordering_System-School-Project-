@@ -51,7 +51,6 @@ public class UserOrderHistory extends javax.swing.JFrame {
         headPanelMenu2 = new javax.swing.JPanel();
         labelPic3 = new javax.swing.JLabel();
         lblMenu2 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         apuLogo = new javax.swing.JLabel();
         btnLogOut = new javax.swing.JButton();
         lblUserName = new javax.swing.JLabel();
@@ -77,15 +76,6 @@ public class UserOrderHistory extends javax.swing.JFrame {
         lblMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblMenu2MousePressed(evt);
-            }
-        });
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel8.setText("Profile");
-        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
             }
         });
 
@@ -133,10 +123,8 @@ public class UserOrderHistory extends javax.swing.JFrame {
                                 .addGap(12, 12, 12)
                                 .addComponent(lblMenu2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(56, 56, 56)
-                                .addComponent(jLabel7)
-                                .addGap(76, 76, 76)
-                                .addComponent(jLabel8)))
-                        .addContainerGap(93, Short.MAX_VALUE))
+                                .addComponent(jLabel7)))
+                        .addContainerGap(216, Short.MAX_VALUE))
                     .addGroup(headPanelMenu2Layout.createSequentialGroup()
                         .addComponent(apuLogo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -152,8 +140,7 @@ public class UserOrderHistory extends javax.swing.JFrame {
                 .addGroup(headPanelMenu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUserName)
                     .addComponent(lblMenu2)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8))
+                    .addComponent(jLabel7))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headPanelMenu2Layout.createSequentialGroup()
                 .addGroup(headPanelMenu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -239,12 +226,6 @@ public class UserOrderHistory extends javax.swing.JFrame {
         new PreLogin().setVisible(true);
     }//GEN-LAST:event_btnLogOutActionPerformed
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        
-        UserProfile prof = new UserProfile(TPNo, pw, name, gender, address, contactno, email, DOB);
-        prof.setVisible(true);          
-    }//GEN-LAST:event_jLabel8MouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -289,7 +270,6 @@ public class UserOrderHistory extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
