@@ -211,7 +211,6 @@ public class ManagerHome extends javax.swing.JFrame {
 
     private void btnViewMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewMenuActionPerformed
        new UpdateMenu().setVisible(true);
-       this.dispose();
         
     }//GEN-LAST:event_btnViewMenuActionPerformed
 

@@ -35,7 +35,6 @@ public class Menu {
    
    //for test
    File menuFile = new File("src/oodj_assignment/Menu.txt");
-
     
     
     public Menu() {
