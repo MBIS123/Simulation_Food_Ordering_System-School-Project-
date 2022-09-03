@@ -356,7 +356,7 @@ public class UpdateUserProfile extends javax.swing.JFrame {
                 //File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
                 
                 //for test
-                File filex = new File("src/oodj_assignment/tempuserdetails");
+                File filex = new File("tempuserdetails");
                 
                 //read temp file to variables
                 //change those variables in both temp file and original file
@@ -381,8 +381,8 @@ public class UpdateUserProfile extends javax.swing.JFrame {
                 //Path temppath = Paths.get("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
                 
                 //for test
-                Path detailspath = Paths.get("src/oodj_assignment/AllUserDetails.txt");
-                Path temppath = Paths.get("src/oodj_assignment/tempuserdetails");
+                Path detailspath = Paths.get("AllUserDetails.txt");
+                Path temppath = Paths.get("tempuserdetails");
                 
                 Charset charset = StandardCharsets.UTF_8;
 
@@ -429,8 +429,7 @@ public class UpdateUserProfile extends javax.swing.JFrame {
              //File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
             
             //for test
-            File filex = new File("src/oodj_assignment/tempuserdetails");
-             
+            File filex = new File("tempuserdetails");
 
             //read temp file to variables
             //change those variables in both temp file and original file
@@ -525,7 +524,7 @@ public class UpdateUserProfile extends javax.swing.JFrame {
              //File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
             
             //for test
-            File filex = new File("src/oodj_assignment/tempuserdetails");
+            File filex = new File("tempuserdetails");
             
             Scanner scan = new Scanner(filex);
             scan.useDelimiter("[:\n]");

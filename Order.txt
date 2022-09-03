@@ -19,3 +19,4 @@ O18:Tan Jin Hao:TP060649:Chicken Chop x 1,Soya Bean x 2,:Online Banking:13
 O19:Tan Jin Hao:TP060649:Sky water x 1,:Online Banking:15
 O20:LEE CHONG WEI :TP234324:Apple Pie x 2,Orange Juice x 2,:Online Banking:22
 O21:Tan Jin Hao:TP060649:Nasi Pataya x 3,Apple Juice x 1,:Online Banking:15
+O22:Sue Bird:TP123456:Hamburger x 6,:Online Banking:24

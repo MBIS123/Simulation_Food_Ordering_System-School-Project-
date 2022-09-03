@@ -24,7 +24,7 @@ public class Cart extends Menu{
     String[][] cartItem;
     
     //for test
-    File cart  =  new File("src/oodj_assignment/Cart.txt");
+    File cart  =  new File("Cart.txt");
     
     //for jinhao
     //File cart  =  new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Cart.txt");
@@ -74,7 +74,8 @@ public class Cart extends Menu{
             //PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
             
             //for test
-            PrintWriter pw = new PrintWriter(new FileWriter(new File("src/oodj_assignment/Cart.txt")));
+            PrintWriter pw = new PrintWriter(new FileWriter(new File("Cart.txt")));
+            
             pw.write("");
             pw.close();
             
@@ -90,7 +91,7 @@ public class Cart extends Menu{
            // PrintWriter pw = new PrintWriter(new FileWriter(new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Cart.txt")));
            
             //for test
-            PrintWriter pw = new PrintWriter(new FileWriter(new File("src/oodj_assignment/Cart.txt")));
+            PrintWriter pw = new PrintWriter(new FileWriter(new File("Cart.txt")));
             
             pw.write("");
             pw.close();

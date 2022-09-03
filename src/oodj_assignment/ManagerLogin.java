@@ -163,7 +163,8 @@ public class ManagerLogin extends javax.swing.JFrame {
             //File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
             
             //for test
-            File filex = new File("src/oodj_assignment/AllUserDetails.txt");
+            //File filex = new File("src/oodj_assignment/AllUserDetails.txt");
+            File filex = new File("AllUserDetails.txt");
             
             Scanner scan = new Scanner(filex);
             scan.useDelimiter("[:\n]");

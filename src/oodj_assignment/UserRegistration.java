@@ -489,7 +489,7 @@ public class UserRegistration extends javax.swing.JFrame {
                 //File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                 
                 //for test
-                File filex = new File("src/oodj_assignment/AllUserDetails.txt");
+                File filex = new File("AllUserDetails.txt");
                 
                 Scanner scan1 = new Scanner(filex);
                 
@@ -527,7 +527,7 @@ public class UserRegistration extends javax.swing.JFrame {
                         //File filex = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                         
                         //for test
-                        File filex = new File("src/oodj_assignment/AllUserDetails.txt");
+                        File filex = new File("AllUserDetails.txt");
                         
                         Scanner scan2 = new Scanner(filex);
 
@@ -634,8 +634,8 @@ public class UserRegistration extends javax.swing.JFrame {
                                 //File file = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                                 
                                 //for test
-                                File file = new File("src/oodj_assignment/AllUserDetails.txt");
-
+                                File file = new File("AllUserDetails.txt");
+                                
                                 try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(file, true))))
                                 {
                                     writer.print("\n");

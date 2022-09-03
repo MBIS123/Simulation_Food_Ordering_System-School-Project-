@@ -28,7 +28,7 @@ public class ViewOrder extends Menu{
     //File orderFile = new File("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\Order.txt");
     
     //for test
-    File orderFile = new File("src/oodj_assignment/Order.txt");
+    File orderFile = new File("Order.txt");
 
     public ViewOrder(JList orderIdList,JList orderItemList,JList grandTotalList) {
         customerOrderHistory = load_orderHistory();
