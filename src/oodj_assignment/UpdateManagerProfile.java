@@ -426,7 +426,7 @@ public class UpdateManagerProfile extends javax.swing.JFrame {
                     //jAY rEN
                     //Path path = Paths.get("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                     //hAO
-                    Path path = Paths.get("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                    Path path = Paths.get("AllUserDetails.txt");
                     
                     Charset charset = StandardCharsets.UTF_8;
 
@@ -496,7 +496,7 @@ public class UpdateManagerProfile extends javax.swing.JFrame {
                             //JayRen
                             //Path path = Paths.get("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                             //Hao
-                            Path path = Paths.get("C:\\Users\\hp\\Desktop\\APU\\Year 2\\Modules\\OODJ\\jrenOODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
+                            Path path = Paths.get("AllUserDetails.txt");
                             Charset charset = StandardCharsets.UTF_8;
 
                             String content = new String(Files.readAllBytes(path), charset);

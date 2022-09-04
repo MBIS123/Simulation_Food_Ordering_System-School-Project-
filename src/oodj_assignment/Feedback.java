@@ -21,7 +21,7 @@ public class Feedback extends Menu{
     
    static protected String orderID;
    //File feedbackFile = new File("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\Feedback.txt");
-    File feedbackFile  =  new File("src/oodj_assignment/Feedback.txt");
+    File feedbackFile  =  new File("Feedback.txt");
 
    void setOrderID(String orderId){
        this.orderID = orderId;

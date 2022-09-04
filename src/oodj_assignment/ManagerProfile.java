@@ -444,6 +444,9 @@ public class ManagerProfile extends javax.swing.JFrame{
 
     private void btnExit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExit1ActionPerformed
         // TODO add your handling code here:        
+        ManagerHome formManagerHome = new ManagerHome();
+        formManagerHome.setData(ManagerID, ManagerPW, ManagerName, ManagerGender, ManagerAddress, ManagerContact, ManagerEmail, ManagerDOB);
+        formManagerHome.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnExit1ActionPerformed
 

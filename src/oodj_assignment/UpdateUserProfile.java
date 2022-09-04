@@ -458,8 +458,8 @@ public class UpdateUserProfile extends javax.swing.JFrame {
                         //Path detailspath = Paths.get("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\AllUserDetails.txt");
                         //Path temppath = Paths.get("C:\\Users\\HAO\\Documents\\NetBeansProjects\\OODJ_Assignment\\src\\oodj_assignment\\tempuserdetails");
                         
-                        Path detailspath = Paths.get("src/oodj_assignment/AllUserDetails.txt");
-                        Path temppath = Paths.get("src/oodj_assignment/tempuserdetails");
+                        Path detailspath = Paths.get("AllUserDetails.txt");
+                        Path temppath = Paths.get("tempuserdetails");
                         
                         Charset charset = StandardCharsets.UTF_8;
 

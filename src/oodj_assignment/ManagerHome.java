@@ -220,6 +220,7 @@ public class ManagerHome extends javax.swing.JFrame {
         //formManagerProfile.LoadManagerProfile();
         //ManagerProfile formManagerProfile = new ManagerProfile();
         formManagerProfile.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnViewProfActionPerformed
 
     private void btnViewOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrdersActionPerformed
